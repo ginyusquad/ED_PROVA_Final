@@ -3,7 +3,7 @@ package com.impacta.estruturadedados.provafinal;
 import java.util.Scanner;
 import com.impacta.estruturadedados.provafinal.interfaces.*;
 
-import com.impacta.estruturadedados.provafinal.arranjo.Arranjo;
+
 import com.impacta.estruturadedados.provafinal.arranjo.MenuArranjo;
 
 public class Principal implements IMenu{

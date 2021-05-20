@@ -77,17 +77,21 @@ public class Arranjo {
 		return repeticoes;
 	}
 	public static final String EXPLICACAO = 	("Com arranjos podemos fazer operções como:\n"+
-			    						 		 "\t\t Somar todos os elementos;\n"+
+			    						 		 "\t\tSomar todos os elementos;\n"+
 			    								 "\t\tPegar o maior elemento;\n"+
 			    								 "\t\tPegar o menor elemento;\n"+
-			    								 "\t\tVer a repetição dos elementos iguais");
+			    								 "\t\tVer a repetição dos elementos iguais;");
 	public void explicacaoArranjo() {
 
-		System.out.println(EXPLICACAO);
-		System.out.print("Na lista: ");
-		for(int i = 0; i < LISTA_INICIAL.length; i++) {
-			System.out.print(LISTA_INICIAL[i]);
-		}
+		System.out.println(EXPLICACAO +"\n");
+		
+		System.out.print("\t\tNa lista: ");
+		System.out.println(toString());
+
+		System.out.println("\t\tA soma dos itens é: " + soma());
+		System.out.println("\t\tO maior iten é: " + maior());
+		System.out.println("\t\tO menor iten é: " + menor());
+		System.out.println("\t\tO valor 940 repete " + repeticoes(940) +" vezes\n");
 		
 	}
 	public String toString(){
