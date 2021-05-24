@@ -2,6 +2,15 @@ package com.impacta.estruturadedados.provafinal.arranjo;
 
 public class Arranjo {
 	public static final Integer[] LISTA_INICIAL = { 940, 880, 830, 790, 750, 660, 650, 590, 510, 940 };
+	private Integer[] vetor;
+	
+	public Arranjo() {
+		this.vetor = LISTA_INICIAL.clone();
+	}
+	
+	public Arranjo(Integer[] vetor) {
+		this.vetor = vetor.clone();
+	}
 
 	/**
 	 * Função que retorna o menor valor do arranjo
@@ -10,9 +19,9 @@ public class Arranjo {
 	 */
 	public int menor() {
 
-        int menor = LISTA_INICIAL[0];
+        int menor = this.vetor[0];
         
-		for (Integer numero : LISTA_INICIAL) {
+		for (Integer numero : this.vetor) {
 
 			// Procura o menor
 			if (menor > numero)menor = numero;
@@ -28,9 +37,9 @@ public class Arranjo {
 	 */
 	public int maior() {
 
-		int maior = LISTA_INICIAL[0];
+		int maior = this.vetor[0];
 
-        for (Integer numero : LISTA_INICIAL) {
+        for (Integer numero : this.vetor) {
 
 			// Procura o menor
 			if (maior < numero)maior = numero;
@@ -49,7 +58,7 @@ public class Arranjo {
 
 		int soma = 0;
 
-		for (Integer numero : LISTA_INICIAL) {
+		for (Integer numero : this.vetor) {
 			soma = numero + soma;
 		}
 
@@ -66,7 +75,7 @@ public class Arranjo {
 
 		int repeticoes = 0;
 
-		for (Integer numero : LISTA_INICIAL) {
+		for (Integer numero : this.vetor) {
 
 			// Incrementa o contador de repetições para cada achado
 			if (numeroRepetido == numero)
@@ -76,11 +85,11 @@ public class Arranjo {
 
 		return repeticoes;
 	}
-	public static final String EXPLICACAO = 	("Com arranjos podemos fazer operções como:\n"+
-			    						 		 "\t\tSomar todos os elementos;\n"+
-			    								 "\t\tPegar o maior elemento;\n"+
-			    								 "\t\tPegar o menor elemento;\n"+
-			    								 "\t\tVer a repetição dos elementos iguais;");
+	public static final String EXPLICACAO = 	("\t\tCom arranjos podemos fazer operações como:\n"+
+			    						 		 "\t\t + Somar todos os elementos;\n"+
+			    								 "\t\t + Pegar o maior elemento;\n"+
+			    								 "\t\t + Pegar o menor elemento;\n"+
+			    								 "\t\t + Ver a repetição dos elementos iguais;");
 	public void explicacaoArranjo() {
 
 		System.out.println(EXPLICACAO +"\n");
@@ -88,15 +97,15 @@ public class Arranjo {
 		System.out.print("\t\tNa lista: ");
 		System.out.println(toString());
 
-		System.out.println("\t\tA soma dos itens é: " + soma());
-		System.out.println("\t\tO maior iten é: " + maior());
-		System.out.println("\t\tO menor iten é: " + menor());
-		System.out.println("\t\tO valor 940 repete " + repeticoes(940) +" vezes\n");
+		System.out.println("\t\t A soma dos itens é: " + soma());
+		System.out.println("\t\t O maior item é: " + maior());
+		System.out.println("\t\t O menor item é: " + menor());
+		System.out.println("\t\t O valor 940 se repete " + repeticoes(940) +" vezes\n");
 		
 	}
 	public String toString(){
 		String arranjoFormatado = "[ ";
-		for( Integer Item : LISTA_INICIAL) {
+		for( Integer Item : this.vetor) {
 			arranjoFormatado += Item+" ";
 		}
 		return arranjoFormatado + " ]";
