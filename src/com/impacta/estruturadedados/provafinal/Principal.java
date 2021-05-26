@@ -43,13 +43,13 @@ public class Principal implements IMenu{
 			out.println("\t9 - TAD-Dicionário");
 			out.println("\t10 - TAD-Mapa Ordenado – ABB");
 			out.println("\t11 - TAD-Mapa Ordenado – AVL");
-			out.println("\t12 - TAD-Grafos\n");
+			out.println("\t12 - TAD-Grafos");
 			out.println("\t13 - Sair\n");
 			
 			out.print("Escolha uma dessas estruturas: ");
 
 			opcao = entrada.nextInt();
-			if(opcao <= 0 || opcao > 12) {
+			if(opcao <= 0 || opcao > 13) {
 				do {
 					out.print("Opção invalida!! \nDigite novamente: ");
 					opcao = entrada.nextInt();
@@ -86,14 +86,14 @@ public class Principal implements IMenu{
 				case 12:
 					break;
 				case 13:
-					
+					close();
 					break;
 			}
 			// Inicia o Sub Menu correspondente
 			subMenu.show();
 			
 		}while(opcao != 13);
-		
+		entrada.close();
 	};
     // fechar o menu
     public void close(){
