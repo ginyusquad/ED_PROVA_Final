@@ -2,7 +2,7 @@
 
 # Projeto Estrutura de dados(Avaliação Final)
 
- Avaliação de Estruturas de dados estrutura 
+ Avaliação de Estruturas de dados estrutura.
 
 
 ## Contribuintes
