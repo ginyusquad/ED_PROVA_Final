@@ -152,7 +152,7 @@ public class NodePositionList<E> implements PositionList<E> {
 		String s = "";
 		for (E i: l) { s += ", " + i; }
 		s = (s.length() == 0 ? s : s.substring(2));
-		return "[" + s + "]";
+		return  "[ " + s + " ]";
 	}
 	// Retorna o iterator a partir do ElemenIterator.
 	public Iterator<E> iterator() { return new ElementIterator<E>(this); }
