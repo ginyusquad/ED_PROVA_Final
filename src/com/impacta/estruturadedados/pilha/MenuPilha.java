@@ -4,7 +4,7 @@ import static java.lang.System.out;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import com.impacta.estruturadedados.arranjo.Arranjo;
+
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.pilha.source.NodeStack;
