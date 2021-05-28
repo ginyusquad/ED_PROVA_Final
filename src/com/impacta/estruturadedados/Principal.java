@@ -12,7 +12,7 @@ import com.impacta.estruturadedados.mapa.AVL.MenuMapaOrdenadoAVL;
 import com.impacta.estruturadedados.pilha.MenuPilha;
 import com.impacta.estruturadedados.arranjo.MenuArranjo;
 import com.impacta.estruturadedados.arvore.binaria.MenuArvoreBinaria;
-import com.impacta.estruturadedados.arvore.generica.MenuArvoreGenetica;
+import com.impacta.estruturadedados.arvore.generica.MenuArvoreGenerica;
 import com.impacta.estruturadedados.dicionario.MenuDicionario;
 import com.impacta.estruturadedados.fila.MenuFila;
 import com.impacta.estruturadedados.fila.prioridades.MenuFilaPrioridades;
@@ -20,7 +20,9 @@ import com.impacta.estruturadedados.grafo.MenuGrafos;
 
 
 public class Principal implements IMenu{
-
+	
+	private String titulo = " Menu Principal";
+	
 	public static void main(String[] args) {
 		Principal menuPrincipal = new Principal();
 
@@ -42,9 +44,9 @@ public class Principal implements IMenu{
 		out.println("Bem Vindo!!");
 		out.println("Este é o projeto final do grupo 6 - Ginyu");
 		
+		out.println(getTitulo()+":");
 		int opcao;
 		do {
-			out.println("Menu: ");
 			out.println("\t1  - Lista Arranjo");
 			out.println("\t2  - Pilha");
 			out.println("\t3  - Fila");
@@ -64,7 +66,7 @@ public class Principal implements IMenu{
 			opcao = entrada.nextInt();
 			
 			// Valida a entrada
-			while(opcao <= 0 || opcao > 12){
+			while(opcao <= 0 || opcao > 13){
 
 				out.print("Opção invalida!! \nDigite novamente: ");
 				opcao = entrada.nextInt();
@@ -88,7 +90,7 @@ public class Principal implements IMenu{
 					subMenu = new MenuListaDeNodos(this);
 					break;
 				case 5:
-					subMenu = new MenuArvoreGenetica(this);
+					subMenu = new MenuArvoreGenerica(this);
 					break;
 				case 6:
 					subMenu = new MenuArvoreBinaria(this);
@@ -135,6 +137,11 @@ public class Principal implements IMenu{
 		}catch (Exception e) {
 			return;
 		}
+	}
+
+	@Override
+	public String getTitulo() {
+		return this.titulo ;
 	};
 
 }

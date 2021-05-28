@@ -16,7 +16,9 @@ public class MenuFila implements ISubMenu{
 	
 	private IMenu menuPrincipal;
 	private Scanner entrada;
-
+	
+	private String titulo = "Menu Fila";
+	
     public MenuFila(IMenu menuPrincipal){
         this.menuPrincipal = menuPrincipal;
         this.entrada = new Scanner(System.in);
@@ -25,7 +27,7 @@ public class MenuFila implements ISubMenu{
 	@Override
 	public void show() {
 		
-		out.println("  Menu Fila:");
+		out.println( getTitulo() + ":");
 		
 		Queue<Integer> fila = new FilaNode<Integer>();
 		// Montando pilha padrao
@@ -33,6 +35,7 @@ public class MenuFila implements ISubMenu{
 		fila.enqueue(2);
 		fila.enqueue(3);
 		fila.enqueue(4);
+
 		//Fazendo o Programa pausar para o usuario ;er as informações na tela
 		try {
 			TimeUnit.SECONDS.sleep(2);
@@ -93,6 +96,9 @@ public class MenuFila implements ISubMenu{
 			}
 	        
         }while(opcao > 0 && opcao < 5);
+        
+        
+		out.println( menuPrincipal.getTitulo() + ":");
 	}
 
 	@Override
@@ -104,5 +110,10 @@ public class MenuFila implements ISubMenu{
 	public void setMenu(IMenu menuPrincipal) {
 		this.menuPrincipal = menuPrincipal;
 	}
+
+	@Override
+	public String getTitulo() {
+		return menuPrincipal.getTitulo()+" > "+this.titulo ;
+	};
     
 }

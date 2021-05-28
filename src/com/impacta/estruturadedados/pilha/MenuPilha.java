@@ -14,7 +14,9 @@ public class MenuPilha implements ISubMenu {
 
 	private IMenu menuPrincipal;
 	private Scanner entrada;
-
+	
+	private String titulo = "Menu Pilha";
+	
     public MenuPilha(IMenu menuPrincipal){
         this.menuPrincipal = menuPrincipal;
         this.entrada = new Scanner(System.in);
@@ -23,7 +25,7 @@ public class MenuPilha implements ISubMenu {
 	@Override
 	public void show() {
 		
-		out.println("  Menu Pilha:");
+		out.println( getTitulo() + ":");
 		
 		Stack<Integer> pilha = new NodeStack<Integer>();
 		// Montando pilha padrao
@@ -91,6 +93,8 @@ public class MenuPilha implements ISubMenu {
 			}
 	        
         }while(opcao > 0 && opcao < 5);
+        
+		out.println( menuPrincipal.getTitulo() + ":");
 	}
 
 	@Override
@@ -102,6 +106,11 @@ public class MenuPilha implements ISubMenu {
 	public void setMenu(IMenu menuPrincipal) {
 		this.menuPrincipal = menuPrincipal;
 	}
+
+	@Override
+	public String getTitulo() {
+		return menuPrincipal.getTitulo()+" > "+this.titulo ;
+	};
 	
 
 }

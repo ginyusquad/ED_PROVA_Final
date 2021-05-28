@@ -4,6 +4,7 @@ import static java.lang.System.out;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+import com.impacta.estruturadedados.arranjo.source.Arranjo;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 
@@ -11,7 +12,9 @@ public class MenuArranjo implements ISubMenu{
     
     private IMenu menuPrincipal;
     private Scanner entrada;
-
+    
+    private String titulo = "Menu Arranjo";
+    
     public MenuArranjo(IMenu menuPrincipal){
         this.menuPrincipal = menuPrincipal;
         this.entrada = new Scanner(System.in);
@@ -20,7 +23,7 @@ public class MenuArranjo implements ISubMenu{
     //Mostra e inicia o menu
     public void show(){
     	
-        out.println("  Menu Arranjo:");
+        out.println( getTitulo() + ":");
         Arranjo arranjo = new Arranjo();
         
 		arranjo.explicacaoArranjo();
@@ -64,7 +67,7 @@ public class MenuArranjo implements ISubMenu{
 	        		out.println("\tO menor item é: " + arranjo.menor() + "\n");
 	        		break;
 	        	case 4:
-	        		out.println("\tDigite o valor que deseja ver as repeticoes }>");
+	        		out.print("\tDigite o valor que deseja ver as repeticoes }>");
 	        		int numeroRepetido = entrada.nextInt();
 	        		out.println("\tPara o vetor "+ arranjo.toString());
 	        		out.println("\tO valor "+numeroRepetido+" se repete " +
@@ -87,7 +90,7 @@ public class MenuArranjo implements ISubMenu{
 			}
         }while(opcao > 0 && opcao < 6);
 	        
-        
+        out.println( menuPrincipal.getTitulo() + ":");
     }
     
     public Arranjo lerArranjo() {
@@ -95,13 +98,13 @@ public class MenuArranjo implements ISubMenu{
     	Integer[] vetor = null;
     	Arranjo arranjo = null;
     	
-    	out.println("    Defina o tamanho }> ");
+    	out.print("    Defina o do vetor tamanho }> ");
     	int tamanho = entrada.nextInt();
     	vetor = new Integer[tamanho];
     	
     	for(int index = 0; index < tamanho; index++) {
     		
-    		out.println("    Defina o "+ (index+1) +"° elemento }> ");
+    		out.print("    Defina o "+ (index+1) +"° elemento }> ");
     		vetor[index] = entrada.nextInt();
     		
     	}
@@ -123,6 +126,11 @@ public class MenuArranjo implements ISubMenu{
     public void setMenu(IMenu menuPrincipal){
         this.menuPrincipal = menuPrincipal;
     }
+
+    @Override
+	public String getTitulo() {
+		return menuPrincipal.getTitulo()+" > "+this.titulo ;
+	};
 
 	
 }

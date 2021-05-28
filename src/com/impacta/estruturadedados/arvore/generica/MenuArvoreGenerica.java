@@ -1,35 +1,34 @@
-package com.impacta.estruturadedados.listaDeNodos;
+package com.impacta.estruturadedados.arvore.generica;
 
 import static java.lang.System.out;
 
-import java.util.Iterator;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
-import com.impacta.estruturadedados.listaDeNodos.source.DNode;
+import com.impacta.estruturadedados.listaDeNodos.MenuPositionList;
 import com.impacta.estruturadedados.listaDeNodos.source.NodePositionList;
-import com.impacta.estruturadedados.listaDeNodos.source.Position;
 import com.impacta.estruturadedados.listaDeNodos.source.PositionList;
 import com.impacta.estruturadedados.utils.Tabela;
 
-public class MenuListaDeNodos implements ISubMenu{
+public class MenuArvoreGenerica implements ISubMenu{
 
+	
 	private IMenu menuPrincipal;
 	private Scanner entrada;
+
+	private String titulo = "Arvore Generica";
 	
-	private String titulo = "Menu Lista Nodos";
-	
-    public MenuListaDeNodos(IMenu menuPrincipal){
+    public MenuArvoreGenerica(IMenu menuPrincipal){
         this.menuPrincipal = menuPrincipal;
         this.entrada = new Scanner(System.in);
     }
-
+    
 	@Override
 	public void show() {
 		out.println( getTitulo() + ":");
-
+		
 		PositionList<Integer> listNodos = new NodePositionList<Integer>();
 		// Montando pilha padrao
 		listNodos.addFirst(4);
@@ -131,25 +130,27 @@ public class MenuListaDeNodos implements ISubMenu{
 			}
 	        
         }while(opcao > 0 && opcao < 6);
-        
+		
+		// Codigo .....
+		
 		out.println( menuPrincipal.getTitulo() + ":");
 	}
 
 	@Override
 	public void close() {
-		menuPrincipal.show();
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void setMenu(IMenu menuPrincipal) {
-		this.menuPrincipal = menuPrincipal; 
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public String getTitulo() {
 		return menuPrincipal.getTitulo()+" > "+this.titulo ;
 	};
-	
     
-	
 }

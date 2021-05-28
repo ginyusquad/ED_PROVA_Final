@@ -1,5 +1,7 @@
 package com.impacta.estruturadedados.grafo;
 
+import static java.lang.System.out;
+
 import java.util.Scanner;
 
 import com.impacta.estruturadedados.interfaces.IMenu;
@@ -9,7 +11,9 @@ public class MenuGrafos implements ISubMenu{
 	
 	private IMenu menuPrincipal;
 	private Scanner entrada;
-
+	
+	private String titulo = "Menu Grafos";
+	
     public MenuGrafos(IMenu menuPrincipal){
         this.menuPrincipal = menuPrincipal;
         this.entrada = new Scanner(System.in);
@@ -17,8 +21,11 @@ public class MenuGrafos implements ISubMenu{
     
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
+		out.println( getTitulo() + ":");
+
+		// Codigo...
 		
+		out.println( menuPrincipal.getTitulo() + ":");
 	}
 
 	@Override
@@ -32,5 +39,10 @@ public class MenuGrafos implements ISubMenu{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public String getTitulo() {
+		return menuPrincipal.getTitulo()+" > "+this.titulo ;
+	};
 
 }

@@ -1,4 +1,4 @@
-package com.impacta.estruturadedados.arranjo;
+package com.impacta.estruturadedados.arranjo.source;
 
 public class Arranjo {
 	
