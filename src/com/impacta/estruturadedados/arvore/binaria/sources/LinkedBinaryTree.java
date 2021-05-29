@@ -273,7 +273,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		BTPosition<E> rightPos = vv.getRight();
 
 		if (leftPos != null && rightPos != null)
-			throw new InvalidPositionException("Cannot remove node with two children");
+			throw new InvalidPositionException("Não é possível remover um ramo com filhos");
 
 		BTPosition<E> ww; // o �nico filho de v, se houver
 

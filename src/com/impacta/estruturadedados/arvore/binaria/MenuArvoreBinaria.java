@@ -77,8 +77,13 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        	case 3:
 	        		out.println("\tPara remover na Árvore selecione um Ramo:");
 	        		selecionado =  selecionarNaArvore(arvore);
+	        		try {
+						arvoreBinaryInteira.remove(selecionado);
+					} catch (Exception e) {
+						out.println("\t" + e.getMessage() + "\n");
+						break;
+					}
 	        		
-	        		arvoreBinaryInteira.remove(selecionado);
 	        		
 	        		arvore =  new Arvore<Integer>(arvoreBinaryInteira);
 	        		out.println("    Ramo removido:"+selecionado.element());
@@ -86,7 +91,13 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        		break;
 	        	case 4:
 	        		arvore =  new Arvore<Integer>(arvoreBinaryInteira);
-	        		out.println(arvore.toString);
+					try {
+						out.println(arvore.toString);
+					} catch (Exception e) {
+						//TODO: handle exception
+						out.println(e.toString());
+					}
+	        		
 	        		break;
 	        	case 5:
 	        		close();
