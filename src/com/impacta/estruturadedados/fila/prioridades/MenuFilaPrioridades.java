@@ -6,8 +6,6 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import com.impacta.estruturadedados.fila.prioridades.source.SortedListPriorityQueue;
-import com.impacta.estruturadedados.fila.source.FilaNode;
-import com.impacta.estruturadedados.fila.source.Queue;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.utils.views.Tabela;
@@ -65,7 +63,7 @@ public class MenuFilaPrioridades implements ISubMenu {
 	        		
 	        		tbl_bugs = new Tabela(listBugs);
 	        		
-	        		out.println(tbl_bugs.toString);
+	        		out.println(tbl_bugs.toString + "\n");
 	        		
 	        		break;
 	        	case 2:
@@ -83,7 +81,7 @@ public class MenuFilaPrioridades implements ISubMenu {
 	        		break;
 	        	case 4:
 	        		out.println("\tFila de Prioridades:");
-	        		out.println(tbl_bugs.toString + "\n");
+	        		out.println(tbl_bugs.toString);
 	        		break;
 	        	case 5:
 	        		close();
@@ -108,8 +106,8 @@ public class MenuFilaPrioridades implements ISubMenu {
 		
 		fila.insert(3, "[Impeditivo] Login fora!");
 		fila.insert(4, "[Front-End] Seleção de Produtos não se mantém");
-		fila.insert(3, "[Back-End] Sistema indisponivel ao realizar compra");
-		fila.insert(5, "[Front-End] Grafico Montado errado");
+		fila.insert(3, "[Back-End] Sistema indisponível ao realizar compra");
+		fila.insert(5, "[Front-End] Gráfico Montado errado");
 		
 		return fila;
 	}

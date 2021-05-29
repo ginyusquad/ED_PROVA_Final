@@ -6,15 +6,10 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import com.impacta.estruturadedados.arvore.binaria.sources.LinkedBinaryTree;
-import com.impacta.estruturadedados.arvore.generica.sources.LinkedTree;
 
-import com.impacta.estruturadedados.arvore.generica.sources.TreeNode;
-import com.impacta.estruturadedados.arvore.generica.sources.TreePosition;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
-import com.impacta.estruturadedados.utils.tab_lista_de_nodos.NodePositionList;
 import com.impacta.estruturadedados.utils.tab_lista_de_nodos.Position;
-import com.impacta.estruturadedados.utils.tab_lista_de_nodos.PositionList;
 import com.impacta.estruturadedados.utils.views.Arvore;
 
 public class MenuArvoreBinaria implements ISubMenu{
@@ -23,7 +18,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 	private IMenu menuPrincipal;
 	private Scanner entrada;
 	
-	private String titulo = "Menu Arvore Binaria";
+	private String titulo = "Menu Árvore Binaria";
 
     public MenuArvoreBinaria(IMenu menuPrincipal){
         this.menuPrincipal = menuPrincipal;
@@ -38,7 +33,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 		LinkedBinaryTree<Integer> arvoreBinaryInteira = criarArvoreBinaryPadrao();
 		// Montando pilha padrao
 		Arvore<Integer> arvore =  new Arvore<Integer>(arvoreBinaryInteira);
-		out.println(" Por Padrao será usado a árvore:");
+		out.println(" Por Padrão será usado a árvore:");
 		out.println(arvore.toString);
 		
         int opcao = -1;
@@ -48,7 +43,7 @@ public class MenuArvoreBinaria implements ISubMenu{
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar um elemento na Árvore Binaria");
 	        out.println("     2. Alterar um elemento da Árvore Binaria");
-	        out.println("     3. Remover um elemento da Árvore Binari");
+	        out.println("     3. Remover um elemento da Árvore Binaria");
 	        out.println("     4. Mostrar a Árvore Binaria");
 	        out.println("     5. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");
@@ -91,7 +86,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        		break;
 	        	case 4:
 	        		arvore =  new Arvore<Integer>(arvoreBinaryInteira);
-	        		out.println(arvore.toString + "\n");
+	        		out.println(arvore.toString);
 	        		break;
 	        	case 5:
 	        		close();

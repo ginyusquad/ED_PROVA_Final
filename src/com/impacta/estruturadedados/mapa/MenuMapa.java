@@ -5,7 +5,6 @@ import static java.lang.System.out;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import com.impacta.estruturadedados.fila.prioridades.source.SortedListPriorityQueue;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.mapa.source.HashTableMap;
@@ -68,7 +67,7 @@ public class MenuMapa  implements ISubMenu{
 	        		break;
 	        	case 2:
 	        		if(mapa.isEmpty()) {
-	        			out.println("\tNão é possivel remover de um Mapa Vazio!\n");
+	        			out.println("\tNão é possível remover de um Mapa Vazio!\n");
 	        			break;
 	        		}
 	        		out.println("\tPara remover no Mapa:");

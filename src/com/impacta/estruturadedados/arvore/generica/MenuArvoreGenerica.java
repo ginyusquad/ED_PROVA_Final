@@ -69,7 +69,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		elemento = entrada.next();
 	        		
 	        		criarFilho( selecionado, elemento);
-	        		arvore =  new Arvore(sistemas_operacionais);
+	        		arvore =  new Arvore<String>(sistemas_operacionais);
 	        		out.println(arvore.toString + "\n");
 	        		
 	        		break;
@@ -81,7 +81,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		elemento = entrada.next();
 	        		sistemas_operacionais.replace(selecionado, elemento);
 
-	        		arvore =  new Arvore(sistemas_operacionais);
+	        		arvore =  new Arvore<String>(sistemas_operacionais);
 	        		out.println(arvore.toString + "\n");
 	        		
 	        		break;
