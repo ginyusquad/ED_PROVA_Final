@@ -34,13 +34,14 @@ public class MenuPositionList implements ISubMenu {
 		// Pegando qual eleemnto o ussuario quer trocar!!!
 		out.print("\tDigite a posicao do elemento (1.."+(listNodos.size() )+") }>");
 		int posicao = entrada.nextInt() - 1 ;
+		out.println();
 		while(posicao > listNodos.size() || posicao < 0) {
 			out.print("\tNão Entendi!!!");
 			out.print("\tDigite a posicao do elemento novamente (1.."+(listNodos.size())+") }>");
 			posicao = entrada.nextInt() - 1 ;
 		}
 		Position<Integer> selecionado = tbl_posicoes.listPosition[posicao];
-		out.println("\tElemento Selecionado Salvo na memoria!!!");
+		out.println("\tElemento Selecionado Salvo na memoria!!!\n");
 		int opcao = -1;
 		 // Loop das operações
 		do{
@@ -53,6 +54,7 @@ public class MenuPositionList implements ISubMenu {
 			out.println("     5. Sair para o menu superior ");
 			out.print("    Selecione uma opção (1.."+ (listNodos.size()) +") }>");
 			opcao = entrada.nextInt();
+			out.println();
 			int sub_opcao = -1;
 			switch(opcao) {
 				case 1:// Sub Menu Adicionar Position
@@ -62,6 +64,7 @@ public class MenuPositionList implements ISubMenu {
 						out.println("      2. Adicionar um elemento Depois do Selecionado");
 						out.println("      3. Sair para menu superior");
 						out.print("    Selecione uma opção (1..3) }>");
+						out.println();
 						sub_opcao = entrada.nextInt();
 						int elemento = 0;
 						switch(sub_opcao) {
@@ -69,20 +72,20 @@ public class MenuPositionList implements ISubMenu {
 								out.print("\tDigite o inteiro a ser adicionado antes do Selecionado }>");
 				        		elemento = entrada.nextInt();
 				        		listNodos.addBefore(selecionado, elemento);
-				        		out.println("\t"+listNodos.toString());
+				        		out.println("\t"+listNodos.toString()+ "\n");
 				        		tbl_posicoes = new Tabela(listNodos);
 								break;
 							case 2:
 								out.print("\tDigite o inteiro a ser adicionado Depois do Selecionado }>");
 				        		elemento = entrada.nextInt();
 				        		listNodos.addAfter(selecionado, elemento);
-				        		out.println("\t"+listNodos.toString());
+				        		out.println("\t"+listNodos.toString()+ "\n");
 				        		tbl_posicoes = new Tabela(listNodos);
 								break;
 							case 3:
 								break;
 							default:
-								out.println("    Não entendi!!!");
+								out.println("    Não entendi!!!\n");
 						}
 						
 					}while(sub_opcao != 3  );
@@ -97,24 +100,25 @@ public class MenuPositionList implements ISubMenu {
 						out.println("      3. Sair para menu superior");
 						out.print("    Selecione uma opção (1..3) }>");
 						sub_opcao = entrada.nextInt();
-						int elemento = 0;
+						out.println();
+						
 						switch(sub_opcao) {
 							case 1:
 				        		Integer elementoRemovido = listNodos.remove(listNodos.prev(selecionado));
 				        		out.print("\t Elemento removido: "+elementoRemovido);
-				        		out.print("\t"+listNodos.toString());
+				        		out.print("\t"+listNodos.toString()+ "\n");
 				        		tbl_posicoes = new Tabela(listNodos);
 								break;
 							case 2:
 				        		Integer inteiro = listNodos.remove(listNodos.next(selecionado));
 				        		out.print("\t Elemento removido: "+inteiro);
-				        		out.print("\t"+listNodos.toString());
+				        		out.print("\t"+listNodos.toString()+ "\n");
 				        		tbl_posicoes = new Tabela(listNodos);
 								break;
 							case 3:
 								break;
 							default:
-								out.println("    Não entendi!!!");
+								out.println("    Não entendi!!!\n");
 						}
 						
 					}while(sub_opcao != 3  );

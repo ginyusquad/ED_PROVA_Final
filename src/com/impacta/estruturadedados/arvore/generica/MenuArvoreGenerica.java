@@ -9,12 +9,13 @@ import com.impacta.estruturadedados.arvore.generica.sources.LinkedTree;
 import com.impacta.estruturadedados.arvore.generica.sources.NodePositionList;
 import com.impacta.estruturadedados.arvore.generica.sources.Position;
 import com.impacta.estruturadedados.arvore.generica.sources.PositionList;
+import com.impacta.estruturadedados.arvore.generica.sources.Tree;
 import com.impacta.estruturadedados.arvore.generica.sources.TreeNode;
 import com.impacta.estruturadedados.arvore.generica.sources.TreePosition;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.utils.Arvore;
-
+import com.impacta.estruturadedados.utils.Tabela;
 
 public class MenuArvoreGenerica implements ISubMenu{
 
@@ -32,22 +33,19 @@ public class MenuArvoreGenerica implements ISubMenu{
 	@Override
 	public void show() {
 		out.println( getTitulo() + ":");
-		
-
-		
+				
 		//Fazendo o Programa pausar para o usuario ;er as informações na tela
 		try {
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(2);
 		} catch (Exception e) {
 			
 		}
-		
 		LinkedTree<String> sistemas_operacionais = criarArvorePadrao();
 		// Montando pilha padrao
 		Arvore arvore =  new Arvore(sistemas_operacionais);
-		out.println("    Por padrão será usado a arvore:");
+		out.println(" Por Padrao será usado a arvore:");
 		out.println(arvore.toString);
-	
+		
         int opcao = -1;
 		// Loop das operações
         do {
@@ -132,12 +130,9 @@ public class MenuArvoreGenerica implements ISubMenu{
 			}
 	        
         }while( opcao != 6);
-        
-		
 		
 		out.println( menuPrincipal.getTitulo() + ":");
 	}
-	
 	private Position<String> selecionarNaArvore(Arvore arvore) {
 		
 		out.println("\tArvore atual:");
@@ -150,7 +145,6 @@ public class MenuArvoreGenerica implements ISubMenu{
 		
 		return arvore.map.get(opcao);
 	}
-
 	public LinkedTree<String> criarArvorePadrao() {
 		
 		LinkedTree<String> T = new LinkedTree<String>();

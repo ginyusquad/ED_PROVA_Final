@@ -2,15 +2,15 @@ package com.impacta.estruturadedados.listaDeNodos;
 
 import static java.lang.System.out;
 
-import java.util.Iterator;
+
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
-import com.impacta.estruturadedados.listaDeNodos.source.DNode;
+
 import com.impacta.estruturadedados.listaDeNodos.source.NodePositionList;
-import com.impacta.estruturadedados.listaDeNodos.source.Position;
+
 import com.impacta.estruturadedados.listaDeNodos.source.PositionList;
 import com.impacta.estruturadedados.utils.Tabela;
 
@@ -36,15 +36,10 @@ public class MenuListaDeNodos implements ISubMenu{
 		listNodos.addFirst(3);
 		listNodos.addFirst(2);
 		listNodos.addFirst(1);
-		//Fazendo o Programa pausar para o usuario ;er as informações na tela
-		try {
-			TimeUnit.SECONDS.sleep(2);
-		} catch (Exception e) {
-			
-		}
+		
 		
 		out.println("    Por padrão será usado a Lista de Nodos:");
-	    out.println("      " + listNodos.toString() );
+	    out.println("      " + listNodos.toString() + "\n");
     
         int opcao = -1;
 		// Loop das operações
@@ -60,21 +55,21 @@ public class MenuListaDeNodos implements ISubMenu{
 	        out.print("    Selecione uma opção (1..6) }>");
 	        
 	        opcao = entrada.nextInt();
-	        
+	        out.println();
 	        switch(opcao) {
 	        	case 1:
 	        		out.println("\tPara adicionar na Lista "+ listNodos.toString());
 	        		out.print("\tDigite o inteiro a ser adicionado no começo }>");
 	        		int elemento = entrada.nextInt();
 	        		listNodos.addFirst(elemento);
-	        		out.println("\t  " + listNodos.toString() );
+	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		break;
 	        	case 2:
 	        		out.println("\tPara a fila "+ listNodos.toString());
 	        		Integer elementoRemovido = listNodos.last().element();
 	        		listNodos.remove(listNodos.last());
 	        		out.println("\tElemento removido [ "+ elementoRemovido.toString()+" ]");
-	        		out.println("\t  " + listNodos.toString() );
+	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		break;
 	        	case 3:
 	        		
@@ -82,7 +77,7 @@ public class MenuListaDeNodos implements ISubMenu{
 	        		out.println("\tbaseados não em um indice especifico mais pela posição de ");
 	        	    out.println("\tum determinado elemento, escolhedo de vaia dicionar depois ou antes");
 	        	    out.println("\tdele ou remover um elemento antes ou depois");
-	        		out.println("\t  " + listNodos.toString() );
+	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		ISubMenu subMenuListaPosition = new MenuPositionList(this, listNodos);
 	        		
 	        		subMenuListaPosition.show();
@@ -111,11 +106,11 @@ public class MenuListaDeNodos implements ISubMenu{
 	        		
 	        		out.println("\tElemento Substituido!!");
 	        		out.println("\tLista:");
-	        		out.println("\t  " + listNodos.toString() );
+	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		break;
 	        	case 5:
 	        		out.println("\tLista:");
-	        		out.println("\t  " + listNodos.toString() );
+	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		break;
 	        	case 6:
 	        		close();
@@ -125,7 +120,7 @@ public class MenuListaDeNodos implements ISubMenu{
 	        		continue;
 	        }
 	        try {
-				TimeUnit.SECONDS.sleep(1);
+				TimeUnit.SECONDS.sleep(2);
 			} catch (Exception e) {
 				
 			}
