@@ -3,6 +3,7 @@ package com.impacta.estruturadedados.fila.prioridades.source;
 import java.util.Comparator;
 import com.impacta.estruturadedados.exception.EmptyPriorityQueueException;
 import com.impacta.estruturadedados.exception.InvalidKeyException;
+import com.impacta.estruturadedados.utils.Entry;
 import com.impacta.estruturadedados.utils.comparators.DefaultComparator;
 import com.impacta.estruturadedados.utils.tab_lista_de_nodos.NodePositionList;
 import com.impacta.estruturadedados.utils.tab_lista_de_nodos.Position;

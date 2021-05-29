@@ -2,11 +2,12 @@ package com.impacta.estruturadedados.utils.views;
 
 import java.util.Iterator;
 
-import com.impacta.estruturadedados.fila.prioridades.source.Entry;
 import com.impacta.estruturadedados.fila.prioridades.source.SortedListPriorityQueue;
 import com.impacta.estruturadedados.listaDeNodos.source.DNode;
 import com.impacta.estruturadedados.listaDeNodos.source.Position;
 import com.impacta.estruturadedados.listaDeNodos.source.PositionList;
+import com.impacta.estruturadedados.mapa.source.HashTableMap;
+import com.impacta.estruturadedados.utils.Entry;
 
 public class Tabela{
 	
@@ -38,6 +39,14 @@ public class Tabela{
 		
 		listTexto +=       "\t└───────┴────────┘ \n";
 		
+		if(listNodos.isEmpty()) {
+			listTexto = "\t┌───────┬────────┐ \n"
+			   		  + "\t│Posicao│Conteudo│ \n"
+			 		  + "\t├───────┴────────┤ \n"
+			 		  + "\t│   Esta Vazio!  │ \n"
+			 		  + "\t└────────────────┘ \n";
+		}
+		
 		this.toString = listTexto;
 		this.listPosition = listPositions;
 	}
@@ -68,9 +77,51 @@ public class Tabela{
 		}
 		listTexto +=       "\t└────────┴──────────┴────────────────────────────────────────────────────────────────────┘ \n";
 		
+		if(listBugs.isEmpty()) {
+			listTexto = "\t┌────────┬──────────┬────────────────────────────────────────────────────────────────────┐ \n"
+			 		  + "\t│ Posicao│Prioridade│  Conteudo                                                          │ \n"
+			 		  + "\t├────────┴──────────┴────────────────────────────────────────────────────────────────────┤ \n"
+			 		  + "\t│                 Lista de Prioridades esta Vazia!                                       │ \n"
+					  +	"\t└────────────────────────────────────────────────────────────────────────────────────────┘ \n";
+		}
 		this.toString = listTexto;
 		//this.listPosition = listPositions;
 		
+		
+	}
+
+	public Tabela(HashTableMap<String, String> mapa) {
+		String listTexto = "\t┌─────────┬─────────────────────┐ \n"
+		 		 		 + "\t│ Chave   │ Valor               │ \n"
+						 + "\t├─────────┼─────────────────────┤ \n";
+		
+		for(Entry<String, String> entry : mapa.entrySet()) {
+			
+			
+			String espaco = "";
+			String chave = entry.getKey();
+			String value = entry.getValue();
+			
+			if(chave.length() > 7)chave = chave.substring(0, 5)+"..";
+			espaco = new String(new char[ (7 - chave.length()) ]).replace("\0", " ");
+			listTexto += "\t│ "+ chave + espaco +" │";
+			
+			
+			if(value.length() > 20)value = value.substring(0, 17)+"..";
+			espaco = new String(new char[ (20 - value.length()) ]).replace("\0", " ");
+			// Valida a parte visual
+    		 		
+			listTexto += " "+value + espaco +"│\n";
+		}
+		listTexto +=       "\t└─────────┴─────────────────────┘ \n";
+		if(mapa.isEmpty()) {
+			listTexto = "\t┌─────────┬────────────────┐ \n"
+	 		 		  + "\t│ Chave   │ Valor          │ \n"
+					  + "\t├─────────┴────────────────┤ \n"
+					  + "\t│  O Mapa esta Vazio!      │ \n"
+					  + "\t└──────────────────────────┘ \n";
+		}
+		this.toString = listTexto;
 		
 	}
 }

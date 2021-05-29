@@ -2,6 +2,7 @@ package com.impacta.estruturadedados.fila.prioridades.source;
 
 import com.impacta.estruturadedados.exception.EmptyPriorityQueueException;
 import com.impacta.estruturadedados.exception.InvalidKeyException;
+import com.impacta.estruturadedados.utils.Entry;
 
 public interface PriorityQueue<K, V> {
 
