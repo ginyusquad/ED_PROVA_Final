@@ -26,17 +26,9 @@ public class MenuArranjo implements ISubMenu{
         out.println( getTitulo() + ":");
         Arranjo arranjo = new Arranjo();
         
-		arranjo.explicacaoArranjo();
-
-		//Fazendo o Programa pausar para o usuario ;er as informações na tela
-		try {
-			TimeUnit.SECONDS.sleep(5);
-		} catch (Exception e) {
-			
-		}
 
 		out.println("    Por padrão será usado o vetor:");
-	    out.println("      " + arranjo.toString() );
+	    out.println("      " + arranjo.toString()  + "\n");
     
         int opcao = -1;
 		// Loop das operações
@@ -48,10 +40,11 @@ public class MenuArranjo implements ISubMenu{
 	        out.println("     3. Pegar o menor elemento ");
 	        out.println("     4. Ver a repetição dos elementos iguais ");
 	        out.println("     5. Alterar o vetor");
-	        out.println("     6. Sair para o menu principal ");
+	        out.println("     6. Sair para o menu principal \n");
 	        out.print("    Selecione uma opção (1..6) }>");
 	        
 	        opcao = entrada.nextInt();
+			out.println();
 	        
 	        switch(opcao) {
 	        	case 1:
@@ -84,7 +77,7 @@ public class MenuArranjo implements ISubMenu{
 	        		continue;
 	        }
 	        try {
-				TimeUnit.SECONDS.sleep(3);
+				TimeUnit.SECONDS.sleep(2);
 			} catch (Exception e) {
 				
 			}

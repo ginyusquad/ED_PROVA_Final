@@ -34,14 +34,10 @@ public class MenuPilha implements ISubMenu {
 		pilha.push(3);
 		pilha.push(4);
 		//Fazendo o Programa pausar para o usuario ;er as informações na tela
-		try {
-			TimeUnit.SECONDS.sleep(2);
-		} catch (Exception e) {
-			
-		}
+	
 		
 		out.println("    Por padrão será usado a pilha:");
-	    out.println("      " + pilha.toString() );
+	    out.println("      " + pilha.toString() + "\n");
     
         int opcao = -1;
 		// Loop das operações
@@ -52,10 +48,11 @@ public class MenuPilha implements ISubMenu {
 	        out.println("     2. Remover elemento ");
 	        out.println("     3. Ver o primeiro elemento da pilha ");
 	        out.println("     4. Mostrar a Pilha");
-	        out.println("     5. Sair para o menu principal ");
+	        out.println("     5. Sair para o menu principal \n");
 	        out.print("    Selecione uma opção (1..5) }>");
 	        
 	        opcao = entrada.nextInt();
+			out.println();
 	        
 	        switch(opcao) {
 	        	case 1:
@@ -63,21 +60,21 @@ public class MenuPilha implements ISubMenu {
 	        		out.print("\tDigite o inteiro a ser adicionado:");
 	        		int elemento = entrada.nextInt();
 	        		pilha.push(elemento);
-	        		out.println("\t  " + pilha.toString() );
+	        		out.println("\t  " + pilha.toString() + "\n");
 	        		break;
 	        	case 2:
 	        		out.println("\tPara a pilha "+ pilha.toString());
 	        		Integer elementoRemovido = pilha.pop();
 	        		out.println("\tElemento removido [ "+ elementoRemovido.toString()+" ]");
-	        		out.println("\t  " + pilha.toString() );
+	        		out.println("\t  " + pilha.toString() + "\n");
 	        		break;
 	        	case 3:
 	        		out.println("\tPara a pilha "+ pilha.toString());
-	        		out.println("\tO elemento do topo da pilha é "+ pilha.top().toString());
+	        		out.println("\tO elemento do topo da pilha é "+ pilha.top().toString() + "\n");
 	        		break;
 	        	case 4:
 	        		out.println("\tPilha:");
-	        		out.println("\t  " + pilha.toString() );
+	        		out.println("\t  " + pilha.toString() + "\n");
 	        		break;
 	        	case 5:
 	        		close();

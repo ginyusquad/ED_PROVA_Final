@@ -42,7 +42,7 @@ public class Principal implements IMenu{
 		Scanner entrada = new Scanner(System.in);
 		
 		out.println("Bem Vindo!!");
-		out.println("Este é o projeto final do grupo 6 - Ginyu");
+		out.println("Este é o projeto final do grupo 6 - Ginyu\n");
 		
 		out.println(getTitulo()+":");
 		int opcao;
@@ -64,12 +64,14 @@ public class Principal implements IMenu{
 			out.print("Escolha uma dessas opções(1..13) }>");
 
 			opcao = entrada.nextInt();
+			out.println();
 			
 			// Valida a entrada
 			while(opcao <= 0 || opcao > 13){
 
 				out.print("Opção invalida!! \nDigite novamente: ");
 				opcao = entrada.nextInt();
+				out.println();
 
 			}
 			
@@ -130,7 +132,7 @@ public class Principal implements IMenu{
 	};
     // fechar o menu
     public void close(){
-    	out.println("Ate mais!! :)");
+    	out.println("Ate mais!! :)\n");
     	
     	try {
     		System.exit(0);
