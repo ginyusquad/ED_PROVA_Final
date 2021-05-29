@@ -5,13 +5,8 @@ import java.util.NoSuchElementException;
 
 import java.lang.UnsupportedOperationException;
 
-/* Uma classe iterator Simples para listas. Os elementos da clise s�o retornados por
-
-* este iterator. Nenhuma c�pia da lista � realizada, de forma que qualquer mudan�a
-
-* na lista � refletida por este iterator. */
-
 public class ElementIterator<E> implements Iterator<E> {
+	
 	protected PositionList<E> list;
 	protected Position<E> cursor;
 	

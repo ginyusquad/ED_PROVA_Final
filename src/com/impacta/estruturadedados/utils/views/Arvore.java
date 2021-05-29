@@ -3,6 +3,8 @@ package com.impacta.estruturadedados.utils.views;
 import java.util.HashMap;
 
 import com.impacta.estruturadedados.arvore.binaria.sources.LinkedBinaryTree;
+import com.impacta.estruturadedados.mapa.ABB.source.BinarySearchTree;
+import com.impacta.estruturadedados.utils.Entry;
 import com.impacta.estruturadedados.utils.tab_lista_de_nodos.Position;
 import com.impacta.estruturadedados.utils.tree.Tree;
 
@@ -25,6 +27,19 @@ public class Arvore<T> {
 		
 	}
 	
+	public Arvore(BinarySearchTree<Integer,String> raiz) {
+		
+		toString = "";
+		for( Entry<Integer,String> entry : raiz.entrySet() ) {
+			toString += "\t"+(entry.toString())+"\n";
+		}
+		
+		
+		
+		
+	}
+	
+	
 	public Arvore(Tree<T> raiz) {
 		
 		map = new HashMap<String, Position<T>>();
@@ -34,6 +49,7 @@ public class Arvore<T> {
 		
 	}
 	
+
 	public String build( LinkedBinaryTree<T> raiz, Position<T> v, String prefix) {
 		
 		String s =  v.element().toString() +"\n";

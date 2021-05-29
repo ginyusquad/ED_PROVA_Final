@@ -24,6 +24,16 @@ public class BTNode<E> implements BTPosition<E>{
 	
 	// Retorna o elemento armazenado nesta posi��o
 	
+	public BTNode() {
+		setElement(null);
+
+		setParent(null);
+
+		setLeft(null);
+
+		setRight(null);
+	}
+
 	public E element() { return element; }
 	
 	// Define o elemento armazenado nesta posi��o
@@ -53,5 +63,10 @@ public class BTNode<E> implements BTPosition<E>{
 	// Define o pai desta posi��o
 	
 	public void setParent(BTPosition<E> v) { parent = v; }
+	
+	public String toString() {
+		if(element == null)return "";
+		return element.toString();
+	}
 
 }

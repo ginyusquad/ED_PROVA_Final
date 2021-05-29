@@ -447,6 +447,19 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		return f;
 
 	}
+	public LinkedBinaryTree<E> binaryPostOrderToInterator(LinkedBinaryTree<E> T, Position<E> v) {
+
+		LinkedBinaryTree<E> sub = new LinkedBinaryTree<E>();
+		sub.addRoot(T.root().element());
+		if (T.hasLeft(v)) {
+			binaryPostOrderToInterator(sub, sub.left(v));
+		}
+		if (T.hasRight(v)) {
+			binaryPostOrderToInterator(sub, sub.right(v));
+		}
+		return sub;
+
+	}
 
 	public String binaryPreOrder(LinkedBinaryTree<E> T, Position<E> v) {
 
