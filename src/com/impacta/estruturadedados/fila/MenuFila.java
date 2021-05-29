@@ -9,8 +9,7 @@ import com.impacta.estruturadedados.fila.source.FilaNode;
 import com.impacta.estruturadedados.fila.source.Queue;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
-import com.impacta.estruturadedados.pilha.source.NodeStack;
-import com.impacta.estruturadedados.pilha.source.Stack;
+
 
 public class MenuFila implements ISubMenu{
 	
@@ -36,15 +35,9 @@ public class MenuFila implements ISubMenu{
 		fila.enqueue(3);
 		fila.enqueue(4);
 
-		//Fazendo o Programa pausar para o usuario ;er as informações na tela
-		try {
-			TimeUnit.SECONDS.sleep(2);
-		} catch (Exception e) {
-			
-		}
 		
 		out.println("    Por padrão será usado a Fila:");
-	    out.println("      " + fila.toString() );
+	    out.println("      " + fila.toString() + "\n");
     
         int opcao = -1;
 		// Loop das operações
@@ -59,28 +52,28 @@ public class MenuFila implements ISubMenu{
 	        out.print("    Selecione uma opção (1..5) }>");
 	        
 	        opcao = entrada.nextInt();
-	        
+	        out.println();
 	        switch(opcao) {
 	        	case 1:
 	        		out.println("\tPara adicionar na fila "+ fila.toString());
 	        		out.print("\tDigite o inteiro a ser adicionado:");
 	        		int elemento = entrada.nextInt();
 	        		fila.enqueue(elemento);
-	        		out.println("\t  " + fila.toString() );
+	        		out.println("\t  " + fila.toString() + "\n");
 	        		break;
 	        	case 2:
 	        		out.println("\tPara a fila "+ fila.toString());
 	        		Integer elementoRemovido = fila.dequeue();
 	        		out.println("\tElemento removido [ "+ elementoRemovido.toString()+" ]");
-	        		out.println("\t  " + fila.toString() );
+	        		out.println("\t  " + fila.toString() + "\n");
 	        		break;
 	        	case 3:
 	        		out.println("\tPara a fila "+ fila.toString());
-	        		out.println("\tO elemento primeiro da fila é "+ fila.front().toString());
+	        		out.println("\tO elemento primeiro da fila é "+ fila.front().toString() + "\n");
 	        		break;
 	        	case 4:
 	        		out.println("\tFila:");
-	        		out.println("\t  " + fila.toString() );
+	        		out.println("\t  " + fila.toString() + "\n");
 	        		break;
 	        	case 5:
 	        		close();
@@ -90,7 +83,7 @@ public class MenuFila implements ISubMenu{
 	        		continue;
 	        }
 	        try {
-				TimeUnit.SECONDS.sleep(1);
+				TimeUnit.SECONDS.sleep(2);
 			} catch (Exception e) {
 				
 			}
