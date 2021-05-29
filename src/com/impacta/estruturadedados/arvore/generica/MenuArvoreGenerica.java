@@ -9,13 +9,13 @@ import com.impacta.estruturadedados.arvore.generica.sources.LinkedTree;
 import com.impacta.estruturadedados.arvore.generica.sources.NodePositionList;
 import com.impacta.estruturadedados.arvore.generica.sources.Position;
 import com.impacta.estruturadedados.arvore.generica.sources.PositionList;
-import com.impacta.estruturadedados.arvore.generica.sources.Tree;
+
 import com.impacta.estruturadedados.arvore.generica.sources.TreeNode;
 import com.impacta.estruturadedados.arvore.generica.sources.TreePosition;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.utils.Arvore;
-import com.impacta.estruturadedados.utils.Tabela;
+
 
 public class MenuArvoreGenerica implements ISubMenu{
 
@@ -34,12 +34,8 @@ public class MenuArvoreGenerica implements ISubMenu{
 	public void show() {
 		out.println( getTitulo() + ":");
 				
-		//Fazendo o Programa pausar para o usuario ;er as informações na tela
-		try {
-			TimeUnit.SECONDS.sleep(2);
-		} catch (Exception e) {
-			
-		}
+		
+	
 		LinkedTree<String> sistemas_operacionais = criarArvorePadrao();
 		// Montando pilha padrao
 		Arvore arvore =  new Arvore(sistemas_operacionais);
@@ -59,6 +55,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        out.println("     6. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..6) }>");
 	        opcao = entrada.nextInt();
+			out.println();
 	        TreeNode<String> selecionado;
 	        String elemento;
 	        
@@ -71,7 +68,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		
 	        		criarFilho( selecionado, elemento);
 	        		arvore =  new Arvore(sistemas_operacionais);
-	        		out.println(arvore.toString );
+	        		out.println(arvore.toString + "\n");
 	        		
 	        		break;
 	        	case 2:
@@ -83,7 +80,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		sistemas_operacionais.replace(selecionado, elemento);
 
 	        		arvore =  new Arvore(sistemas_operacionais);
-	        		out.println(arvore.toString);
+	        		out.println(arvore.toString + "\n");
 	        		
 	        		break;
 	        	case 3:
@@ -92,7 +89,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		
 	        		if(sistemas_operacionais.isRoot(selecionado)) {
 	        			
-	        			out.println("    Não é possivel remover a raiz Principal!!!");
+	        			out.println("    Não é possivel remover a raiz Principal!!!\n");
 	        			break;
 	        		}
 	        		
@@ -107,14 +104,14 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		
 	        		arvore =  new Arvore(sistemas_operacionais);
 	        		out.println("    Ramo removido:"+selecionado.element());
-	        		//out.println(arvore.toString);
+	        		out.println(arvore.toString + "\n");
 	        		break;
 	        	case 4:
 	        		arvore =  new Arvore(sistemas_operacionais);
-	        		out.println(arvore.toString );
+	        		out.println(arvore.toString + "\n");
 	        		break;
 	        	case 5:
-	        		out.println("\tAltura da Arvore: "+sistemas_operacionais.height1(sistemas_operacionais) );
+	        		out.println("\tAltura da Arvore: "+sistemas_operacionais.height1(sistemas_operacionais) + "\n");
 	        		break;
 	        	case 6:
 	        		close();
@@ -124,7 +121,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		continue;
 	        }
 	        try {
-				TimeUnit.SECONDS.sleep(1);
+				TimeUnit.SECONDS.sleep(2);
 			} catch (Exception e) {
 				
 			}

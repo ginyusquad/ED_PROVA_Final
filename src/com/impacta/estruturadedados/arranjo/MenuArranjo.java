@@ -60,7 +60,7 @@ public class MenuArranjo implements ISubMenu{
 	        		out.println("\tO menor item é: " + arranjo.menor() + "\n");
 	        		break;
 	        	case 4:
-	        		out.print("\tDigite o valor que deseja ver as repeticoes }>");
+	        		out.print("\tDigite o valor que deseja ver as repetições }>");
 	        		int numeroRepetido = entrada.nextInt();
 	        		out.println("\tPara o vetor "+ arranjo.toString());
 	        		out.println("\tO valor "+numeroRepetido+" se repete " +

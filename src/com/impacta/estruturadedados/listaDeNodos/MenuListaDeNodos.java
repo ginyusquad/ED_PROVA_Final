@@ -48,7 +48,7 @@ public class MenuListaDeNodos implements ISubMenu{
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento no começo da lista");
 	        out.println("     2. Remover elemento no final da lista");
-	        out.println("     3. Adicionar ou Remover um elemento a frente ou atras\n        de um outro elemento");
+	        out.println("     3. Adicionar ou Remover um elemento à frente ou atrás\n        de um outro elemento");
 	        out.println("     4. Substituir um elemento ");
 	        out.println("     5. Mostrar a Lista");
 	        out.println("     6. Sair para o menu principal ");
@@ -73,10 +73,10 @@ public class MenuListaDeNodos implements ISubMenu{
 	        		break;
 	        	case 3:
 	        		
-	        		out.println("\t As PositionList permitem que vc remova e adicione elementos");
-	        		out.println("\tbaseados não em um indice especifico mais pela posição de ");
-	        	    out.println("\tum determinado elemento, escolhedo de vaia dicionar depois ou antes");
-	        	    out.println("\tdele ou remover um elemento antes ou depois");
+	        		out.println("\t As PositionLists permitem que você remova e adicione elementos");
+	        		out.println("\tbaseados não em um índice específico mais pela posição de ");
+	        	    out.println("\tum determinado elemento, escolhendo se vai adicionar ou remover ");
+	        	    out.println("\tum elemento dela antes ou depois");
 	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		ISubMenu subMenuListaPosition = new MenuPositionList(this, listNodos);
 	        		
@@ -84,18 +84,18 @@ public class MenuListaDeNodos implements ISubMenu{
 	        		
 	        		break;
 	        	case 4:
-	        		out.println("\t Tabela com as Posicoes:");
+	        		out.println("\t Tabela com as Posições:");
 	        		
 	        		// Tabela que monta a lsita de posicoes na tela
 	        		Tabela tbl_posicoes = new Tabela(listNodos);
 	        		out.print(tbl_posicoes.toString);
 
 	        		// Pegando qual eleemnto o ussuario quer trocar!!!
-	        		out.print("\tDigite a posicao do elemento (1.."+(listNodos.size() - 1)+") }>");
+	        		out.print("\tDigite a posição do elemento (1.."+(listNodos.size() - 1)+") }>");
 	        		int posicao = entrada.nextInt() - 1 ;
 	        		while(posicao > listNodos.size() || posicao < 0) {
 	        			out.print("\tNão Entendi!!!");
-	        			out.print("\tDigite a posicao do elemento novamente (1.."+(listNodos.size() - 1)+") }>");
+	        			out.print("\tDigite a posição do elemento novamente (1.."+(listNodos.size() - 1)+") }>");
 	        			posicao = entrada.nextInt() - 1 ;
 	        		}
 	        		
@@ -104,7 +104,7 @@ public class MenuListaDeNodos implements ISubMenu{
 	        		
 	        		listNodos.set(tbl_posicoes.listPosition[posicao], element);
 	        		
-	        		out.println("\tElemento Substituido!!");
+	        		out.println("\tElemento Substituído!!");
 	        		out.println("\tLista:");
 	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		break;

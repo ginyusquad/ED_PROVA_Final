@@ -69,7 +69,7 @@ public class Principal implements IMenu{
 			// Valida a entrada
 			while(opcao <= 0 || opcao > 13){
 
-				out.print("Opção invalida!! \nDigite novamente: ");
+				out.print("Opção inválida!! \nDigite novamente: ");
 				opcao = entrada.nextInt();
 				out.println();
 

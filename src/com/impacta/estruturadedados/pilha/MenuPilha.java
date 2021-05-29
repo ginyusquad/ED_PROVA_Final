@@ -84,7 +84,7 @@ public class MenuPilha implements ISubMenu {
 	        		continue;
 	        }
 	        try {
-				TimeUnit.SECONDS.sleep(1);
+				TimeUnit.SECONDS.sleep(2);
 			} catch (Exception e) {
 				
 			}
