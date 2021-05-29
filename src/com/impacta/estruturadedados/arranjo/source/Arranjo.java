@@ -86,24 +86,8 @@ public class Arranjo {
 
 		return repeticoes;
 	}
-	public static final String EXPLICACAO = 	("\t\tCom arranjos podemos fazer operações como:\n"+
-			    						 		 "\t\t + Somar todos os elementos;\n"+
-			    								 "\t\t + Pegar o maior elemento;\n"+
-			    								 "\t\t + Pegar o menor elemento;\n"+
-			    								 "\t\t + Ver a repetição dos elementos iguais;");
-	public void explicacaoArranjo() {
 
-		System.out.println(EXPLICACAO +"\n");
-		
-		System.out.print("\t\tNa lista: ");
-		System.out.println(toString());
-
-		System.out.println("\t\t A soma dos itens é: " + soma());
-		System.out.println("\t\t O maior item é: " + maior());
-		System.out.println("\t\t O menor item é: " + menor());
-		System.out.println("\t\t O valor 940 se repete " + repeticoes(940) +" vezes\n");
-		
-	}
+	
 	public String toString(){
 		String arranjoFormatado = "[ ";
 		for( Integer Item : this.vetor) {
