@@ -15,6 +15,7 @@ public class Arvore {
 	public Arvore(Tree<String> raiz) {
 		
 		map = new HashMap<String, Position<String>>();
+		map.put("1", raiz.root());
 		toString = " 1 "+build(raiz, raiz.root(), "1");
 		arvore = raiz;
 		

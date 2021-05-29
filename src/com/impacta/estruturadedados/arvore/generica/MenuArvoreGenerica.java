@@ -57,33 +57,68 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        out.println("     2. Alterar um elemento da Arvore");
 	        out.println("     3. Remover um elemento da Arvore");
 	        out.println("     4. Mostrar a Arvore");
-	        out.println("     5. Mostrar Tamanho da Arvore");
+	        out.println("     5. Mostrar Altura da Arvore");
 	        out.println("     6. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..6) }>");
 	        opcao = entrada.nextInt();
+	        TreeNode<String> selecionado;
+	        String elemento;
 	        
 	        switch(opcao) {
 	        	case 1:
 	        		out.println("\tPara adicionar na Arvore selecione um Ramo:");
-	        		TreeNode<String> selecionado = (TreeNode<String>) selecionarNaArvore(arvore);
+	        		selecionado = (TreeNode<String>) selecionarNaArvore(arvore);
 	        		out.print("\tDigite o que será adicionado }>");
-	        		String elemento = entrada.next();
+	        		elemento = entrada.next();
 	        		
 	        		criarFilho( selecionado, elemento);
 	        		arvore =  new Arvore(sistemas_operacionais);
-	        		
 	        		out.println(arvore.toString );
+	        		
 	        		break;
 	        	case 2:
 	        		
+	        		out.println("\tPara alterar a Arvore selecione um Ramo:");
+	        		selecionado = (TreeNode<String>) selecionarNaArvore(arvore);
+	        		out.print("\tDigite o que será colocado no lugar }>");
+	        		elemento = entrada.next();
+	        		sistemas_operacionais.replace(selecionado, elemento);
+
+	        		arvore =  new Arvore(sistemas_operacionais);
+	        		out.println(arvore.toString);
+	        		
 	        		break;
 	        	case 3:
+	        		out.println("\tPara remover na Arvore selecione um Ramo:");
+	        		selecionado = (TreeNode<String>) selecionarNaArvore(arvore);
 	        		
+	        		if(sistemas_operacionais.isRoot(selecionado)) {
+	        			
+	        			out.println("    Não é possivel remover a raiz Principal!!!");
+	        			break;
+	        		}
+	        		
+	        		TreePosition<String> pai = selecionado.getParent();
+	        		PositionList<Position<String>> list = new NodePositionList<Position<String>>();
+	        		
+	        		for(Position<String> finho: pai.getChildren()) {
+	        			if(!finho.equals(selecionado))list.addLast(finho);
+	        		}
+	        		
+	        		pai.setChildren(list);
+	        		
+	        		arvore =  new Arvore(sistemas_operacionais);
+	        		out.println("    Ramo removido:"+selecionado.element());
+	        		//out.println(arvore.toString);
 	        		break;
 	        	case 4:
-	        		
+	        		arvore =  new Arvore(sistemas_operacionais);
+	        		out.println(arvore.toString );
 	        		break;
 	        	case 5:
+	        		out.println("\tAltura da Arvore: "+sistemas_operacionais.height1(sistemas_operacionais) );
+	        		break;
+	        	case 6:
 	        		close();
 	        		return;
 	        	default:
