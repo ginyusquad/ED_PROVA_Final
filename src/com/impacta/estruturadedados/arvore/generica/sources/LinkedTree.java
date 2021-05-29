@@ -7,6 +7,10 @@ import com.impacta.estruturadedados.exception.BoundaryViolationException;
 import com.impacta.estruturadedados.exception.EmptyTreeException;
 import com.impacta.estruturadedados.exception.InvalidPositionException;
 import com.impacta.estruturadedados.exception.NonEmptyTreeException;
+import com.impacta.estruturadedados.utils.tab_lista_de_nodos.NodePositionList;
+import com.impacta.estruturadedados.utils.tab_lista_de_nodos.Position;
+import com.impacta.estruturadedados.utils.tab_lista_de_nodos.PositionList;
+import com.impacta.estruturadedados.utils.tree.Tree;
 
 
 public class LinkedTree<E> implements  Tree<E> {

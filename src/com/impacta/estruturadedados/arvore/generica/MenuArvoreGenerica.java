@@ -6,15 +6,16 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import com.impacta.estruturadedados.arvore.generica.sources.LinkedTree;
-import com.impacta.estruturadedados.arvore.generica.sources.NodePositionList;
-import com.impacta.estruturadedados.arvore.generica.sources.Position;
-import com.impacta.estruturadedados.arvore.generica.sources.PositionList;
+
 
 import com.impacta.estruturadedados.arvore.generica.sources.TreeNode;
 import com.impacta.estruturadedados.arvore.generica.sources.TreePosition;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
-import com.impacta.estruturadedados.utils.Arvore;
+import com.impacta.estruturadedados.utils.tab_lista_de_nodos.NodePositionList;
+import com.impacta.estruturadedados.utils.tab_lista_de_nodos.Position;
+import com.impacta.estruturadedados.utils.tab_lista_de_nodos.PositionList;
+import com.impacta.estruturadedados.utils.views.Arvore;
 
 
 public class MenuArvoreGenerica implements ISubMenu{
@@ -37,8 +38,9 @@ public class MenuArvoreGenerica implements ISubMenu{
 		
 	
 		LinkedTree<String> sistemas_operacionais = criarArvorePadrao();
+		
 		// Montando pilha padrao
-		Arvore arvore =  new Arvore(sistemas_operacionais);
+		Arvore<String> arvore =  new Arvore<String>(sistemas_operacionais);
 		out.println(" Por Padrçao será usado a árvore:");
 		out.println(arvore.toString);
 		
@@ -102,12 +104,12 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		
 	        		pai.setChildren(list);
 	        		
-	        		arvore =  new Arvore(sistemas_operacionais);
+	        		arvore =  new Arvore<String>(sistemas_operacionais);
 	        		out.println("    Ramo removido:"+selecionado.element());
 	        		out.println(arvore.toString + "\n");
 	        		break;
 	        	case 4:
-	        		arvore =  new Arvore(sistemas_operacionais);
+	        		arvore =  new Arvore<String>(sistemas_operacionais);
 	        		out.println(arvore.toString + "\n");
 	        		break;
 	        	case 5:
@@ -130,14 +132,14 @@ public class MenuArvoreGenerica implements ISubMenu{
 		
 		out.println( menuPrincipal.getTitulo() + ":");
 	}
-	private Position<String> selecionarNaArvore(Arvore arvore) {
+	private Position<String> selecionarNaArvore(Arvore<String> arvore) {
 		
 		out.println("\tÁrvore atual:");
 		out.println(arvore.toString);
 		out.print("    Selecione um ramo (1.1, 1.2 e etc) }>");
         String opcao = entrada.next();
         
-		String elemento = arvore.map.get(opcao).element();
+		String elemento = arvore.map.get(opcao).toString();
 		out.println("    Ramo selecionado: "+ opcao +" "+ elemento);
 		
 		return arvore.map.get(opcao);

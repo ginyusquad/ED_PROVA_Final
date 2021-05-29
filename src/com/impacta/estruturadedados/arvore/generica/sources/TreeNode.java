@@ -1,5 +1,8 @@
 package com.impacta.estruturadedados.arvore.generica.sources;
 
+import com.impacta.estruturadedados.utils.tab_lista_de_nodos.Position;
+import com.impacta.estruturadedados.utils.tab_lista_de_nodos.PositionList;
+
 public class TreeNode<E> implements TreePosition<E> {
 	
 	private TreePosition<E> parent;

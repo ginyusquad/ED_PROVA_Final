@@ -8,7 +8,7 @@ import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.listaDeNodos.source.Position;
 import com.impacta.estruturadedados.listaDeNodos.source.PositionList;
-import com.impacta.estruturadedados.utils.Tabela;
+import com.impacta.estruturadedados.utils.views.Tabela;
 
 public class MenuPositionList implements ISubMenu {
 	
