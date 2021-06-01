@@ -3,9 +3,14 @@ package com.impacta.estruturadedados.dicionario;
 import static java.lang.System.out;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
+import com.impacta.estruturadedados.dicionario.source.HashTableMultiMap;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
+import com.impacta.estruturadedados.mapa.source.HashTableMap;
+import com.impacta.estruturadedados.mapa.source.Map;
+import com.impacta.estruturadedados.utils.views.Tabela;
 
 public class MenuDicionario implements ISubMenu{
 	
@@ -24,9 +29,102 @@ public class MenuDicionario implements ISubMenu{
 	public void show() {
 		out.println( getTitulo() + ":");
 		
-		// Codigo
+		HashTableMultiMap<String, String> dict =  criaDicionarioPadrao();
+		
+		Tabela tbl_dict = new Tabela(dict);
+		
+		out.println("    Por padrão será usado o Dicionario:");
+	    out.println("      " + tbl_dict.toString + "\n");
+    
+        int opcao = -1;
+        do {
+	        
+        	out.println("    Opções: ");
+	        out.println("     1. Adicionar elemento");
+	        out.println("     2. Remover elemento");
+	        out.println("     3. Mostrar o dicionario");
+	        out.println("     4. Sair para o menu principal ");
+	        out.print("    Selecione uma opção (1..4) }>");
+	        
+	        opcao = entrada.nextInt();
+	        String chave = "";
+	        String conteudo = "";
+	        out.println();
+	        switch(opcao) {
+	        	case 1:
+	        		out.println("\tPara adicionar no Dicionario:");
+	        		out.println(tbl_dict.toString);
+	        		
+	        		out.println("\tDigite a Chave:");
+	        		entrada.nextLine();
+	        		chave = entrada.nextLine();
+	        		out.println("\tDigite o conteudo:");
+	        		conteudo = entrada.nextLine();
+	        		
+	        		dict.put(chave, conteudo);
+	        		
+	        		tbl_dict =  new Tabela(dict);
+	        		
+	        		out.println(tbl_dict.toString);
+	        		
+	        		break;
+	        	case 2:
+	        		if(dict.isEmpty()) {
+	        			out.println("\tNão é possível remover de um Dicionario Vazio!\n");
+	        			break;
+	        		}
+	        		out.println("\tPara remover no Dicionario:");
+	        		tbl_dict = new Tabela(dict,true);
+	        		out.println(tbl_dict.toString);
+	        		out.print("\tDigite a posicao do elemento que deseja remover }>");
+	        		int posicao = entrada.nextInt();
+	        		
+	        		try { dict.remove(tbl_dict.mapDic.get(posicao));}
+	        		catch (Exception e) {
+	        			out.println("\t "+e.getMessage());
+	        			break;
+					}
+	        		out.println("\tElemento removido!!");
+	        		
+	        		tbl_dict =  new Tabela(dict);
+	        		
+	        		out.println(tbl_dict.toString);
+	        		
+	        		break;
+	        	case 3:
+	        		out.println("\tDicionario:");
+	        		out.println(tbl_dict.toString);
+	        		break;
+	        	case 4:
+	        		close();
+	        		return;
+	        	default:
+	        		out.println("    Não entendi!\n");
+	        		continue;
+	        }
+	        try {
+				TimeUnit.SECONDS.sleep(2);
+			} catch (Exception e) {
+				
+			}
+	        
+        }while( opcao != 4 );
 		
 		out.println( menuPrincipal.getTitulo() + ":");
+	}
+
+	private HashTableMultiMap<String, String> criaDicionarioPadrao() {
+		HashTableMultiMap<String, String> dicionario = new HashTableMultiMap<String, String>();
+		
+		dicionario.put("Centente", "Feliz");
+		
+		dicionario.put("Raiva", "Odio");
+		dicionario.put("Raiva", "Aversão");
+		
+		dicionario.put("Amor", "Afeto");
+		dicionario.put("Amor", "Azelo");
+		
+		return dicionario;
 	}
 
 	@Override

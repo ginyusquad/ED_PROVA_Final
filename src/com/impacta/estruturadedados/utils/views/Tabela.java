@@ -1,7 +1,11 @@
 package com.impacta.estruturadedados.utils.views;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
+import com.impacta.estruturadedados.dicionario.source.HashTableMultiMap;
 import com.impacta.estruturadedados.fila.prioridades.source.SortedListPriorityQueue;
 import com.impacta.estruturadedados.listaDeNodos.source.DNode;
 import com.impacta.estruturadedados.listaDeNodos.source.Position;
@@ -14,6 +18,8 @@ public class Tabela{
 	
 	public String toString;
 	public Position<Integer>[] listPosition;
+	public HashMap<Integer,java.util.Map.Entry> mapDic;
+	
 	
 	public Tabela(PositionList<Integer> listNodos) {
 		
@@ -158,5 +164,92 @@ public class Tabela{
 					  + "\t└──────────────────────────┘ \n";
 		}
 		this.toString = listTexto;
+	}
+
+	public Tabela(HashTableMultiMap<String, String> dict) {
+				
+		
+		String listTexto = "\t┌──────────────┬─────────────────────┐ \n"
+		 		 		 + "\t│ Chave        │ Valores             │ \n"
+		 		 		 + "\t├──────────────┼─────────────────────┤ \n";
+
+		for(java.util.Map.Entry<String,String>  entry: dict.entrySet()) {
+			
+			
+			String espaco = "";
+			String chave = entry.getKey();
+			
+			
+			if(chave.length() > 12)chave = chave.substring(0, 10)+"..";
+			espaco = new String(new char[ (12 - chave.length()) ]).replace("\0", " ");
+			listTexto += "\t│ "+ chave + espaco +" │";
+			
+			
+			String value = entry.getValue();
+			if(value.length() > 20)value = value.substring(0, 17)+"..";
+			espaco = new String(new char[ (20 - value.length()) ]).replace("\0", " ");
+			// Valida a parte visual
+			 		
+			listTexto += " "+value + espaco +"│\n";
+		}
+		listTexto +=       "\t└──────────────┴─────────────────────┘ \n";
+		if(dict.isEmpty()) {
+			listTexto = "\t┌─────────┬────────────────┐ \n"
+			 		  + "\t│ Chave   │ Valores        │ \n"
+					  + "\t├─────────┴────────────────┤ \n"
+					  + "\t│ O Dicionario esta Vazio! │ \n"
+					  + "\t└──────────────────────────┘ \n";
+		}
+		this.toString = listTexto;
+				
+		
+	}
+
+	public Tabela(HashTableMultiMap<String, String> dict, boolean isIndex) {
+		
+		mapDic = new HashMap<Integer, java.util.Map.Entry>();
+		
+		String listTexto = "\t┌────────┬──────────────┬─────────────────────┐ \n"
+		 		 		 + "\t│Posicao │ Chave        │ Valores             │ \n"
+		 		 		 + "\t├────────┼──────────────┼─────────────────────┤ \n";
+		int index = 0;
+
+		for(java.util.Map.Entry<String,String>  entry: dict.entrySet()) {
+			
+			
+			String espaco = "";
+			String chave = entry.getKey();
+			String posicao = ""+ index;
+			mapDic.put(index, entry);
+			
+			if((posicao+"").length() > 6)posicao = posicao.substring(0, 4)+"..";
+			espaco = new String(new char[ (6 - posicao.length()) ]).replace("\0", " ");
+			listTexto += "\t│ "+ posicao + espaco +" │";
+			
+			
+			
+			if(chave.length() > 12)chave = chave.substring(0, 10)+"..";
+			espaco = new String(new char[ (12 - chave.length()) ]).replace("\0", " ");
+			listTexto += " "+ chave + espaco +" │";
+			
+			
+			String value = entry.getValue();
+			if(value.length() > 20)value = value.substring(0, 17)+"..";
+			espaco = new String(new char[ (20 - value.length()) ]).replace("\0", " ");
+			// Valida a parte visual
+			 		
+			listTexto += " "+value + espaco +"│\n";
+			index++;
+		}
+		listTexto +=       "\t└────────┴──────────────┴─────────────────────┘ \n";
+		if(dict.isEmpty()) {
+			listTexto = "\t┌─────────┬────────────────┐ \n"
+			 		  + "\t│ Chave   │ Valores        │ \n"
+					  + "\t├─────────┴────────────────┤ \n"
+					  + "\t│ O Dicionario esta Vazio! │ \n"
+					  + "\t└──────────────────────────┘ \n";
+		}
+		this.toString = listTexto;
+		
 	}
 }

@@ -55,7 +55,7 @@ public class Principal implements IMenu{
 			out.println("\t6  - TAD-Árvore Binária");
 			out.println("\t7  - TAD-Fila de Prioridade");
 			out.println("\t8  - TAD-Mapa");
-			out.println("\t9  - TAD-Dicionário[Ainda não implementado]");
+			out.println("\t9  - TAD-Dicionário");
 			out.println("\t10 - TAD-Mapa Ordenado – ABB[Falta funcioanlidades]");
 			out.println("\t11 - TAD-Mapa Ordenado – AVL[Ainda não implementado]");
 			out.println("\t12 - TAD-Grafos[Ainda não implementado]");
