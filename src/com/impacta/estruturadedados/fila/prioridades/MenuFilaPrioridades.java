@@ -30,23 +30,31 @@ public class MenuFilaPrioridades implements ISubMenu {
 		SortedListPriorityQueue<Integer, String> listBugs =  criaFilaPrioridades();
 		Tabela tbl_bugs = new Tabela(listBugs);
 		
-		out.println("\n# Descrição:");
-	    out.println("\t    Uma Fila de prioridades é uma estrutura de dados que armazena elementos com base na prioridade");
-        out.println("\t   os elementos possuem uma chave que os define sua prioridade e a  removidos");
-        out.println("\t   ocorre conforme suas respectivas prioridades.");
-        out.println("\t   Por exemplo em uma lista de bugs de uma loga virtual existem os seguintes itens:");
+		out.println("\n"
+		  	  	  + "\t┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
+		   	  	  + "\t│                                                   DESCRICAO                                              │");
+		out.println("\t├──────────────────────────────────────────────────────────────────────────────────────────────────────────┤");
+		out.println("\t│                                                                                                          │");
+		out.println("\t│                                                                                                          │");
+	    out.println("\t│    Uma Fila de prioridades é uma estrutura de dados que armazena elementos com base na prioridade        │");
+        out.println("\t│   os elementos possuem uma chave que os define sua prioridade e a  removidos                             │");
+        out.println("\t│   ocorre conforme suas respectivas prioridades.                                                          │");
+        out.println("\t│   Por exemplo em uma lista de bugs de uma loga virtual existem os seguintes itens:                       │");
+        out.println("\t│                                                                                                          │");
+        out.println("\t│     1  [Impeditivo] Login fora do ar                                                                     │");
+        out.println("\t│     2  [Bug Grave na Jornada] Carrinho de compras apaga itens comprados                                  │");
+        out.println("\t│     3  [Aparencia] Pagina de informações sobre o produto, esta sumindo com o nome do produto             │");
+        out.println("\t│                   quando o nome no mesmo supera 256 carateres                                            │");
+        out.println("\t│                                                                                                          │");
+        out.println("\t│    Nesse exemplo o programador devera se concentrar no elemento com maior priodade                       │");
+        out.println("\t│   que é o [Impeditivo] Login fora do ar , pois sem o login não e possivel, realizar pedidos ou verificar │");
+        out.println("\t│   a situação de pedidos que já tinham sido feitos!                                                       │");
+        out.println("\t│                                                                                                          │");
+        out.println("\t│                   @Curiosidade: E possivel se contruir uma fila de prioridades usando uma Lista de Nodos │");
+        out.println("\t│                                                                                              ou um Heap! │");
+        out.println("\t│                                                                                                          │");
+        out.println("\t└──────────────────────────────────────────────────────────────────────────────────────────────────────────┘\n");
         
-        out.println("\t    1  [Impeditivo] Login fora do ar");
-        out.println("\t    2  [Bug Grave na Jornada] Carrinho de compras apaga itens comprados");
-        out.println("\t    3  [Aparencia] Pagina de informações sobre o produto, esta sumindo com o nome do produto");
-        out.println("\t    			   quando o nome no mesmo supera 256 carateres");
-        
-        out.println("\t    Nesse exemplo o programador devera se concentrar no elemento com maior priodade");
-        out.println("\t   que é o [Impeditivo] Login fora do ar , pois sem o login não e possivel, realizar pedidos ou verificar");
-        out.println("\t   a situação de pedidos já feitos!\n");
-        
-        out.println("                     @Curiosidade: E possivel se contruir uma fila de prioridades usando uma Lista de Nodos ou um Heap!");
-				
 		out.println("    Por padrão será usado a Fila de Prioridades:");
 	    out.println("      " + tbl_bugs.toString + "\n");
 	    

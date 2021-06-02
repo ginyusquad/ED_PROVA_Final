@@ -30,33 +30,38 @@ public class MenuGrafos implements ISubMenu{
 		out.println( getTitulo() + ":");
 		
 		Grafo<String> grafo =  criarGrafoPadrao();
-		out.println("\n# Descrição:");
-	    out.println("\t    Um Grafo é uma estrutura de dados que armazena elementos e suas relações");
-        out.println("\t   os elementos são as Vertices e suas ligações são as arestas");
-        out.println("\t   Por exemplo esse mapa de um bairro :\n");
-        out.println("\t\t   Bairro: Jardim Silveira");
-        out.println("\t\t    (R. São José)                        (Av. Castelo Branco)");
-        out.println("\t\t          \\                               /          ");
-        out.println("\t\t           \\* Aresta                     / * Aresta ");
-        out.println("\t\t            \\                           /            ");
-        out.println("\t\t             \\                         /            ");
-        out.println("\t\t            (Av. Santa padroeira do brasil)           ");
-        out.println("\t\t              /             |            \\");
-        out.println("\t\t             /* Aresta      |* Aresta     \\ * Aresta ");
-        out.println("\t\t            /               |              \\");
-        out.println("\t\t           /                |               \\");
-        out.println("\t\t  (R. Pilheiros)       (R. Triade)       (Peco do conforto)");
-        out.println("\t\t         \\                   \\                /");
-        out.println("\t\t          \\                   \\* Aresta      /* Aresta ");
-        out.println("\t\t           \\                   \\            /");
-        out.println("\t\t            \\                  (R. dos Santos)");
-        out.println("\t\t             \\* Aresta               /");
-        out.println("\t\t              \\                     /");
-        out.println("\t\t               \\                   /* Aresta ");
-        out.println("\t\t                \\                 /");
-        out.println("\t\t               (Av. Brigadeiro Jordão)");
-        out.println("        @Curiosidade: Existem bancos de dados especializados em só arazenar em grafos\n");
-		
+		out.println("\n"      
+		  	  	  + "\t┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
+		   	  	  + "\t│                                                   DESCRICAO                                              │");
+		out.println("\t├──────────────────────────────────────────────────────────────────────────────────────────────────────────┤");
+		out.println("\t│                                                                                                          │");
+	    out.println("\t│    Um Grafo é uma estrutura de dados que armazena elementos e suas relações                              │");
+        out.println("\t│   os elementos são as Vertices e suas ligações são as arestas                                            │");
+        out.println("\t│   Por exemplo esse mapa de um bairro :                                                                   │");
+        out.println("\t│                                                                                                          │");
+        out.println("\t│         Bairro: Jardim Silveira                                                                          │");
+        out.println("\t│          (R. São José)                        (Av. Castelo Branco)                                       │");
+        out.println("\t│                \\                               /                                                         │");
+        out.println("\t│                 \\* Aresta                     / * Aresta                                                 │");
+        out.println("\t│                  \\                           /                                                           │");
+        out.println("\t│                   \\                         /                   @Curiosidade: Existem bancos de dados    │");
+        out.println("\t│                  (Av. Santa padroeira do brasil)                          especializados em só armazenar │");
+        out.println("\t│                    /             |            \\                          grafos.                         │");
+        out.println("\t│                   /* Aresta      |* Aresta     \\ * Aresta                                                │");
+        out.println("\t│                  /               |              \\                                                        │");
+        out.println("\t│                 /                |               \\                                                       │");
+        out.println("\t│        (R. Pilheiros)       (R. Triade)       (Peco do conforto)                                         │");
+        out.println("\t│               \\                   \\                /                                                     │");
+        out.println("\t│                \\                   \\* Aresta      /* Aresta                                              │");
+        out.println("\t│                 \\                   \\            /                                                       │");
+        out.println("\t│                  \\                  (R. dos Santos)                                                      │");
+        out.println("\t│                   \\* Aresta               /                                                              │");
+        out.println("\t│                    \\                     /                                                               │");
+        out.println("\t│                     \\                   /* Aresta                                                        │");
+        out.println("\t│                      \\                 /                                                                 │");
+        out.println("\t│                     (Av. Brigadeiro Jordão)                                                              │");
+        out.println("\t│                                                                                                          │");
+        out.println("\t└──────────────────────────────────────────────────────────────────────────────────────────────────────────┘\n");
 		
 		
 		Tabela tbl_grafo = new Tabela(grafo);
