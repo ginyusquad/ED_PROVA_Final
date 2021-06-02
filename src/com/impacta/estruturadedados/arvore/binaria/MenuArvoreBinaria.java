@@ -44,10 +44,10 @@ public class MenuArvoreBinaria implements ISubMenu{
 		
 		out.println("\n"
       		  	  + "\t┌─────────────────────────────────────────────────────────────────────────────────────┐\n"
-      		   	  + "\t│                                       DESCRICAO                                     │");
+      		   	  + "\t│                                       DESCRIÇÃO                                     │");
 		out.println("\t├─────────────────────────────────────────────────────────────────────────────────────┤");
-		out.println("\t│    Uma arvore binaria é uma estrutura de dados, formada por 2 nós filhos sendo eles │");
-        out.println("\t│   1 a esquerda e 1 a direita, cada Nó também possui 2 nos na esquerda e direita     │");
+		out.println("\t│    Uma árvore binária é uma estrutura de dados, formada por 2 nós filhos sendo eles │");
+        out.println("\t│   1 a esquerda e 1 a direita, cada Nó também possui 2 nós na esquerda e direita     │");
         out.println("\t│   podendo indexar estruturas gigantescas como por exemplo um sistemas de arquivos.  │");
         out.println("\t└─────────────────────────────────────────────────────────────────────────────────────┘\n"); 
 		
@@ -64,7 +64,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        out.println("     1. Adicionar um elemento na Árvore Binaria");
 	        out.println("\t add(): adiciona na estrutura usado os metodos insertLeft e InsertRight");
 	        out.println("     2. Alterar um elemento da Árvore Binaria");
-	        out.println("\t replace(): Altera um finho na arvore");
+	        out.println("\t replace(): Altera um finho na árvore");
 	        out.println("     3. Remover um elemento da Árvore Binaria");
 	        out.println("\t remove(x): Remove o nó filho x ");
 	        out.println("     4. Mostrar a Árvore Binaria");
@@ -115,7 +115,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        	case 4:// Exibe a arvore
 	        		arvore =  new Arvore<Integer>(arvoreBinaryInteira);
 					try {
-						out.println("Arvore: ");
+						out.println("Árvore: ");
 						out.println(arvore.toString);
 					} catch (Exception e) {
 						out.println(e.toString());
@@ -151,7 +151,7 @@ public class MenuArvoreBinaria implements ISubMenu{
         String elemento = null;
         try { elemento = arvore.map.get(opcao).toString(); }
         catch (Exception e) {
-        	out.println("    Ramo Nao encontrado!!!");
+        	out.println("    Ramo Não encontrado!!!");
         	return selecionarNaArvore(arvore);
 		}
 		out.println("    Ramo selecionado: "+ opcao +" "+ elemento);

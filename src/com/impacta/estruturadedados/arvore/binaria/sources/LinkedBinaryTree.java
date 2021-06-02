@@ -1,6 +1,6 @@
 package com.impacta.estruturadedados.arvore.binaria.sources;
 
-import java.util.Arrays;
+
 import java.util.Iterator;
 
 import com.impacta.estruturadedados.arvore.binaria.sources.interfaces.BTPosition;

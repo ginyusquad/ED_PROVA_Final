@@ -51,16 +51,16 @@ public class MenuArvoreGenerica implements ISubMenu{
 		
 		out.println("\n"
     		  	  + "\t┌─────────────────────────────────────────────────────────────────────────────────────┐\n"
-    		   	  + "\t│                                       DESCRICAO                                     │");
+    		   	  + "\t│                                       DESCRIÇÃO                                     │");
 		out.println("\t├─────────────────────────────────────────────────────────────────────────────────────┤");
-		out.println("\t│    Uma arvore generica é uma estrutura de dados, que armazena inumeros elementos    │"); 
+		out.println("\t│    Uma árvore genérica é uma estrutura de dados, que armazena inúmeros elementos    │"); 
         out.println("\t│   montandos eles em nós, com hierarquias, sendo o pai a raiz                        │");
         out.println("\t│   os filhos os nós abaixo do pai e assim por diante hierarquicamente.               │");
         out.println("\t│   Exemplo:                                                                          │");
         out.println("\t│          Adam                                                                       │");
-        out.println("\t│         /    \\                                                                      │");
+        out.println("\t│         /    \\                                                                     │");
         out.println("\t│       Abel   Cain                                                                   │");
-        out.println("\t│                \\                                                                    │");
+        out.println("\t│                \\                                                                   │");
         out.println("\t│               Enoque                                                                │");
         out.println("\t│   Podendo indexar estruturas gigantescas como sistemas de arquivos.                 │");
         out.println("\t└─────────────────────────────────────────────────────────────────────────────────────┘\n");
@@ -75,11 +75,11 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar um elemento na Árvore ");
-	        out.println("\t addLast(x): Adiciona o nó x na ultima ponta da arvore ou ramo selecionado");
+	        out.println("\t addLast(x): Adiciona o nó x na última ponta da árvore ou ramo selecionado");
 	        out.println("     2. Alterar um elemento da Árvore");
 	        out.println("\t replace(x,conteudo): altera o conteudo do elemento selecionado");
 	        out.println("     3. Remover um elemento da Árvore");
-	        out.println("\t restruturar a arvore para manter a integridade, retirando o ramo e re arrumando a mesma");
+	        out.println("\t restruturar a árvore para manter a integridade, retirando o ramo e re arrumando a mesma");
 	        out.println("     4. Mostrar a Árvore");
 	        out.println("     5. Mostrar Altura da Árvore");
 	        out.println("\t height1():");

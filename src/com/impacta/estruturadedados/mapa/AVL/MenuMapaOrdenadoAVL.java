@@ -7,7 +7,6 @@ import java.util.concurrent.TimeUnit;
 
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
-import com.impacta.estruturadedados.mapa.ABB.source.BinarySearchTree;
 import com.impacta.estruturadedados.mapa.AVL.source.AVLTreeMap;
 import com.impacta.estruturadedados.utils.Entry;
 import com.impacta.estruturadedados.utils.views.Arvore;
@@ -43,12 +42,12 @@ public class MenuMapaOrdenadoAVL implements ISubMenu{
 		
 		out.println("\n"
 		  	  	  + "\t┌────────────────────────────────────────────────────────────────────────────┐\n"
-		   	  	  + "\t│                                 DESCRICAO                                  │");
+		   	  	  + "\t│                                 DESCRIÇÃO                                  │");
 		out.println("\t├────────────────────────────────────────────────────────────────────────────┤");
 		out.println("\t│                                                                            │");
 		out.println("\t│   Um mapa Ordenado AVL é uma estrutura de dados semelhante ao Mapa         │");
-        out.println("\t│  no entanto ele usa uma arvore binaria de busca para indexar como o        │");
-        out.println("\t│  mapa Ordenado ABB, mas utiliza mecanicas para manter a arvore balanceada. │");
+        out.println("\t│  no entanto ele usa uma árvore binária de busca para indexar como o        │");
+        out.println("\t│  mapa Ordenado ABB, mas utiliza mecânicas para manter a árvore balanceada. │");
         out.println("\t│                                                                            │");
         out.println("\t└────────────────────────────────────────────────────────────────────────────┘\n");
 		
@@ -57,7 +56,7 @@ public class MenuMapaOrdenadoAVL implements ISubMenu{
 		
 		out.println("    Por padrão será usado o Mapa:");
 	    out.println("    Tabela:  \n" + tbl_mapa.toString + "\n");
-	    out.println("    Arvore binaria:  \n" + arvore.toString + "\n");
+	    out.println("    Árvore binária:  \n" + arvore.toString + "\n");
 	    out.print(mapa.printExpression(mapa.root())+"\n");
         int opcao = -1;
         do {
@@ -65,8 +64,8 @@ public class MenuMapaOrdenadoAVL implements ISubMenu{
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
 	        out.println("\t put(k, v): Insere um elemento no Mapa com chave k e valor v, restructure");
-	        out.println("\t           em nosso AVL a posicao da insercao, tenta manter a arvore balanceada");
-	        out.println("\t           usando o restructure(x) aonde a arvore e rebalanceada depois da operação");
+	        out.println("\t           em nosso AVL a posição da inserção, tenta manter a árvore balanceada");
+	        out.println("\t           usando o restructure(x) aonde a árvore e rebalanceada depois da operação");
 	        out.println("     2. Remover elemento");
 	        out.println("\t remove(k): Remove o elemento com a chave k do Mapa");
 	        out.println("     3. Mostrar o Mapa");
@@ -99,7 +98,7 @@ public class MenuMapaOrdenadoAVL implements ISubMenu{
 	        		break;
 	        	case 2:
 	        		if(mapa.isEmpty()) {
-	        			out.println("\tNão é possivel remover de um Mapa Vazio!\n");
+	        			out.println("\tNão é possível remover de um Mapa Vazio!\n");
 	        			break;
 	        		}
 	        		

@@ -27,7 +27,7 @@ public class MenuDicionario implements ISubMenu{
 	private IMenu menuPrincipal;
 	private Scanner entrada;
 	
-	private String titulo = "Menu Dicionario";
+	private String titulo = "Menu Dicionário";
 	
     public MenuDicionario(IMenu menuPrincipal){
         this.menuPrincipal = menuPrincipal;
@@ -44,16 +44,16 @@ public class MenuDicionario implements ISubMenu{
   		  	  	  + "\t┌─────────────────────────────────────────────────────────────────────────────────────┐\n"
   		   	  	  + "\t│                                       DESCRICAO                                     │");
 		out.println("\t├─────────────────────────────────────────────────────────────────────────────────────┤");
-		out.println("\t│    Um dicionario é uma estrutura de dados semelhante aos Mapas no entanto           │");
-        out.println("\t│   ele permite armazenar diferentes valores em uma unica chave                       │");
-        out.println("\t│   como um dicioanrio na vida real aodne uma unica palavra pode                      │");
-        out.println("\t│   ter inumeros sinonimos e significados simultaneamente.                            │");
+		out.println("\t│    Um dicionário é uma estrutura de dados semelhante aos Mapas no entanto           │");
+        out.println("\t│   ele permite armazenar diferentes valores em uma única chave                       │");
+        out.println("\t│   como um dicionário na vida real apnde uma única palavra pode                      │");
+        out.println("\t│   ter inúmeros sinônimos e significados simultaneamente.                            │");
         out.println("\t└─────────────────────────────────────────────────────────────────────────────────────┘\n");
         
 				
 		Tabela tbl_dict = new Tabela(dict);
 		
-		out.println("    Por padrão será usado o Dicionario:");
+		out.println("    Por padrão será usado o Dicionário:");
 	    out.println("      " + tbl_dict.toString + "\n");
     
         int opcao = -1;
@@ -66,9 +66,9 @@ public class MenuDicionario implements ISubMenu{
 	        out.println("\t           junto ao existente, diferente do map");
 	        out.println("     2. Remover elemento");
 	        out.println("\t remove(entry): remove o elemento entry selecionado");
-	        out.println("\t               e importante re-saltar que dicionarios");
-	        out.println("\t               podem possuir varios valores para uma unica chave!");
-	        out.println("     3. Mostrar o dicionario");
+	        out.println("\t               e importante re-saltar que dicionários");
+	        out.println("\t               podem possuir vários valores para uma única chave!");
+	        out.println("     3. Mostrar o dicionário");
 	        out.println("     4. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..4) }>");
 	        
@@ -78,7 +78,7 @@ public class MenuDicionario implements ISubMenu{
 	        out.println();
 	        switch(opcao) {
 	        	case 1://Adiciona
-	        		out.println("\tPara adicionar no Dicionario:");
+	        		out.println("\tPara adicionar no Dicionário:");
 	        		out.println(tbl_dict.toString);
 	        		
 	        		out.println("\tDigite a Chave:");
@@ -96,13 +96,13 @@ public class MenuDicionario implements ISubMenu{
 	        		break;
 	        	case 2:// Remove
 	        		if(dict.isEmpty()) {
-	        			out.println("\tNão é possível remover de um Dicionario Vazio!\n");
+	        			out.println("\tNão é possível remover de um Dicionário Vazio!\n");
 	        			break;
 	        		}
-	        		out.println("\tPara remover no Dicionario:");
+	        		out.println("\tPara remover no Dicionário:");
 	        		tbl_dict = new Tabela(dict,true);
 	        		out.println(tbl_dict.toString);
-	        		out.print("\tDigite a posicao do elemento que deseja remover }>");
+	        		out.print("\tDigite a posição do elemento que deseja remover }>");
 	        		int posicao = entrada.nextInt();
 	        		
 	        		try { dict.remove(tbl_dict.mapDic.get(posicao));}
@@ -118,7 +118,7 @@ public class MenuDicionario implements ISubMenu{
 	        		
 	        		break;
 	        	case 3:// Exibe
-	        		out.println("\tDicionario:");
+	        		out.println("\tDicionário:");
 	        		out.println(tbl_dict.toString);
 	        		break;
 	        	case 4:

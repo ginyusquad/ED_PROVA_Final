@@ -39,11 +39,11 @@ public class MenuPilha implements ISubMenu {
 		
 		out.println("\n"
 		  	  	  + "\t┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
-		   	  	  + "\t│                                                   DESCRICAO                                              │");
+		   	  	  + "\t│                                                   DESCRIÇÃO                                              │");
 		out.println("\t├──────────────────────────────────────────────────────────────────────────────────────────────────────────┤");
 		out.println("\t│                                                                                                          │");
 		out.println("\t│   Uma Pilha é uma estrutura de dados que armazena elementos seguindo o padrão                            │");
-        out.println("\t│  LIFO, ao seja, o primeiro elemento a entrar e o ultimo a sair.                                          │");
+        out.println("\t│  LIFO, ao seja, o primeiro elemento a entrar e o último a sair.                                          │");
         out.println("\t│                                                           @Curiosidade: Uma pilha pode ser contruida     │");
         out.println("\t│                                                                        usando um Array ou uma LinkedList.│");
         out.println("\t└──────────────────────────────────────────────────────────────────────────────────────────────────────────┘\n");

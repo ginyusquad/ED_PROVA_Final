@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.mapa.ABB.source.BinarySearchTree;
-import com.impacta.estruturadedados.mapa.source.HashTableMap;
 import com.impacta.estruturadedados.utils.Entry;
 import com.impacta.estruturadedados.utils.views.Arvore;
 import com.impacta.estruturadedados.utils.views.Tabela;
@@ -43,11 +42,11 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 		
 		out.println("\n"
 		  	  	  + "\t┌─────────────────────────────────────────────────────────────────────────┐\n"
-		   	  	  + "\t│                              DESCRICAO                                  │");
+		   	  	  + "\t│                              DESCRIÇÃO                                  │");
 		out.println("\t├─────────────────────────────────────────────────────────────────────────┤");
 		out.println("\t│                                                                         │");
 		out.println("\t│    Um mapa Ordenado ABB é uma estrutura de dados semelhante ao Mapa     │");
-        out.println("\t│   no entanto ele usa uma arvore binaria de busca para indexar.          │");
+        out.println("\t│   no entanto ele usa uma árvore binária de busca para indexar.          │");
         out.println("\t│                                                                         │");
         out.println("\t└─────────────────────────────────────────────────────────────────────────┘\n");
 			
@@ -57,7 +56,7 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 		
 		out.println("    Por padrão será usado o Mapa:");
 	    out.println("    Tabela:  \n" + tbl_mapa.toString + "\n");
-	    out.println("    Arvore binaria:  \n" + arvore.toString + "\n");
+	    out.println("    Árvore binária:  \n" + arvore.toString + "\n");
     
         int opcao = -1;
         do {
@@ -65,10 +64,10 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
 	        out.println("\t put(k, v): Insere um elemento no Mapa com chave k e valor v ");
-	        out.println("\t           em nosso ABB a posicao da insercao sera definida seguindo ");
-	        out.println("\t           o lugar ideal na Arvore de Pesquisa");
+	        out.println("\t           em nosso ABB a posiçãoo da inserção será definida seguindo ");
+	        out.println("\t           o lugar ideal na árvore de Pesquisa");
 	        out.println("     2. Remover elemento");
-	        out.println("\t remove(k): Remove o elemento com a chave k do Mapa, na arvore");
+	        out.println("\t remove(k): Remove o elemento com a chave k do Mapa, na árvore");
 	        out.println("\t           isso será um pouco complexo, pois se for um nó externo");
 	        out.println("\t           será possivel remover sem esforço, caso não seja, utilizará");
 	        out.println("\t           o primeiro filho, trocando de lugar com o elemento removido");
@@ -102,7 +101,7 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 	        		break;
 	        	case 2:
 	        		if(mapa.isEmpty()) {
-	        			out.println("\tNão é possivel remover de um Mapa Vazio!\n");
+	        			out.println("\tNão é possível remover de um Mapa Vazio!\n");
 	        			break;
 	        		}
 	        		

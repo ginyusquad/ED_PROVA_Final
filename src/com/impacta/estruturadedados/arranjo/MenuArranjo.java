@@ -37,13 +37,13 @@ public class MenuArranjo implements ISubMenu{
         Arranjo arranjo = new Arranjo();
         out.println("\n"
         		  + "\t┌─────────────────────────────────────────────────────────────────────────────────┐\n"
-        		  + "\t│                                   DESCRICAO                                     │");
+        		  + "\t│                                   DESCRIÇÃO                                     │");
         out.println("\t├─────────────────────────────────────────────────────────────────────────────────┤");  
         out.println("\t│    Um arranjo é uma coleção de N elementos, sendo eles armazenados              │");
-        out.println("\t│   em um vetor que vai de 0 a N - 1, sendo o indice 0 o primeiro elemento e      │");
-        out.println("\t│   o indice N - 1 o ultimo elemento!                                             │");
+        out.println("\t│   em um vetor que vai de 0 a N - 1, sendo o índice 0 o primeiro elemento e      │");
+        out.println("\t│   o índice N - 1 o último elemento!                                             │");
         out.println("\t│    Ele pode ser utilizado para armazenar, por exemplo, notas de uma prova       │");
-        out.println("\t│   sendo que vc saberá quantas provas seram aplicadas.                           │");
+        out.println("\t│   sendo que você deve saber quantas provas serão aplicadas.                     │");
         out.println("\t└─────────────────────────────────────────────────────────────────────────────────┘\n");
         
         

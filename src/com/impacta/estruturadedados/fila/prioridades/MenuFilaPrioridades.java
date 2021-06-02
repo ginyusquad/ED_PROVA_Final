@@ -43,25 +43,25 @@ public class MenuFilaPrioridades implements ISubMenu {
 		
 		out.println("\n"
 		  	  	  + "\t┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
-		   	  	  + "\t│                                                   DESCRICAO                                              │");
+		   	  	  + "\t│                                                   DESCRIÇÃO                                              │");
 		out.println("\t├──────────────────────────────────────────────────────────────────────────────────────────────────────────┤");
 		out.println("\t│                                                                                                          │");
 		out.println("\t│                                                                                                          │");
 	    out.println("\t│    Uma Fila de prioridades é uma estrutura de dados que armazena elementos com base na prioridade        │");
-        out.println("\t│   os elementos possuem uma chave que os define sua prioridade e a  removidos                             │");
+        out.println("\t│   os elementos possuem uma chave que os define sua prioridade e a remoção                                │");
         out.println("\t│   ocorre conforme suas respectivas prioridades.                                                          │");
         out.println("\t│   Por exemplo em uma lista de bugs de uma loga virtual existem os seguintes itens:                       │");
         out.println("\t│                                                                                                          │");
         out.println("\t│     1  [Impeditivo] Login fora do ar                                                                     │");
         out.println("\t│     2  [Bug Grave na Jornada] Carrinho de compras apaga itens comprados                                  │");
-        out.println("\t│     3  [Aparencia] Pagina de informações sobre o produto, esta sumindo com o nome do produto             │");
+        out.println("\t│     3  [Aparência] Página de informações sobre o produto, esta sumindo com o nome do produto             │");
         out.println("\t│                   quando o nome no mesmo supera 256 carateres                                            │");
         out.println("\t│                                                                                                          │");
         out.println("\t│    Nesse exemplo o programador devera se concentrar no elemento com maior priodade                       │");
-        out.println("\t│   que é o [Impeditivo] Login fora do ar , pois sem o login não e possivel, realizar pedidos ou verificar │");
+        out.println("\t│   que é o [Impeditivo] Login fora do ar , pois sem o login não e possível, realizar pedidos ou verificar │");
         out.println("\t│   a situação de pedidos que já tinham sido feitos!                                                       │");
         out.println("\t│                                                                                                          │");
-        out.println("\t│                   @Curiosidade: E possivel se contruir uma fila de prioridades usando uma Lista de Nodos │");
+        out.println("\t│                   @Curiosidade: É possivel se contruir uma fila de prioridades usando uma Lista de Nodos │");
         out.println("\t│                                                                                              ou um Heap! │");
         out.println("\t│                                                                                                          │");
         out.println("\t└──────────────────────────────────────────────────────────────────────────────────────────────────────────┘\n");
@@ -118,7 +118,7 @@ public class MenuFilaPrioridades implements ISubMenu {
 	        	case 3: // Exibe o elemento mais prioritario
 	        		out.println("\tNa fila Prioridades:");
 	        		out.println(tbl_bugs.toString);
-	        		out.println("\tO elemento mais prioritario é o "+listBugs.min().getValue());
+	        		out.println("\tO elemento mais prioritário é o "+listBugs.min().getValue());
 	        		break;
 	        	case 4: // Exibe a fila de prioridades
 	        		out.println("\tFila de Prioridades:");

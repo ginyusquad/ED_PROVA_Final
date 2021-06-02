@@ -10,7 +10,6 @@ import com.impacta.estruturadedados.grafo.source.Grafo;
 import com.impacta.estruturadedados.grafo.source.Vertice;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
-import com.impacta.estruturadedados.mapa.source.HashTableMap;
 import com.impacta.estruturadedados.utils.views.Tabela;
 /*
  *	Grupo: 6.
@@ -42,33 +41,33 @@ public class MenuGrafos implements ISubMenu{
 		Grafo<String> grafo =  criarGrafoPadrao();
 		out.println("\n"      
 		  	  	  + "\t┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
-		   	  	  + "\t│                                                   DESCRICAO                                              │");
+		   	  	  + "\t│                                                   DESCRIÇÃO                                              │");
 		out.println("\t├──────────────────────────────────────────────────────────────────────────────────────────────────────────┤");
 		out.println("\t│                                                                                                          │");
 	    out.println("\t│    Um Grafo é uma estrutura de dados que armazena elementos e suas relações                              │");
-        out.println("\t│   os elementos são as Vertices e suas ligações são as arestas                                            │");
+        out.println("\t│   os elementos são as Vértices e suas ligações são as arestas                                            │");
         out.println("\t│   Por exemplo esse mapa de um bairro :                                                                   │");
         out.println("\t│                                                                                                          │");
         out.println("\t│         Bairro: Jardim Silveira                                                                          │");
         out.println("\t│          (R. São José)                        (Av. Castelo Branco)                                       │");
-        out.println("\t│                \\                               /                                                         │");
-        out.println("\t│                 \\* Aresta                     / * Aresta                                                 │");
-        out.println("\t│                  \\                           /                                                           │");
-        out.println("\t│                   \\                         /                   @Curiosidade: Existem bancos de dados    │");
+        out.println("\t│                \\                               /                                                        │");
+        out.println("\t│                 \\* Aresta                     / * Aresta                                                │");
+        out.println("\t│                  \\                           /                                                          │");
+        out.println("\t│                   \\                         /                   @Curiosidade: Existem bancos de dados   │");
         out.println("\t│                  (Av. Santa padroeira do brasil)                          especializados em só armazenar │");
-        out.println("\t│                    /             |            \\                          grafos.                         │");
-        out.println("\t│                   /* Aresta      |* Aresta     \\ * Aresta                                                │");
-        out.println("\t│                  /               |              \\                                                        │");
-        out.println("\t│                 /                |               \\                                                       │");
+        out.println("\t│                    /             |            \\                          grafos.                        │");
+        out.println("\t│                   /* Aresta      |* Aresta     \\ * Aresta                                               │");
+        out.println("\t│                  /               |              \\                                                       │");
+        out.println("\t│                 /                |               \\                                                      │");
         out.println("\t│        (R. Pilheiros)       (R. Triade)       (Peco do conforto)                                         │");
-        out.println("\t│               \\                   \\                /                                                     │");
-        out.println("\t│                \\                   \\* Aresta      /* Aresta                                              │");
-        out.println("\t│                 \\                   \\            /                                                       │");
-        out.println("\t│                  \\                  (R. dos Santos)                                                      │");
-        out.println("\t│                   \\* Aresta               /                                                              │");
-        out.println("\t│                    \\                     /                                                               │");
-        out.println("\t│                     \\                   /* Aresta                                                        │");
-        out.println("\t│                      \\                 /                                                                 │");
+        out.println("\t│               \\                   \\                /                                                   │");
+        out.println("\t│                \\                   \\* Aresta      /* Aresta                                            │");
+        out.println("\t│                 \\                   \\            /                                                     │");
+        out.println("\t│                  \\                  (R. dos Santos)                                                     │");
+        out.println("\t│                   \\* Aresta               /                                                             │");
+        out.println("\t│                    \\                     /                                                              │");
+        out.println("\t│                     \\                   /* Aresta                                                       │");
+        out.println("\t│                      \\                 /                                                                │");
         out.println("\t│                     (Av. Brigadeiro Jordão)                                                              │");
         out.println("\t│                                                                                                          │");
         out.println("\t└──────────────────────────────────────────────────────────────────────────────────────────────────────────┘\n");
@@ -82,12 +81,12 @@ public class MenuGrafos implements ISubMenu{
         do {
 	        
         	out.println("    Opções: ");
-	        out.println("     1. Adicionar Vertice");
-	        out.println("\t insertVertex(x): Insere a vertice x e retorna a vertice ");
+	        out.println("     1. Adicionar Vértice");
+	        out.println("\t insertVertex(x): Insere o vértice x e retorna o vértice ");
 	        out.println("     2. Adicionar Aresta");
 	        out.println("\t insertEdge(v, w, x): Cria uma aresta de v para w");
-	        out.println("     3. Remover Vertice");
-	        out.println("\t removeVertex(v): Remove o vertice v");
+	        out.println("     3. Remover Vértice");
+	        out.println("\t removeVertex(v): Remove o vértice v");
 	        out.println("     4. Remover Aresta");
 	        out.println("\t removeEdge(e): Remove a aresta e");
 	        out.println("     5. Mostrar o Grafo");
@@ -102,37 +101,37 @@ public class MenuGrafos implements ISubMenu{
 	        		out.println("\tPara adicionar no Grafo:");
 	        		out.println(tbl_grafo.toString);
 	        		
-	        		out.println("\tDigite o Vertice:");
+	        		out.println("\tDigite o Vértice:");
 	        		entrada.nextLine();
 	        		chave = entrada.nextLine();
 	        		
 	        		grafo.addVertice(chave);
 	        		
 	        		tbl_grafo = new Tabela(grafo);
-	        		out.println("\tVertice adicionado!!!");
+	        		out.println("\tVértice adicionado!!!");
 	        		out.println(tbl_grafo.toString);
 	        		break;
 	        	case 2:// Adicioanr Aresta
 	        		out.println("\tPara adicionar no Grafo:");
 	        		out.println(tbl_grafo.toString);
 	        		
-	        		out.print("\t Selecione a posicao da vertice de origem }>");
+	        		out.print("\t Selecione a posição da vértice de origem }>");
 	        		int origemIndex = entrada.nextInt();
 	        		Vertice<String> verticOrigem  = null;
 	        		
 	        		try { verticOrigem =  tbl_grafo.mapVertices.get(origemIndex); }
 	        		catch (Exception e) {
-	        			out.println("\t Posicao não encontrada!!");
+	        			out.println("\t Posição não encontrada!!");
 	        			break;
 					}
 	        		
-	        		out.print("\t Selecione a posicao da vertice de destino }>");
+	        		out.print("\t Selecione a posição do vértice de destino }>");
 	        		int destinoIndex = entrada.nextInt();
 	        		Vertice<String> verticDestino = null;
 	        		
 	        		try { verticDestino =  tbl_grafo.mapVertices.get(destinoIndex);}
 	        		catch (Exception e) {
-	        			out.println("\t Posicao não encontrada!!");
+	        			out.println("\t Posição não encontrada!!");
 	        			break;
 					}
 	        		grafo.addAresta(verticOrigem, verticDestino);
@@ -145,13 +144,13 @@ public class MenuGrafos implements ISubMenu{
 	        		out.println("\tPara Remover no Grafo:");
 	        		out.println(tbl_grafo.toString);
 	        		int index = 0;
-	        		out.print("\t Selecione a posicao Removida }>");
+	        		out.print("\t Selecione a posição Removida }>");
 	        		index = entrada.nextInt();
 	        		Vertice<String> verticeRemovido = null;
 	        		
 	        		try { verticeRemovido = grafo.vertices.get(index - 1);}
 	        		catch (Exception e) {
-	        			out.println("\t Posicao não encontrada!!");
+	        			out.println("\t Posição não encontrada!!");
 	        			break;
 					}
 	        		
@@ -170,7 +169,7 @@ public class MenuGrafos implements ISubMenu{
 	        		}
 	        		
 	        		tbl_grafo = new Tabela(grafo);
-	        		out.println("\t Vertice Removido!!!");
+	        		out.println("\t Vértice Removido!!!");
 	        		out.println(tbl_grafo.toString);
 	        		
 	        		break;
@@ -178,16 +177,16 @@ public class MenuGrafos implements ISubMenu{
 	        		out.println("\tPara Remover no Grafo:");
 	        		out.println(tbl_grafo.toString);
 	        		
-	        		out.print("\t Selecione a posicao do vertice }>");
+	        		out.print("\t Selecione a posição do vértice }>");
 	        		int verticeIndex = entrada.nextInt();
 	        		Vertice<String> vertic  = null;
 	        		
 	        		try { vertic =  tbl_grafo.mapVertices.get(verticeIndex); }
 	        		catch (Exception e) {
-	        			out.println("\t Posicao não encontrada!!");
+	        			out.println("\t Posição não encontrada!!");
 					}
 	        		if(vertic ==  null) {
-	        			out.println("\t Posicao não encontrada!!");
+	        			out.println("\t Posição não encontrada!!");
 	        			break;
 	        		}
 	        			
@@ -195,7 +194,7 @@ public class MenuGrafos implements ISubMenu{
 	        		
 	        		out.print("\t" + arestas.toString);
 	        		
-	        		out.print("\t Digite a posicao da Aresta }>");
+	        		out.print("\t Digite a posição da Aresta }>");
 	        		int indexAresta = entrada.nextInt()-1;
 	        		
 	        		vertic.aresta.remove(indexAresta);

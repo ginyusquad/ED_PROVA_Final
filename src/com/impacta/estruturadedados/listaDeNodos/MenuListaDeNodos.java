@@ -48,17 +48,17 @@ public class MenuListaDeNodos implements ISubMenu{
 		listNodos.addFirst(1);
 		out.println("\n"      
 		  	  	  + "\t┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
-		   	  	  + "\t│                                                         DESCRICAO                                                      │");
+		   	  	  + "\t│                                                         DESCRIÇÃO                                                      │");
 		out.println("\t├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤");
 		out.println("\t│                                                                                                                        │");
 		out.println("\t│      Uma lista de nodos é estrutura de dados que armazena um conjunto de nós, sendo                                    │");
-        out.println("\t│     que cada um armazena um elemento e a referencia do nó anterior e posterior da sua posição atual,                   │");
-        out.println("\t│     dentro dela e usado uma Abstração chamada de position que nos permite adcionar e remover elementos                 │");
+        out.println("\t│     que cada um armazena um elemento e a referência do nó anterior e posterior da sua posição atual,                   │");
+        out.println("\t│     dentro dela e usado uma Abstração chamada de position que nos permite adicionar e remover elementos                │");
         out.println("\t│     em relação a um elemento que já exista na lista, por exemplo:                                                      │");
-        out.println("\t│       [\" Primeiro \", \"Segundo\", \"Terceiro\"]                                                                            │");
-        out.println("\t│        .addBefore(\"Segundo\", \"Entre o Primeiro e o Segundo\")                                                           │");
-        out.println("\t│        .addAfter(\"Segundo\", \"Entre o Segundo e o Terceiro\")                                                            │");
-        out.println("\t│       [\" Primeiro \", \"Entre o Primeiro e o Segundo \", \"Segundo\", \"Entre o Segundo e o Terceiro\", \"Terceiro\"]           │");
+        out.println("\t│       [\" Primeiro \", \"Segundo\", \"Terceiro\"]                                                                      │");
+        out.println("\t│        .addBefore(\"Segundo\", \"Entre o Primeiro e o Segundo\")                                                       │");
+        out.println("\t│        .addAfter(\"Segundo\", \"Entre o Segundo e o Terceiro\")                                                        │");
+        out.println("\t│       [\" Primeiro \", \"Entre o Primeiro e o Segundo \", \"Segundo\", \"Entre o Segundo e o Terceiro\", \"Terceiro\"] │");
         out.println("\t│      Fora isso e possivel usar o addFirst(x) para adicionar no começo da lista.                                        │");
         out.println("\t│     e addLast(x) para adicionar no começo da lista.                                                                    │");
         out.println("\t│                                                                                                                        │");
@@ -73,7 +73,7 @@ public class MenuListaDeNodos implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento no começo da lista");
-	        out.println("\t addFirst(x): Insere o elemento x no inicio da lista");
+	        out.println("\t addFirst(x): Insere o elemento x no ínicio da lista");
 	        out.println("     2. Remover elemento no final da lista");
 	        out.println("\t remove(x): Remove o node x e redireciona o node anterior e posterior para ");
 	        out.println("\t           fechar a lista que se abriu quando foi retirado o elemento x");

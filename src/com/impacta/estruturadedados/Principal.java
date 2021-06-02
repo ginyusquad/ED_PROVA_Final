@@ -128,7 +128,7 @@ public class Principal implements IMenu{
 					close();
 					return;
 				default:
-					out.println("Opção invalida!! Reveja o Menu");
+					out.println("Opção inválida!! Reveja o Menu");
 					continue;
 			}
 			// Invoca o sub menu escolhido
