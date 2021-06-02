@@ -105,14 +105,14 @@ public class LinkedTree<E> implements  Tree<E> {
 	public String toString() { 
 		
 		String s = "";
-		// intero sobre min mesmo
+
 		for (E i : this) { s += ", " + i; }
 		s = (s.length() == 0 ? s : s.substring(2));
 		return "[" + s + "]";
 	}
 	
 
-	// 3_ a) parentheticRepresentation conforme o algoritmo do slide 55.
+
 	public String parentheticRepresentation (Tree<E> T, Position<E> v) {
 		
 		String s = v.element().toString();
@@ -131,7 +131,7 @@ public class LinkedTree<E> implements  Tree<E> {
 		return s;
 	}
 	
-	// 3_ b) Com base no algoritmo posorder (slide 57) crie o m�todo toStringPostorder (imprime os valores dos nodes visitados).
+
 	public String toStringPostorder(LinkedTree<E> T, Position<E> v) {
 		
 		String s = "";			

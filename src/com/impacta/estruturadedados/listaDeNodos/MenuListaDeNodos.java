@@ -47,13 +47,14 @@ public class MenuListaDeNodos implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento no começo da lista");
-	        out.println("\t addFirst(): ");
+	        out.println("\t addFirst(x): Insere o elemento x no inicio da lista");
 	        out.println("     2. Remover elemento no final da lista");
-	        out.println("\t remove(): ");
+	        out.println("\t remove(x): Remove o node x e redireciona o node anterior e posterior para ");
+	        out.println("\t           fechar a lista que se abriu quando foi retirado o elemento x");
 	        out.println("     3. Adicionar ou Remover um elemento à frente ou atrás\n        de um outro elemento");
 	        out.println("\t  + menu PositionList");
 	        out.println("     4. Substituir um elemento ");
-	        out.println("\t set(): ");
+	        out.println("\t set(x,y): Substitui x pelo elemento y na lista");
 	        out.println("     5. Mostrar a Lista");
 	        out.println("     6. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..6) }>");

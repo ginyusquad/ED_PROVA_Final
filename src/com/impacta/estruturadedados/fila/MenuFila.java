@@ -45,11 +45,11 @@ public class MenuFila implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
-	        out.println("\t enqueue(): ");
+	        out.println("\t enqueue(x): Insere o elemento x na fila");
 	        out.println("     2. Remover elemento ");
-	        out.println("\t dequeue(): ");
+	        out.println("\t dequeue(): Remove o elemento de inicio da fila");
 	        out.println("     3. Ver o primeiro elemento da fila ");
-	        out.println("\t front(): ");
+	        out.println("\t front(): Retorna o primeiro elemento da fila");
 	        out.println("     4. Mostrar a Fila");
 	        out.println("     5. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");

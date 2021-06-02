@@ -41,13 +41,13 @@ public class MenuGrafos implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar Vertice");
-	        out.println("\t insertVertex(): ");
+	        out.println("\t insertVertex(x): Insere a vertice x e retorna a vertice ");
 	        out.println("     2. Adicionar Aresta");
-	        out.println("\t insertEdge(): ");
+	        out.println("\t insertEdge(v, w, x): Cria uma aresta de v para w");
 	        out.println("     3. Remover Vertice");
-	        out.println("\t removeVertex(): ");
+	        out.println("\t removeVertex(v): Remove o vertice v");
 	        out.println("     4. Remover Aresta");
-	        out.println("\t removeEdge(): ");
+	        out.println("\t removeEdge(e): Remove a aresta e");
 	        out.println("     5. Mostrar o Grafo");
 	        out.println("     6. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");

@@ -38,11 +38,11 @@ public class MenuArranjo implements ISubMenu{
 	        out.println("     1. Somar todos os elementos ");
 	        out.println("\t somar(): Percorre a coleção de elementos somando");
 	        out.println("     2. Pegar o maior elemento ");
-	        out.println("\t maior(): Percorre a coleção de elementos pegando o maior");
+	        out.println("\t maior(): Percorre a coleção de elementos pegando o maior elemento");
 	        out.println("     3. Pegar o menor elemento ");
-	        out.println("\t menor(): Percorre a coleção de elementos pegando o menor");
+	        out.println("\t menor(): Percorre a coleção de elementos pegando o menor elemento");
 	        out.println("     4. Ver a repetição dos elementos iguais ");
-	        out.println("\t repeticoes(): Percorre a coleção de elementos pegando contando os elementos semelhantes");
+	        out.println("\t repeticoes(x): Percorre a coleção de elementos as ocorrendias de x");
 	        out.println("     5. Alterar o vetor");
 	        out.println("     6. Sair para o menu principal \n");
 	        out.print("    Selecione uma opção (1..6) }>");

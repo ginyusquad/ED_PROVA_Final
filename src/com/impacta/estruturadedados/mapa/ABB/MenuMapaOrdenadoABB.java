@@ -44,7 +44,14 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
+	        out.println("\t put(k, v): Insere um elemento no Mapa com chave k e valor v ");
+	        out.println("\t           em nosso ABB a posicao da insercao sera definida seguindo ");
+	        out.println("\t           o lugar ideal na Arvore de Pesquisa");
 	        out.println("     2. Remover elemento");
+	        out.println("\t remove(k): Remove o elemento com a chave k do Mapa, na arvore");
+	        out.println("\t           isso será um pouco complexo, pois se for um nó externo");
+	        out.println("\t           será possivel remover sem esforço, caso não seja, utilizará");
+	        out.println("\t           o primeiro filho, trocando de lugar com o elemento removido");
 	        out.println("     3. Mostrar o Mapa");
 	        out.println("     4. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..4) }>");

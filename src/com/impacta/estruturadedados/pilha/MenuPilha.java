@@ -42,14 +42,14 @@ public class MenuPilha implements ISubMenu {
         int opcao = -1;
 		// Loop das operações
         do {
-	        
+        	//out.println("\t           isso será um pouco complexo, pois se for um nó externo");
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
-	        out.println("\t push(): ");
+	        out.println("\t push(x): Insere no topo da pilha ");
 	        out.println("     2. Remover elemento ");
-	        out.println("\t pop(): ");
+	        out.println("\t pop(): Remove o elemento do topo");
 	        out.println("     3. Ver o primeiro elemento da pilha ");
-	        out.println("\t top(): ");
+	        out.println("\t top(): Retorna o elemento do topo da pilha");
 	        out.println("     4. Mostrar a Pilha");
 	        out.println("     5. Sair para o menu principal \n");
 	        out.print("    Selecione uma opção (1..5) }>");

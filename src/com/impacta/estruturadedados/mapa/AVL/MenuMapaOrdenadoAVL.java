@@ -44,7 +44,11 @@ public class MenuMapaOrdenadoAVL implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
+	        out.println("\t put(k, v): Insere um elemento no Mapa com chave k e valor v, restructure");
+	        out.println("\t           em nosso AVL a posicao da insercao, tenta manter a arvore balanceada");
+	        out.println("\t           usando o restructure(x) aonde a arvore e rebalanceada depois da operação");
 	        out.println("     2. Remover elemento");
+	        out.println("\t remove(k): Remove o elemento com a chave k do Mapa");
 	        out.println("     3. Mostrar o Mapa");
 	        out.println("     4. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..4) }>");

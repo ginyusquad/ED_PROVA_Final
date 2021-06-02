@@ -31,7 +31,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 		out.println( getTitulo() + ":");
 				
 		LinkedBinaryTree<Integer> arvoreBinaryInteira = criarArvoreBinaryPadrao();
-		// Montando pilha padrao
+		// Montando Arvore padrao
 		Arvore<Integer> arvore =  new Arvore<Integer>(arvoreBinaryInteira);
 		out.println(" Por Padrão será usado a árvore:");
 		out.println(arvore.toString);
@@ -42,11 +42,11 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar um elemento na Árvore Binaria");
-	        out.println("\t add():");
+	        out.println("\t add(): adiciona na estrutura usado os metodos insertLeft e InsertRight");
 	        out.println("     2. Alterar um elemento da Árvore Binaria");
-	        out.println("\t replace():");
+	        out.println("\t replace(): Altera um finho na arvore");
 	        out.println("     3. Remover um elemento da Árvore Binaria");
-	        out.println("\t remove():");
+	        out.println("\t remove(x): Remove o nó filho x ");
 	        out.println("     4. Mostrar a Árvore Binaria");
 	        out.println("     5. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");
@@ -97,7 +97,6 @@ public class MenuArvoreBinaria implements ISubMenu{
 					try {
 						out.println(arvore.toString);
 					} catch (Exception e) {
-						//TODO: handle exception
 						out.println(e.toString());
 					}
 	        		
@@ -128,8 +127,12 @@ public class MenuArvoreBinaria implements ISubMenu{
 		out.println(arvore.toString);
 		out.print("    Selecione um ramo (1.1, 1.2 e etc) }>");
         String opcao = entrada.next();
-        
-		String elemento = arvore.map.get(opcao).toString();
+        String elemento = null;
+        try { elemento = arvore.map.get(opcao).toString(); }
+        catch (Exception e) {
+        	out.println("    Ramo Nao encontrado!!!");
+        	return selecionarNaArvore(arvore);
+		}
 		out.println("    Ramo selecionado: "+ opcao +" "+ elemento);
 		
 		return arvore.map.get(opcao);

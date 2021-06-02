@@ -17,103 +17,54 @@ import com.impacta.estruturadedados.utils.tree.Tree;
 
 public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
-	protected BTPosition<E> root; // refer�ncia para a raiz
-
-	protected int size; // n�mero de nodos
-
-// Cria uma �rvore bin�ria vazia.
+	protected BTPosition<E> root;
+	protected int size;
 
 	public LinkedBinaryTree() {
-
-		root = null; // inicia com uma �rvore vazia
-
+		root = null;
 		size = 0;
-
 	}
-
-// Retorna o n�mero de nodos da �rvore.
-
 	public int size() {
 		return size;
 	}
-
-// Retorna se um nodo � interno.
-
 	public boolean isInternal(Position<E> v) throws InvalidPositionException {
-
-		checkPosition(v); // m�todo auxiliar
-
-		return (hasLeft(v) || hasRight(v));
-
-	}
-
-// Retorna se um nodo � a raiz.
-
-	public boolean isRoot(Position<E> v) throws InvalidPositionException {
-
 		checkPosition(v);
-
+		return (hasLeft(v) || hasRight(v));
+	}
+	public boolean isRoot(Position<E> v) throws InvalidPositionException {
+		checkPosition(v);
 		return (v == root());
-
 	}
-
-// Retorna se um nodo tem o filho da esquerda.
-
 	public boolean hasLeft(Position<E> v) throws InvalidPositionException {
-
 		BTPosition<E> vv = checkPosition(v);
-
 		return (vv.getLeft() != null);
-
 	}
-
-// Retorna a raiz da �rvore.
-
 	public Position<E> root() throws EmptyTreeException {
-
 		if (root == null)
 			throw new EmptyTreeException("The tree is empty");
 
 		return root;
-
 	}
-
-// Retorna o filho da esquerda de um nodo.
-
 	public Position<E> left(Position<E> v) throws InvalidPositionException, BoundaryViolationException {
-
 		BTPosition<E> vv = checkPosition(v);
-
 		Position<E> leftPos = (Position<E>) vv.getLeft();
 
 		if (leftPos == null)
 			throw new BoundaryViolationException("No left child");
 
 		return leftPos;
-
 	}
-
-// Retorna o pai de um nodo.
-
 	public Position<E> parent(Position<E> v) throws InvalidPositionException, BoundaryViolationException {
-
 		BTPosition<E> vv = checkPosition(v);
-
 		Position<E> parentPos = (Position<E>) vv.getParent();
-
 		if (parentPos == null)
 			throw new BoundaryViolationException("No parent");
 
 		return parentPos;
-
 	}
-
-// Retorna uma cole��o iter�vel contendo os filhos de um nodo.
-
 	public Iterable<Position<E>> children(Position<E> v) throws InvalidPositionException {
 
 		PositionList<Position<E>> children = new NodePositionList<Position<E>>();
-
 		if (hasLeft(v))
 			children.addLast(left(v));
 
@@ -121,50 +72,39 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 			children.addLast(right(v));
 
 		return children;
-
 	}
-
-//Cria uma lista que armazena os nodos da sub�rvore de um nodo ordenados de acordo com o caminhamento inorder da sub�rvore.
-
 	public void inorderPositions(Position<E> v, PositionList<Position<E>> pos) throws InvalidPositionException {
 
 		if (hasLeft(v))
-			inorderPositions(left(v), pos); // recurs�o sobre o filho da esquerda
+			inorderPositions(left(v), pos); 
 
 		pos.addLast(v);
 
 		if (hasRight(v))
-			inorderPositions(right(v), pos); // recurs�o sobre o filho da direita
+			inorderPositions(right(v), pos);
 
 	}
-
-// Retorna uma cole��o iter�vel (inorder) contendo os nodos da �rvore.
 
 	public Iterable<Position<E>> positionsInorder() {
 
 		PositionList<Position<E>> positions = new NodePositionList<Position<E>>();
 
 		if (size != 0)
-			inorderPositions(root(), positions); // atribui as posi��es usando caminhamento prefixado
+			inorderPositions(root(), positions); 
 
 		return positions;
 
 	}
-
-// Retorna uma cole��o iter�vel contendo os nodos da �rvore.
-
 	public Iterable<Position<E>> positions() {
 
 		PositionList<Position<E>> positions = new NodePositionList<Position<E>>();
 
 		if (size != 0)
-			preorderPositions(root(), positions); // atribui as posi��es usando caminhamento prefixado
+			preorderPositions(root(), positions);
 
 		return positions;
 
 	}
-
-// Retorna um iterador sobre os elementos armazenados nos nodos
 
 	public Iterator<E> iterator() {
 
@@ -175,16 +115,10 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		for (Position<E> pos : positions)
 			elements.addLast(pos.element());
 
-		return elements.iterator(); // Um iterador sobre os elementos
-
+		return elements.iterator();
 	}
-
-// Substitui o elemento armazenado no nodo.
-
 	public E replace(Position<E> v, E o) throws InvalidPositionException {
-
 		BTPosition<E> vv = checkPosition(v);
-
 		E temp = v.element();
 
 		vv.setElement(o);
@@ -192,15 +126,8 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		return temp;
 
 	}
-
-// Método de acesso adicional
-
-// Retorna o irm�o de um nodo
-
 	public Position<E> sibling(Position<E> v) throws InvalidPositionException, BoundaryViolationException {
-
 		BTPosition<E> vv = checkPosition(v);
-
 		BTPosition<E> parentPos = vv.getParent();
 
 		if (parentPos != null) {
@@ -224,10 +151,6 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 	}
 
-// M�todos de acesso adicionais
-
-// Insere a raiz em uma �rvore vazia
-
 	public Position<E> addRoot(E e) throws NonEmptyTreeException {
 
 		if (!isEmpty())
@@ -240,8 +163,6 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		return root;
 
 	}
-
-// Insere o filho da esquerda em um nodo.
 
 	public Position<E> insertLeft(Position<E> v, E e) throws InvalidPositionException {
 
@@ -262,8 +183,6 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 	}
 
-// Remove um nodo com zero ou um filho.
-
 	public E remove(Position<E> v) throws InvalidPositionException {
 
 		BTPosition<E> vv = checkPosition(v);
@@ -275,7 +194,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		if (leftPos != null && rightPos != null)
 			throw new InvalidPositionException("Não é possível remover um ramo com filhos");
 
-		BTPosition<E> ww; // o �nico filho de v, se houver
+		BTPosition<E> ww;
 
 		if (leftPos != null)
 			ww = leftPos;
@@ -283,18 +202,18 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		else if (rightPos != null)
 			ww = rightPos;
 
-		else // v � folha
+		else // v  folha
 
 			ww = null;
 
-		if (vv == root) { // v � a raiz
+		if (vv == root) { // v  a raiz
 
 			if (ww != null)
 				ww.setParent(null);
 
 			root = ww;
 
-		} else { // v n�o � a raiz
+		} else {
 
 			BTPosition<E> uu = vv.getParent();
 
@@ -315,7 +234,6 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 	}
 
-// Conecta duas �rvores para serem sub�rvores de um nodo externo.
 
 	public void attach(Position<E> v, BinaryTree<E> T1, BinaryTree<E> T2) throws InvalidPositionException {
 
@@ -330,7 +248,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 			vv.setLeft(r1);
 
-			r1.setParent(vv); // T1 deve ser invalidada
+			r1.setParent(vv);
 
 		}
 
@@ -340,13 +258,12 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 			vv.setRight(r2);
 
-			r2.setParent(vv); // T2 deve ser invalidada
+			r2.setParent(vv); 
 
 		}
 
 	}
 
-// Se v � um nodo de �rvore bin�ria, converte para BTPosition, caso contr�rio lan�a exce��o
 
 	protected BTPosition<E> checkPosition(Position<E> v) throws InvalidPositionException {
 
@@ -357,27 +274,21 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 	}
 
-// Cria um novo nodo de �rvore bin�ria
-
 	protected BTPosition<E> createNode(E element, BTPosition<E> parent, BTPosition<E> left, BTPosition<E> right) {
 
 		return new BTNode<E>(element, parent, left, right);
 
 	}
 
-// Cria uma lista que armazena os nodos da sub�rvore de um nodo ordenados de acordo com o
-
-// caminhamento prefixado da sub�rvore.
-
 	protected void preorderPositions(Position<E> v, PositionList<Position<E>> pos) throws InvalidPositionException {
 
 		pos.addLast(v);
 
 		if (hasLeft(v))
-			preorderPositions(left(v), pos); // recurs�o sobre o filho da esquerda
+			preorderPositions(left(v), pos);
 
 		if (hasRight(v))
-			preorderPositions(right(v), pos); // recurs�o sobre o filho da direita
+			preorderPositions(right(v), pos);
 
 	}
 
@@ -414,9 +325,6 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 		String s = "";
 
-		// for (E i : T) { s += ", " + i; }
-
-		// OU
 
 		for (Iterator<E> it = T.iterator(); it.hasNext(); ) {
 
@@ -537,7 +445,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 	public String parentheticRepresentation(Tree<E> T, Position<E> v) {
 
-		String s = v.element().toString(); // a��o principal de visita
+		String s = v.element().toString();
 
 		if (T.isInternal(v)) {
 
@@ -546,20 +454,19 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 			for (Position<E> w : T.children(v)) {
 
 				if (firstTime) {
-					// primeiro filho
 
 					s += "(" + parentheticRepresentation(T, w);
 
 					firstTime = false;
 
 				} else {
-					// filhos seguintes
+
 
 					s += "," + parentheticRepresentation(T, w);
 
 				}
 
-				s += ")"; // fecha par�nteses
+				s += ")"; 
 
 			}
 
@@ -622,24 +529,16 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		return f;
 
 	}
-
 	public int depth(LinkedBinaryTree<E> T, Position<E> v) {
-		/**
-		 * Se v for raiz, profundidade = 0 Se nao, chama depth com o filho do nodo
-		 * recursivamente Soma +1 a profundiade maxima dos filhos
-		 */
+		
 		if (T.isRoot(v)) {
 			return 0;
 		}
 		return 1 + depth(T, T.parent(v));
 	}
 
-
 	public int height1(LinkedBinaryTree<E> T) {
-		/**
-		 * Percorrer a lista T Verificar se o Position v da lista T um nodo externo se
-		 * sim, o inteiro h recebe o maior entre o proprio h e o depth de v na lista T
-		 */
+		
 		int h = 0;
 		for (Position<E> v : T.positions()) {
 			if (T.isExternal(v)) {

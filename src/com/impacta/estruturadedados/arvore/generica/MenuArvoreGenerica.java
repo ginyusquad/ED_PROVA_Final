@@ -50,11 +50,11 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar um elemento na Árvore ");
-	        out.println("\t addLast(): ");
+	        out.println("\t addLast(x): Adiciona o nó x na ultima ponta da arvore ou ramo selecionado");
 	        out.println("     2. Alterar um elemento da Árvore");
-	        out.println("\t replace(): ");
+	        out.println("\t replace(x,conteudo): altera o conteudo do elemento selecionado");
 	        out.println("     3. Remover um elemento da Árvore");
-	        out.println("\t restruturar a arvore!");
+	        out.println("\t restruturar a arvore para manter a integridade, retirando o ramo e re arrumando a mesma");
 	        out.println("     4. Mostrar a Árvore");
 	        out.println("     5. Mostrar Altura da Árvore");
 	        out.println("\t height1():");

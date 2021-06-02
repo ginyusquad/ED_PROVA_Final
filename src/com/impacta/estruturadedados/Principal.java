@@ -68,16 +68,12 @@ public class Principal implements IMenu{
 			
 			// Valida a entrada
 			while(opcao <= 0 || opcao > 13){
-
 				out.print("Opção inválida!! \nDigite novamente: ");
 				opcao = entrada.nextInt();
 				out.println();
-
 			}
-			
 
 			ISubMenu subMenu =  null;
-
 			switch(opcao) {
 				case 1:
 					subMenu = new MenuArranjo(this);
@@ -126,7 +122,7 @@ public class Principal implements IMenu{
 			// Inicia o Sub Menu correspondente
 			subMenu.show();
 			
-		}while(opcao < 13 );
+		}while(opcao != 13 );
 		
 		entrada.close();
 	};
@@ -143,7 +139,7 @@ public class Principal implements IMenu{
 
 	@Override
 	public String getTitulo() {
-		return this.titulo ;
+		return this.titulo;
 	};
 
 }

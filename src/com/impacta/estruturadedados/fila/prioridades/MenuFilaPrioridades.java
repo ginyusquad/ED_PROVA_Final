@@ -38,12 +38,12 @@ public class MenuFilaPrioridades implements ISubMenu {
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
-	        out.println("\t insert():");
+	        out.println("\t insert(k, v): Insere o v na fila");
 	        out.println("     2. Remover elemento com menor Prioridade ");
-	        out.println("\t removeMin():");
+	        out.println("\t removeMin(): Retorna o elemento com menor chave");
 	        out.println("     3. Ver o primeiro elemento da Fila ");
-	        out.println("\t min():");
-	        out.println("     4. Mostrar a Fila");
+	        out.println("\t min(): Retorna o elemento com menor chave");
+	        out.println("     4. Mostrar a Fila de Prioridade");
 	        out.println("     5. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");
 	        

@@ -38,9 +38,9 @@ public class MenuMapa  implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
-	        out.println("\t put(): ");
+	        out.println("\t put(k, v): Insere um elemento no Mapa com chave k e valor v");
 	        out.println("     2. Remover elemento");
-	        out.println("\t remove(): ");
+	        out.println("\t remove(k): Remove o elemento com a chave k do Mapa");
 	        out.println("     3. Mostrar o Mapa");
 	        out.println("     4. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");

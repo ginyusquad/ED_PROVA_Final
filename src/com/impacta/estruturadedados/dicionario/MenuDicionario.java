@@ -8,8 +8,7 @@ import java.util.concurrent.TimeUnit;
 import com.impacta.estruturadedados.dicionario.source.HashTableMultiMap;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
-import com.impacta.estruturadedados.mapa.source.HashTableMap;
-import com.impacta.estruturadedados.mapa.source.Map;
+
 import com.impacta.estruturadedados.utils.views.Tabela;
 
 public class MenuDicionario implements ISubMenu{
@@ -41,9 +40,13 @@ public class MenuDicionario implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
-	        out.println("\t put(): ");
+	        out.println("\t put(k, v): adiciona um elemento com chave k e valor v");
+	        out.println("\t           caso já exista uma chave k sera acresentado outro valor");
+	        out.println("\t           junto ao existente, diferente do map");
 	        out.println("     2. Remover elemento");
-	        out.println("\t remove(): ");
+	        out.println("\t remove(entry): remove o elemento entry selecionado");
+	        out.println("\t               e importante re-saltar que dicionarios");
+	        out.println("\t               podem possuir varios valores para uma unica chave!");
 	        out.println("     3. Mostrar o dicionario");
 	        out.println("     4. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..4) }>");
