@@ -27,6 +27,19 @@ public class MenuFila implements ISubMenu{
 	public void show() {
 		
 		out.println( getTitulo() + ":");
+		out.println("\n# Descrição:");
+		out.println("\t    Uma Fila é uma estrutura de dados que armazena elementos seguindo o padrão");
+        out.println("\t   FIFO, ao seja, o primeiro elemento a ser adicionado e o primeiro a ser removido.");
+        out.println("\t   Por exemplo em uma mainframe de um Banco possue uma fila de operaçoes como essa:");
+        out.println("");
+        out.println("\t    1° Criar Conta A com R$ 300,0 de saldo        [Usuario: Gilberto (1° titular da conta A)]");
+        out.println("\t    2° Sacar R$ 300,0 da Conta A                  [Usuario: Rodigo   (2° titular da conta A)]");
+        out.println("\t    3° Tranferir R$ 300,0 da Conta A para Conta B [Usuario: Takai    (3° titular da conta A)]");
+        out.println("");
+        out.println("\t    Nesse exemplo o computador vai criar a conta A e depois vai sacar 300 reais dela");
+        out.println("\t   em seguinda  no 3° elemento da fila o usuario takai vai tentar transferir e dará saldo insuficiente");
+        out.println("\t    Se não tivessemos a fila de operação poderia ocorrer em qualquer ordem e não teria um controle sobre oque executa primeiro");
+        out.println("\t   poderiamos ter também o caso da operação 2° e 3° ocorrerem ao mesmo tempo, oque faria o banco perder 300 reais.\n");
 		
 		Queue<Integer> fila = new FilaNode<Integer>();
 		// Montando pilha padrao

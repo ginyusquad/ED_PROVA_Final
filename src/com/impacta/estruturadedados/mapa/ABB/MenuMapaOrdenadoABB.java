@@ -31,6 +31,12 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 		
 		BinarySearchTree<Integer, String> mapa =  criaArvoreBinariaPadrao();
 		
+		out.println("\n# Descrição:");
+		out.println("\t    Um mapa Ordenado ABB é uma estrutura de dados semelhante ao Mapa");
+        out.println("\t   no entanto ele usa uma arvore binaria de busca para indexar.\n");
+        
+			
+		
 		Tabela tbl_mapa = new Tabela(mapa);
 		Arvore<Entry<Integer, String>> arvore = new Arvore<Entry<Integer,String>>(mapa);
 		

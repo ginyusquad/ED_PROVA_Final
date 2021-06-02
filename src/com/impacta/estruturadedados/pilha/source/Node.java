@@ -2,11 +2,10 @@ package com.impacta.estruturadedados.pilha.source;
 
 public class Node<E>{
 	
-	// Dado mantido pelo Node
 	private E dado;
-	// Referencia para o Proximo elemento
+	
 	private Node<E> prev;
-	// Referencia para o elemento Anterior
+	
 	private Node<E> next;
 	
 	public boolean hasNext(){

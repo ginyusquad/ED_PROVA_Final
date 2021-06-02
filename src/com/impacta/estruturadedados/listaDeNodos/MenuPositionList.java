@@ -28,7 +28,7 @@ public class MenuPositionList implements ISubMenu {
 	public void show() {
 		
 		out.println( getTitulo() + ":");
-		
+
 		Tabela tbl_posicoes = new Tabela(listNodos);
 		out.print(tbl_posicoes.toString);
 		// Pegando qual eleemnto o ussuario quer trocar!!!
@@ -48,9 +48,10 @@ public class MenuPositionList implements ISubMenu {
 			 
 			out.println("    Opções: ");
 			out.println("     1. Adicionar um elemento Antes ou Depois do Selecionado");
-			out.println("\t addBefore(),addAfter(): ");
+			out.println("\t addBefore(x,y):Adiciona o elemento y antes do nodo x");
+			out.println("\t addAfter(x,y): Adiciona o elemento y depois do nodo x");
 			out.println("     2. Remover um elemento Antes ou Depois do Selecionado");
-			out.println("\t remove(): ");
+			out.println("\t remove(x): Remove o elemento x");
 			out.println("     3. Selecionar outro elemento");
 			out.println("     4. Mostrar Tabela de Posições");
 			out.println("     5. Sair para o menu superior ");
@@ -66,7 +67,6 @@ public class MenuPositionList implements ISubMenu {
 						out.println("      2. Adicionar um elemento Depois do Selecionado");
 						out.println("      3. Sair para menu superior");
 						out.print("    Selecione uma opção (1..3) }>");
-						out.println();
 						sub_opcao = entrada.nextInt();
 						int elemento = 0;
 						switch(sub_opcao) {

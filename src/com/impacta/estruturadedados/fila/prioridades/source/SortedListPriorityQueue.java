@@ -16,8 +16,8 @@ public class SortedListPriorityQueue<K, V> implements PriorityQueue<K, V> {
 	protected Position<Entry<K, V>> actionPos;
 	
 	protected static class MyEntry<K, V> implements Entry<K, V> {
-		protected K k; // chave
-		protected V v; // valor
+		protected K k;
+		protected V v;
 		public MyEntry(K key, V value) {
 			k = key;
 			v = value;

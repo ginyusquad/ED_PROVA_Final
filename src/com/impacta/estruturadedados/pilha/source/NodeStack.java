@@ -5,7 +5,6 @@ public class NodeStack<E> implements Stack<E> {
 	private Node<E> cabeca =  null;
 	private int size = 0;
 	
-	
 	@Override
 	public int size() {
 		return size;
@@ -24,22 +23,17 @@ public class NodeStack<E> implements Stack<E> {
 
 	@Override
 	public void push(E elemento){
-			
 		
-		// Cria um node e atribui o valor ao elemento
 		Node<E> node =  new Node<E>();
 		node.setDado(elemento);
 
-		// Verifica se o trail j� foi definido
+		
 		if(cabeca != null){
-			// Definindo que a cabe�a tera como elemento anterior
-			// o novo elemento
 			cabeca.setPrev(node);
 			node.setPrev(null);
 			node.setNext(cabeca);
 		}
 		
-		// Definindo novo node como o cabe�a
 		cabeca = node;
 		size++;
 	}
@@ -56,7 +50,6 @@ public class NodeStack<E> implements Stack<E> {
 		
 		
 		if(cabeca.hasNext()){
-			// Retirando ultimo node 
 			cabeca.getNext().setPrev(null);
 			cabeca = cabeca.getNext();
 			

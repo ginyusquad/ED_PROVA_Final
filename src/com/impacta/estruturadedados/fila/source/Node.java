@@ -3,10 +3,9 @@ package com.impacta.estruturadedados.fila.source;
 public class Node<E> {
 	
 	private E dado;
-	// link para o proximo elemento da lista
+
 	private Node<E> next;
-	// link para o elemento anterior da lista
-	// Pode estar nullo dependendo da lista!
+
 	private Node<E> prev;
 	
 	public Node(E dado) {
@@ -35,11 +34,11 @@ public class Node<E> {
 	public void setPrev(Node<E> prev) {
 		this.prev = prev;
 	}
-	/* Verifica se existe uma proximo elemento do node atual */
+
 	public boolean hasNext() {
 		return next != null;
 	}
-	/* Verifica se existe uma proximo elemento do node atual */
+
 	public boolean hasPrev() {
 		return prev != null;
 	}
@@ -48,7 +47,6 @@ public class Node<E> {
 		return dado != null;
 	}
 	
-	// Preciso de algo que n�o seja getDado kkk
 	public E getValue() {
 		return dado;
 	}

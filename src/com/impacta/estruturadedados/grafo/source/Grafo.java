@@ -1,8 +1,5 @@
 package com.impacta.estruturadedados.grafo.source;
 
-//Este é um exemplo simples de implementação de grafo representado por lista
-//de adjacências
-
 import java.util.List;
 import java.util.ArrayList;
 

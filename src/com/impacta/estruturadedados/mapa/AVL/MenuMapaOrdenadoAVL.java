@@ -31,6 +31,12 @@ public class MenuMapaOrdenadoAVL implements ISubMenu{
 		
 		AVLTreeMap<Integer, String> mapa =  criaArvoreBinariaPadra();
 		
+		out.println("\n# Descrição:");
+		out.println("\t    Um mapa Ordenado AVL é uma estrutura de dados semelhante ao Mapa");
+        out.println("\t   no entanto ele usa uma arvore binaria de busca para indexar como o");
+        out.println("\t   mapa Ordenado ABB, mas utiliza mecanicas para manter a arvore balanceada\n");
+        
+		
 		Tabela tbl_mapa = new Tabela(mapa);
 		Arvore<Entry<Integer, String>> arvore = new Arvore<Entry<Integer,String>>(mapa);
 		

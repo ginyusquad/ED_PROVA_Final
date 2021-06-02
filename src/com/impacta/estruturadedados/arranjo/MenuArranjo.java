@@ -25,8 +25,18 @@ public class MenuArranjo implements ISubMenu{
     	
         out.println( getTitulo() + ":");
         Arranjo arranjo = new Arranjo();
+        out.println("\n"
+        		  + "\t┌─────────────────────────────────────────────────────────────────────────────────┐\n"
+        		  + "\t│                                   DESCRICAO                                     │");
+        out.println("\t├─────────────────────────────────────────────────────────────────────────────────┤");  
+        out.println("\t│    Um arranjo é uma coleção de N elementos, sendo eles armazenados              │");
+        out.println("\t│   em um vetor que vai de 0 a N - 1, sendo o indice 0 o primeiro elemento e      │");
+        out.println("\t│   o indice N - 1 o ultimo elemento!                                             │");
+        out.println("\t│    Ele pode ser utilizado para armazenar, por exemplo, notas de uma prova       │");
+        out.println("\t│   sendo que vc saberá quantas provas seram aplicadas.                           │");
+        out.println("\t└─────────────────────────────────────────────────────────────────────────────────┘\n");
         
-
+        
 		out.println("    Por padrão será usado o vetor:");
 	    out.println("      " + arranjo.toString()  + "\n");
     

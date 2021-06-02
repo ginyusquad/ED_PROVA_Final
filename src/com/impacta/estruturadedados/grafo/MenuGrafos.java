@@ -30,9 +30,36 @@ public class MenuGrafos implements ISubMenu{
 		out.println( getTitulo() + ":");
 		
 		Grafo<String> grafo =  criarGrafoPadrao();
+		out.println("\n# Descrição:");
+	    out.println("\t    Um Grafo é uma estrutura de dados que armazena elementos e suas relações");
+        out.println("\t   os elementos são as Vertices e suas ligações são as arestas");
+        out.println("\t   Por exemplo esse mapa de um bairro :\n");
+        out.println("\t\t   Bairro: Jardim Silveira");
+        out.println("\t\t    (R. São José)                        (Av. Castelo Branco)");
+        out.println("\t\t          \\                               /          ");
+        out.println("\t\t           \\* Aresta                     / * Aresta ");
+        out.println("\t\t            \\                           /            ");
+        out.println("\t\t             \\                         /            ");
+        out.println("\t\t            (Av. Santa padroeira do brasil)           ");
+        out.println("\t\t              /             |            \\");
+        out.println("\t\t             /* Aresta      |* Aresta     \\ * Aresta ");
+        out.println("\t\t            /               |              \\");
+        out.println("\t\t           /                |               \\");
+        out.println("\t\t  (R. Pilheiros)       (R. Triade)       (Peco do conforto)");
+        out.println("\t\t         \\                   \\                /");
+        out.println("\t\t          \\                   \\* Aresta      /* Aresta ");
+        out.println("\t\t           \\                   \\            /");
+        out.println("\t\t            \\                  (R. dos Santos)");
+        out.println("\t\t             \\* Aresta               /");
+        out.println("\t\t              \\                     /");
+        out.println("\t\t               \\                   /* Aresta ");
+        out.println("\t\t                \\                 /");
+        out.println("\t\t               (Av. Brigadeiro Jordão)");
+        out.println("        @Curiosidade: Existem bancos de dados especializados em só arazenar em grafos\n");
+		
+		
 		
 		Tabela tbl_grafo = new Tabela(grafo);
-		
 		out.println("    Por padrão será usado o Grafo:");
 	    out.println("\n" + tbl_grafo.toString + "\n");
     
@@ -189,7 +216,7 @@ public class MenuGrafos implements ISubMenu{
 		
 		Vertice<String> rudge = grafo.addVertice("Av. Rudge");
 		Vertice<String> bosque = grafo.addVertice("R. do Bosque");
-		Vertice<String> norma = grafo.addVertice("R. Norma Pieruccini Giannotti");
+		Vertice<String> norma = grafo.addVertice("R. Norma Pieruccini");
 		
 		grafo.addAresta(rudge, bosque);
 		grafo.addAresta(rudge, norma);

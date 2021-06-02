@@ -6,11 +6,10 @@ public class FilaNode<E> implements Queue<E>{
 	private Node<E> tail;
 	private int tamanho = 0;
 
-	// Lista ciscular encadeada
 	public FilaNode() {
 		this.head = new Node<E>();
 		this.tail = new Node<E>();
-		// Encadeando a estrutura
+
 		head.setNext(tail);
 		head.setPrev(tail);
 		tail.setNext(head);
@@ -20,13 +19,11 @@ public class FilaNode<E> implements Queue<E>{
 	
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
 		return tamanho;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
 		return tamanho < 1;
 	}
 
@@ -41,17 +38,16 @@ public class FilaNode<E> implements Queue<E>{
 
 	@Override
 	public void enqueue(E elemento) {
+	
+		Node<E> nodeEmpilhado = new Node<E>(elemento);
 		
-		// Bem mais facil adicioanr um novo elemento!!
-			Node<E> nodeEmpilhado = new Node<E>(elemento);
-			
-			nodeEmpilhado.setPrev(tail.getPrev());
-			nodeEmpilhado.setNext(tail);
-			tail.getPrev().setNext(nodeEmpilhado);
-			tail.setPrev(nodeEmpilhado);
+		nodeEmpilhado.setPrev(tail.getPrev());
+		nodeEmpilhado.setNext(tail);
+		tail.getPrev().setNext(nodeEmpilhado);
+		tail.setPrev(nodeEmpilhado);
 
-			
-			tamanho++;
+		
+		tamanho++;
 	}
 
 	@Override
@@ -69,8 +65,6 @@ public class FilaNode<E> implements Queue<E>{
 		
 		
 		tamanho--;
-	
-		// If se for o ultimo elemento da lsita defazer a head e tail
 		
 		
 		return nodeDesempinhado.getDado();
@@ -79,7 +73,6 @@ public class FilaNode<E> implements Queue<E>{
 	
 	public String toString() {
 		
-		// Valida se esta zerado a lista
 		if(tamanho == 0)return "[]";
 		
 		String vetor = "["+head.getNext().getDado().toString();
@@ -102,7 +95,7 @@ public class FilaNode<E> implements Queue<E>{
 	public void clear() {
 		this.head = new Node<E>();
 		this.tail = new Node<E>();
-		// Encadeando a estrutura
+		
 		head.setNext(tail);
 		head.setPrev(tail);
 		tail.setNext(head);

@@ -31,6 +31,16 @@ public class MenuArvoreBinaria implements ISubMenu{
 		out.println( getTitulo() + ":");
 				
 		LinkedBinaryTree<Integer> arvoreBinaryInteira = criarArvoreBinaryPadrao();
+		
+		out.println("\n"
+      		  	  + "\t┌─────────────────────────────────────────────────────────────────────────────────────┐\n"
+      		   	  + "\t│                                       DESCRICAO                                     │");
+		out.println("\t├─────────────────────────────────────────────────────────────────────────────────────┤");
+		out.println("\t│    Uma arvore binaria é uma estrutura de dados, formada por 2 nós filhos sendo eles │");
+        out.println("\t│   1 a esquerda e 1 a direita, cada Nó também possui 2 nos na esquerda e direita     │");
+        out.println("\t│   podendo indexar estruturas gigantescas como por exemplo um sistemas de arquivos.  │");
+        out.println("\t└─────────────────────────────────────────────────────────────────────────────────────┘\n"); 
+		
 		// Montando Arvore padrao
 		Arvore<Integer> arvore =  new Arvore<Integer>(arvoreBinaryInteira);
 		out.println(" Por Padrão será usado a árvore:");
