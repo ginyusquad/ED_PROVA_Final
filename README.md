@@ -1,5 +1,3 @@
-[![Testar no Browser](https://raw.githubusercontent.com/gilberto-009199/JAgendaWeb/master/gitpod.svg)](https://gitpod.io#https://github.com/ginyusquad/ED_PROVA_Final)
-
 # Projeto Estrutura de dados(Avaliação Final)
 
 ![Tela inicial](./exemplo.png)
@@ -17,5 +15,4 @@
 
 ## Bibliotecas
 
-* [JUnit](https://junit.org/junit5/) - Framework para desenvolvimento de testes unitarios
 * [Java](https://openjdk.java.net/) - Linguagem de programação 
