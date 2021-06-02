@@ -30,12 +30,17 @@ public class MenuMapa  implements ISubMenu{
 		
 		Tabela tbl_mapa = new Tabela(mapa);
 		
-		out.println("\n# Descrição:");
-		out.println("\t    Um mapa é uma estrutura de dados que armazena elementos indexados por chave-valor");
-        out.println("\t   o mapa permite apenas chaves diferentes e utiliza uma função hash");
-        out.println("\t   para mapear a chave para uma posiçao no vetor.");
-        out.println("\t    * vetor[ Compressao( hash(chave), N) ] = (chave: valor)");
-        	
+		out.println("\n"
+		  	  	  + "\t┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
+		   	  	  + "\t│                                                   DESCRICAO                                              │");
+		out.println("\t├──────────────────────────────────────────────────────────────────────────────────────────────────────────┤");
+		out.println("\t│                                                                                                          │");
+		out.println("\t│    Um mapa é uma estrutura de dados que armazena elementos indexados por chave-valor                     │");
+        out.println("\t│   o mapa permite apenas chaves diferentes e utiliza uma função hash para mapear a                        │");
+        out.println("\t│   chave para uma posiçao no vetor.                                                                       │");
+        out.println("\t│    * vetor[ Compressao( hash(chave), N) ] = (chave: valor)                                               │");
+        out.println("\t│                                                                                                          │");
+        out.println("\t└──────────────────────────────────────────────────────────────────────────────────────────────────────────┘\n");
 		
 		out.println("    Por padrão será usado o Mapa:");
 	    out.println("      " + tbl_mapa.toString + "\n");

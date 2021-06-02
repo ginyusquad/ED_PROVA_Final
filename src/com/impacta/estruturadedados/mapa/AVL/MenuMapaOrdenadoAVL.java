@@ -31,16 +31,20 @@ public class MenuMapaOrdenadoAVL implements ISubMenu{
 		
 		AVLTreeMap<Integer, String> mapa =  criaArvoreBinariaPadra();
 		
-		out.println("\n# Descrição:");
-		out.println("\t    Um mapa Ordenado AVL é uma estrutura de dados semelhante ao Mapa");
-        out.println("\t   no entanto ele usa uma arvore binaria de busca para indexar como o");
-        out.println("\t   mapa Ordenado ABB, mas utiliza mecanicas para manter a arvore balanceada\n");
-        
+		out.println("\n"
+		  	  	  + "\t┌────────────────────────────────────────────────────────────────────────────┐\n"
+		   	  	  + "\t│                                 DESCRICAO                                  │");
+		out.println("\t├────────────────────────────────────────────────────────────────────────────┤");
+		out.println("\t│                                                                            │");
+		out.println("\t│   Um mapa Ordenado AVL é uma estrutura de dados semelhante ao Mapa         │");
+        out.println("\t│  no entanto ele usa uma arvore binaria de busca para indexar como o        │");
+        out.println("\t│  mapa Ordenado ABB, mas utiliza mecanicas para manter a arvore balanceada. │");
+        out.println("\t│                                                                            │");
+        out.println("\t└────────────────────────────────────────────────────────────────────────────┘\n");
 		
 		Tabela tbl_mapa = new Tabela(mapa);
 		Arvore<Entry<Integer, String>> arvore = new Arvore<Entry<Integer,String>>(mapa);
 		
-		out.println("\t\t\t@Um mapa ordenado ABB utiliza uma arvore binaria de pesquisa!");
 		out.println("    Por padrão será usado o Mapa:");
 	    out.println("    Tabela:  \n" + tbl_mapa.toString + "\n");
 	    out.println("    Arvore binaria:  \n" + arvore.toString + "\n");

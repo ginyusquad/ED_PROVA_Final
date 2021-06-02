@@ -36,19 +36,25 @@ public class MenuListaDeNodos implements ISubMenu{
 		listNodos.addFirst(3);
 		listNodos.addFirst(2);
 		listNodos.addFirst(1);
-		out.println("\n# Descrição:");
-		out.println("\t    Uma lista de nodos é estrutura de dados que armazena um conjunto de nós, sendo");
-        out.println("\t   que cada um armazena um elemento e a referencia do nó anterior e posterior da sua posição atual,");
-        out.println("\t   dentro dela e usado uma Abstração chamada de position que nos permite adcionar e remover elementos");
-        out.println("\t   em relação a um elemento que já exista na lista, por exemplo:");
-        out.println("\t     [\" Primeiro \", \"Segundo\", \"Terceiro\"]");
-        out.println("\t      .addBefore(\"Segundo\", \"Entre o Primeiro e o Segundo\")");
-        out.println("\t      .addAfter(\"Segundo\", \"Entre o Segundo e o Terceiro\")");
-        out.println("\t     [\" Primeiro \", \"Entre o Primeiro e o Segundo \", \"Segundo\", \"Entre o Segundo e o Terceiro\", \"Terceiro\"]");
-        out.println("\t    Fora isso e possivel usar o addFirst(x) para adicionar no começo da lista.");
-        out.println("\t   e addLast(x) para adicionar no começo da lista\n");
+		out.println("\n"      
+		  	  	  + "\t┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
+		   	  	  + "\t│                                                         DESCRICAO                                                      │");
+		out.println("\t├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤");
+		out.println("\t│                                                                                                                        │");
+		out.println("\t│      Uma lista de nodos é estrutura de dados que armazena um conjunto de nós, sendo                                    │");
+        out.println("\t│     que cada um armazena um elemento e a referencia do nó anterior e posterior da sua posição atual,                   │");
+        out.println("\t│     dentro dela e usado uma Abstração chamada de position que nos permite adcionar e remover elementos                 │");
+        out.println("\t│     em relação a um elemento que já exista na lista, por exemplo:                                                      │");
+        out.println("\t│       [\" Primeiro \", \"Segundo\", \"Terceiro\"]                                                                            │");
+        out.println("\t│        .addBefore(\"Segundo\", \"Entre o Primeiro e o Segundo\")                                                           │");
+        out.println("\t│        .addAfter(\"Segundo\", \"Entre o Segundo e o Terceiro\")                                                            │");
+        out.println("\t│       [\" Primeiro \", \"Entre o Primeiro e o Segundo \", \"Segundo\", \"Entre o Segundo e o Terceiro\", \"Terceiro\"]           │");
+        out.println("\t│      Fora isso e possivel usar o addFirst(x) para adicionar no começo da lista.                                        │");
+        out.println("\t│     e addLast(x) para adicionar no começo da lista.                                                                    │");
+        out.println("\t│                                                                                                                        │");
+        out.println("\t└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘\n");
 		
-		out.println("    Por padrão será usado a Lista de Nodos:");
+        out.println("    Por padrão será usado a Lista de Nodos:");
 	    out.println("      " + listNodos.toString() + "\n");
     
         int opcao = -1;

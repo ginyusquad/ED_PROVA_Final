@@ -27,11 +27,16 @@ public class MenuPilha implements ISubMenu {
 		
 		out.println( getTitulo() + ":");
 		
-		out.println("\n# Descrição:");
-		out.println("\t    Uma Pilha é uma estrutura de dados que armazena elementos seguindo o padrão");
-        out.println("\t   LIFO, ao seja, o primeiro elemento a entrar e o ultimo a sair.");
-        out.println("\t   @Curiosidade: e possivel contruir usando Array ou uma LinkedList.\n");
-        
+		out.println("\n"
+		  	  	  + "\t┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n"
+		   	  	  + "\t│                                                   DESCRICAO                                              │");
+		out.println("\t├──────────────────────────────────────────────────────────────────────────────────────────────────────────┤");
+		out.println("\t│                                                                                                          │");
+		out.println("\t│   Uma Pilha é uma estrutura de dados que armazena elementos seguindo o padrão                            │");
+        out.println("\t│  LIFO, ao seja, o primeiro elemento a entrar e o ultimo a sair.                                          │");
+        out.println("\t│                                                           @Curiosidade: Uma pilha pode ser contruida     │");
+        out.println("\t│                                                                        usando um Array ou uma LinkedList.│");
+        out.println("\t└──────────────────────────────────────────────────────────────────────────────────────────────────────────┘\n");
 		
 		Stack<Integer> pilha = new NodeStack<Integer>();
 		// Montando pilha padrao
