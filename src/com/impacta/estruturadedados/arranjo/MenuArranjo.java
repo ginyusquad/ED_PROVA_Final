@@ -36,9 +36,13 @@ public class MenuArranjo implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Somar todos os elementos ");
+	        out.println("\t somar(): Percorre a coleção de elementos somando");
 	        out.println("     2. Pegar o maior elemento ");
+	        out.println("\t maior(): Percorre a coleção de elementos pegando o maior");
 	        out.println("     3. Pegar o menor elemento ");
+	        out.println("\t menor(): Percorre a coleção de elementos pegando o menor");
 	        out.println("     4. Ver a repetição dos elementos iguais ");
+	        out.println("\t repeticoes(): Percorre a coleção de elementos pegando contando os elementos semelhantes");
 	        out.println("     5. Alterar o vetor");
 	        out.println("     6. Sair para o menu principal \n");
 	        out.print("    Selecione uma opção (1..6) }>");
@@ -60,7 +64,7 @@ public class MenuArranjo implements ISubMenu{
 	        		out.println("\tO menor item é: " + arranjo.menor() + "\n");
 	        		break;
 	        	case 4:
-	        		out.print("\tDigite o valor que deseja ver as repetições }>");
+	        		out.print("\tDigite o elemento que deseja ver as repetições no vetor }>");
 	        		int numeroRepetido = entrada.nextInt();
 	        		out.println("\tPara o vetor "+ arranjo.toString());
 	        		out.println("\tO valor "+numeroRepetido+" se repete " +
@@ -70,7 +74,7 @@ public class MenuArranjo implements ISubMenu{
 	        		arranjo = lerArranjo();
 	        		break;
 	        	case 6:
-	        		this.menuPrincipal.show();
+	        		close();
 	        		return;
 	        	default:
 	        		out.println("    Não entendi!\n");
@@ -111,9 +115,7 @@ public class MenuArranjo implements ISubMenu{
     }
     // fechar o menu
     public void close(){
-    	
-    	menuPrincipal.show();
-
+    	out.println("    Saindo do menu "+ this.titulo);
     }
 
     public void setMenu(IMenu menuPrincipal){

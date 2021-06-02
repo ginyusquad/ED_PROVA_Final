@@ -38,8 +38,11 @@ public class MenuFilaPrioridades implements ISubMenu {
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
+	        out.println("\t insert():");
 	        out.println("     2. Remover elemento com menor Prioridade ");
+	        out.println("\t removeMin():");
 	        out.println("     3. Ver o primeiro elemento da Fila ");
+	        out.println("\t min():");
 	        out.println("     4. Mostrar a Fila");
 	        out.println("     5. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");
@@ -114,7 +117,7 @@ public class MenuFilaPrioridades implements ISubMenu {
 
 	@Override
 	public void close() {
-		menuPrincipal.show();
+		out.println("    Saindo do menu "+ this.titulo);
 	}
 
 	@Override

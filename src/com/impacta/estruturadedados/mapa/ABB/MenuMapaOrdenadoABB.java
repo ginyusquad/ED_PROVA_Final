@@ -47,7 +47,7 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 	        out.println("     2. Remover elemento");
 	        out.println("     3. Mostrar o Mapa");
 	        out.println("     4. Sair para o menu principal ");
-	        out.print("    Selecione uma opção (1..5) }>");
+	        out.print("    Selecione uma opção (1..4) }>");
 	        
 	        opcao = entrada.nextInt();
 	        int chave = 0;
@@ -133,14 +133,12 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 
 	@Override
 	public void close() {
-		// TODO Auto-generated method stub
-		
+		out.println("    Saindo do menu "+ this.titulo);
 	}
 
 	@Override
 	public void setMenu(IMenu menuPrincipal) {
-		// TODO Auto-generated method stub
-		
+		this.menuPrincipal = menuPrincipal;
 	}
 
 	@Override

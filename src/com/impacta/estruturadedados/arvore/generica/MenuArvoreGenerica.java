@@ -50,10 +50,14 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar um elemento na Árvore ");
+	        out.println("\t addLast(): ");
 	        out.println("     2. Alterar um elemento da Árvore");
+	        out.println("\t replace(): ");
 	        out.println("     3. Remover um elemento da Árvore");
+	        out.println("\t restruturar a arvore!");
 	        out.println("     4. Mostrar a Árvore");
 	        out.println("     5. Mostrar Altura da Árvore");
+	        out.println("\t height1():");
 	        out.println("     6. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..6) }>");
 	        opcao = entrada.nextInt();
@@ -65,8 +69,9 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        	case 1:
 	        		out.println("\tPara adicionar na Árvore selecione um Ramo:");
 	        		selecionado = (TreeNode<String>) selecionarNaArvore(arvore);
-	        		out.print("\tDigite o que será adicionado }>");
-	        		elemento = entrada.next();
+	        		out.println("\tDigite o que será adicionado:");
+	        		entrada.nextLine();
+	        		elemento = entrada.nextLine();
 	        		
 	        		criarFilho( selecionado, elemento);
 	        		arvore =  new Arvore<String>(sistemas_operacionais);
@@ -78,7 +83,8 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		out.println("\tPara alterar a Árvore selecione um Ramo:");
 	        		selecionado = (TreeNode<String>) selecionarNaArvore(arvore);
 	        		out.print("\tDigite o que será colocado no lugar }>");
-	        		elemento = entrada.next();
+	        		entrada.nextLine();
+	        		elemento = entrada.nextLine();
 	        		sistemas_operacionais.replace(selecionado, elemento);
 
 	        		arvore =  new Arvore<String>(sistemas_operacionais);
@@ -138,8 +144,14 @@ public class MenuArvoreGenerica implements ISubMenu{
 		out.println(arvore.toString);
 		out.print("    Selecione um ramo (1.1, 1.2 e etc) }>");
         String opcao = entrada.next();
+        String elemento = null;
         
-		String elemento = arvore.map.get(opcao).toString();
+        try { elemento = arvore.map.get(opcao).toString(); }
+        catch (Exception e) {
+        	out.println("    Não consegui identificar esse ramo!!  ");
+        	return selecionarNaArvore(arvore);
+		}
+        
 		out.println("    Ramo selecionado: "+ opcao +" "+ elemento);
 		
 		return arvore.map.get(opcao);
@@ -188,14 +200,12 @@ public class MenuArvoreGenerica implements ISubMenu{
 	}
 	@Override
 	public void close() {
-		// TODO Auto-generated method stub
-		
+		out.println("    Saindo do menu "+ this.titulo);
 	}
 
 	@Override
 	public void setMenu(IMenu menuPrincipal) {
-		// TODO Auto-generated method stub
-		
+		this.menuPrincipal = menuPrincipal;
 	}
 
 	@Override

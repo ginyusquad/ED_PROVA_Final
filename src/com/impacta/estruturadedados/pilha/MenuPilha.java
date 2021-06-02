@@ -45,8 +45,11 @@ public class MenuPilha implements ISubMenu {
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
+	        out.println("\t push(): ");
 	        out.println("     2. Remover elemento ");
+	        out.println("\t pop(): ");
 	        out.println("     3. Ver o primeiro elemento da pilha ");
+	        out.println("\t top(): ");
 	        out.println("     4. Mostrar a Pilha");
 	        out.println("     5. Sair para o menu principal \n");
 	        out.print("    Selecione uma opção (1..5) }>");
@@ -96,7 +99,7 @@ public class MenuPilha implements ISubMenu {
 
 	@Override
 	public void close() {
-		menuPrincipal.show();
+		out.println("    Saindo do menu "+ this.titulo);
 	}
 
 	@Override

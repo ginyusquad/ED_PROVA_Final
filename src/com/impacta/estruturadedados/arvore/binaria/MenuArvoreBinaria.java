@@ -42,8 +42,11 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar um elemento na Árvore Binaria");
+	        out.println("\t add():");
 	        out.println("     2. Alterar um elemento da Árvore Binaria");
+	        out.println("\t replace():");
 	        out.println("     3. Remover um elemento da Árvore Binaria");
+	        out.println("\t remove():");
 	        out.println("     4. Mostrar a Árvore Binaria");
 	        out.println("     5. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");
@@ -160,7 +163,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 
 	@Override
 	public void close() {
-		this.menuPrincipal.show();
+		out.println("    Saindo do menu " + this.titulo);
 	}
 
 	@Override

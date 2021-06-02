@@ -45,8 +45,11 @@ public class MenuFila implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento");
+	        out.println("\t enqueue(): ");
 	        out.println("     2. Remover elemento ");
+	        out.println("\t dequeue(): ");
 	        out.println("     3. Ver o primeiro elemento da fila ");
+	        out.println("\t front(): ");
 	        out.println("     4. Mostrar a Fila");
 	        out.println("     5. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");
@@ -96,7 +99,7 @@ public class MenuFila implements ISubMenu{
 
 	@Override
 	public void close() {
-		menuPrincipal.show();
+		out.println("    Saindo do menu "+ this.titulo);
 	}
 
 	@Override

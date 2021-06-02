@@ -47,9 +47,13 @@ public class MenuListaDeNodos implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar elemento no começo da lista");
+	        out.println("\t addFirst(): ");
 	        out.println("     2. Remover elemento no final da lista");
+	        out.println("\t remove(): ");
 	        out.println("     3. Adicionar ou Remover um elemento à frente ou atrás\n        de um outro elemento");
+	        out.println("\t  + menu PositionList");
 	        out.println("     4. Substituir um elemento ");
+	        out.println("\t set(): ");
 	        out.println("     5. Mostrar a Lista");
 	        out.println("     6. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..6) }>");
@@ -59,7 +63,7 @@ public class MenuListaDeNodos implements ISubMenu{
 	        switch(opcao) {
 	        	case 1:
 	        		out.println("\tPara adicionar na Lista "+ listNodos.toString());
-	        		out.print("\tDigite o inteiro a ser adicionado no começo }>");
+	        		out.print("\tDigite o inteiro a ser adicionado }>");
 	        		int elemento = entrada.nextInt();
 	        		listNodos.addFirst(elemento);
 	        		out.println("\t  " + listNodos.toString() + "\n");
@@ -132,7 +136,7 @@ public class MenuListaDeNodos implements ISubMenu{
 
 	@Override
 	public void close() {
-		menuPrincipal.show();
+		out.println("    Saindo do menu "+ this.titulo);
 	}
 
 	@Override

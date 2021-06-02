@@ -48,7 +48,9 @@ public class MenuPositionList implements ISubMenu {
 			 
 			out.println("    Opções: ");
 			out.println("     1. Adicionar um elemento Antes ou Depois do Selecionado");
+			out.println("\t addBefore(),addAfter(): ");
 			out.println("     2. Remover um elemento Antes ou Depois do Selecionado");
+			out.println("\t remove(): ");
 			out.println("     3. Selecionar outro elemento");
 			out.println("     4. Mostrar Tabela de Posições");
 			out.println("     5. Sair para o menu superior ");
@@ -142,7 +144,8 @@ public class MenuPositionList implements ISubMenu {
 					out.print(tbl_posicoes.toString);
 					break;
 				case 5:
-					break;
+					this.close();
+					return;
 				default:
 					out.println("    Não entendi!!!\n");
 			}
@@ -156,7 +159,7 @@ public class MenuPositionList implements ISubMenu {
 
 	@Override
 	public void close() {
-		menuPrincipal.show();
+		out.println("    Saindo do menu "+ this.titulo);
 	}
 
 	@Override

@@ -41,9 +41,13 @@ public class MenuGrafos implements ISubMenu{
 	        
         	out.println("    Opções: ");
 	        out.println("     1. Adicionar Vertice");
+	        out.println("\t insertVertex(): ");
 	        out.println("     2. Adicionar Aresta");
+	        out.println("\t insertEdge(): ");
 	        out.println("     3. Remover Vertice");
+	        out.println("\t removeVertex(): ");
 	        out.println("     4. Remover Aresta");
+	        out.println("\t removeEdge(): ");
 	        out.println("     5. Mostrar o Grafo");
 	        out.println("     6. Sair para o menu principal ");
 	        out.print("    Selecione uma opção (1..5) }>");
@@ -70,22 +74,24 @@ public class MenuGrafos implements ISubMenu{
 	        		out.println("\tPara adicionar no Grafo:");
 	        		out.println(tbl_grafo.toString);
 	        		
-	        		out.print("\t Selecione a posicao da origem }>");
+	        		out.print("\t Selecione a posicao da vertice de origem }>");
 	        		int origemIndex = entrada.nextInt();
 	        		Vertice<String> verticOrigem  = null;
 	        		
 	        		try { verticOrigem =  tbl_grafo.mapVertices.get(origemIndex); }
 	        		catch (Exception e) {
 	        			out.println("\t Posicao não encontrada!!");
+	        			break;
 					}
 	        		
-	        		out.print("\t Selecione a posicao de destino }>");
+	        		out.print("\t Selecione a posicao da vertice de destino }>");
 	        		int destinoIndex = entrada.nextInt();
 	        		Vertice<String> verticDestino = null;
 	        		
 	        		try { verticDestino =  tbl_grafo.mapVertices.get(destinoIndex);}
 	        		catch (Exception e) {
 	        			out.println("\t Posicao não encontrada!!");
+	        			break;
 					}
 	        		grafo.addAresta(verticOrigem, verticDestino);
 	        		
@@ -99,7 +105,14 @@ public class MenuGrafos implements ISubMenu{
 	        		int index = 0;
 	        		out.print("\t Selecione a posicao Removida }>");
 	        		index = entrada.nextInt();
-	        		Vertice<String> verticeRemovido = grafo.vertices.get(index - 1);
+	        		Vertice<String> verticeRemovido = null;
+	        		
+	        		try { verticeRemovido = grafo.vertices.get(index - 1);}
+	        		catch (Exception e) {
+	        			out.println("\t Posicao não encontrada!!");
+	        			break;
+					}
+	        		
 	        		grafo.vertices.remove(verticeRemovido);
 	        		
 	        		for(Vertice<String> vert : grafo.vertices) {
@@ -131,6 +144,11 @@ public class MenuGrafos implements ISubMenu{
 	        		catch (Exception e) {
 	        			out.println("\t Posicao não encontrada!!");
 					}
+	        		if(vertic ==  null) {
+	        			out.println("\t Posicao não encontrada!!");
+	        			break;
+	        		}
+	        			
 	        		Tabela arestas = new Tabela(vertic.aresta);
 	        		
 	        		out.print("\t" + arestas.toString);
@@ -184,14 +202,12 @@ public class MenuGrafos implements ISubMenu{
 
 	@Override
 	public void close() {
-		// TODO Auto-generated method stub
-		
+		out.println("    Saindo do menu "+ this.titulo);
 	}
 
 	@Override
 	public void setMenu(IMenu menuPrincipal) {
-		// TODO Auto-generated method stub
-		
+		this.menuPrincipal = menuPrincipal;	
 	}
 
 	@Override
