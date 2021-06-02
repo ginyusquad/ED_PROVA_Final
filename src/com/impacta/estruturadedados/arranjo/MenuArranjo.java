@@ -7,7 +7,17 @@ import java.util.concurrent.TimeUnit;
 import com.impacta.estruturadedados.arranjo.source.Arranjo;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuArranjo implements ISubMenu{
     
     private IMenu menuPrincipal;
@@ -20,7 +30,7 @@ public class MenuArranjo implements ISubMenu{
         this.entrada = new Scanner(System.in);
     }
 
-    //Mostra e inicia o menu
+    // Mostra  o menu
     public void show(){
     	
         out.println( getTitulo() + ":");
@@ -61,29 +71,29 @@ public class MenuArranjo implements ISubMenu{
 			out.println();
 	        
 	        switch(opcao) {
-	        	case 1:
+	        	case 1:// Mostra a Soma
 	        		out.println("\tPara o vetor "+ arranjo.toString());
 	        		out.println("\tA soma dos itens é: " + arranjo.soma() + "\n");
 	        		break;
-	        	case 2:
+	        	case 2:// Mostra o maior elemento
 	        		out.println("\tPara o vetor "+ arranjo.toString());
 	        		out.println("\tO maior item é: " + arranjo.maior() + "\n");
 	        		break;
-	        	case 3:
+	        	case 3:// Mostra o menor elemento
 	        		out.println("\tPara o vetor "+ arranjo.toString());
 	        		out.println("\tO menor item é: " + arranjo.menor() + "\n");
 	        		break;
-	        	case 4:
+	        	case 4:// Mostra o numerod e vezes que um eleemento x se repete no conjunto
 	        		out.print("\tDigite o elemento que deseja ver as repetições no vetor }>");
 	        		int numeroRepetido = entrada.nextInt();
 	        		out.println("\tPara o vetor "+ arranjo.toString());
 	        		out.println("\tO valor "+numeroRepetido+" se repete " +
 	        					arranjo.repeticoes(numeroRepetido) +" vezes\n");
 	        		break;
-	        	case 5:
+	        	case 5:// Altera o arranjo
 	        		arranjo = lerArranjo();
 	        		break;
-	        	case 6:
+	        	case 6:// Sai para o menu principal
 	        		close();
 	        		return;
 	        	default:
@@ -95,7 +105,7 @@ public class MenuArranjo implements ISubMenu{
 			} catch (Exception e) {
 				
 			}
-        }while(opcao > 0 && opcao < 6);
+        }while(opcao != 6);
 	        
         out.println( menuPrincipal.getTitulo() + ":");
     }

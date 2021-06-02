@@ -9,7 +9,17 @@ import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.pilha.source.NodeStack;
 import com.impacta.estruturadedados.pilha.source.Stack;
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuPilha implements ISubMenu {
 
 	private IMenu menuPrincipal;
@@ -103,7 +113,7 @@ public class MenuPilha implements ISubMenu {
 				
 			}
 	        
-        }while(opcao > 0 && opcao < 5);
+        }while(opcao != 5);
         
 		out.println( menuPrincipal.getTitulo() + ":");
 	}

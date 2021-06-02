@@ -12,7 +12,17 @@ import com.impacta.estruturadedados.mapa.AVL.source.AVLTreeMap;
 import com.impacta.estruturadedados.utils.Entry;
 import com.impacta.estruturadedados.utils.views.Arvore;
 import com.impacta.estruturadedados.utils.views.Tabela;
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuMapaOrdenadoAVL implements ISubMenu{
 	
 	private IMenu menuPrincipal;

@@ -13,7 +13,17 @@ import com.impacta.estruturadedados.listaDeNodos.source.NodePositionList;
 
 import com.impacta.estruturadedados.listaDeNodos.source.PositionList;
 import com.impacta.estruturadedados.utils.views.Tabela;
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuListaDeNodos implements ISubMenu{
 
 	private IMenu menuPrincipal;
@@ -80,21 +90,21 @@ public class MenuListaDeNodos implements ISubMenu{
 	        opcao = entrada.nextInt();
 	        out.println();
 	        switch(opcao) {
-	        	case 1:
+	        	case 1:// Adiciona na lista
 	        		out.println("\tPara adicionar na Lista "+ listNodos.toString());
 	        		out.print("\tDigite o inteiro a ser adicionado }>");
 	        		int elemento = entrada.nextInt();
 	        		listNodos.addFirst(elemento);
 	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		break;
-	        	case 2:
+	        	case 2:// Remove da fila
 	        		out.println("\tPara a fila "+ listNodos.toString());
 	        		Integer elementoRemovido = listNodos.last().element();
 	        		listNodos.remove(listNodos.last());
 	        		out.println("\tElemento removido [ "+ elementoRemovido.toString()+" ]");
 	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		break;
-	        	case 3:
+	        	case 3:// Sub menu Position
 	        		
 	        		out.println("\t As PositionLists permitem que você remova e adicione elementos");
 	        		out.println("\tbaseados não em um índice específico mais pela posição de ");
@@ -106,7 +116,7 @@ public class MenuListaDeNodos implements ISubMenu{
 	        		subMenuListaPosition.show();
 	        		
 	        		break;
-	        	case 4:
+	        	case 4:// Altera um elemento da lista
 	        		out.println("\t Tabela com as Posições:");
 	        		
 	        		// Tabela que monta a lsita de posicoes na tela
@@ -131,11 +141,11 @@ public class MenuListaDeNodos implements ISubMenu{
 	        		out.println("\tLista:");
 	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		break;
-	        	case 5:
-	        		out.println("\tLista:");
+	        	case 5:// Exibe a Lista
+	        		out.println("\tLista de Nodos:");
 	        		out.println("\t  " + listNodos.toString() + "\n");
 	        		break;
-	        	case 6:
+	        	case 6:// Sai para o menu principal
 	        		close();
 	        		return;
 	        	default:
@@ -148,7 +158,7 @@ public class MenuListaDeNodos implements ISubMenu{
 				
 			}
 	        
-        }while(opcao > 0 && opcao < 6);
+        }while(opcao != 6);
         
 		out.println( menuPrincipal.getTitulo() + ":");
 	}

@@ -9,7 +9,17 @@ import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.mapa.source.HashTableMap;
 import com.impacta.estruturadedados.utils.views.Tabela;
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuMapa  implements ISubMenu{
 	
 	private IMenu menuPrincipal;
@@ -55,7 +65,7 @@ public class MenuMapa  implements ISubMenu{
 	        out.println("\t remove(k): Remove o elemento com a chave k do Mapa");
 	        out.println("     3. Mostrar o Mapa");
 	        out.println("     4. Sair para o menu principal ");
-	        out.print("    Selecione uma opção (1..5) }>");
+	        out.print("    Selecione uma opção (1..4) }>");
 	        
 	        opcao = entrada.nextInt();
 	        String chave = "";
@@ -101,8 +111,6 @@ public class MenuMapa  implements ISubMenu{
 	        	case 3:
 	        		out.println("\tMapa:");
 	        		out.println(tbl_mapa.toString);
-	        		
-	        		
 	        		
 	        		break;
 	        	case 4:

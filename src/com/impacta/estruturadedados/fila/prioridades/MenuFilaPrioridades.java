@@ -9,7 +9,17 @@ import com.impacta.estruturadedados.fila.prioridades.source.SortedListPriorityQu
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.utils.views.Tabela;
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuFilaPrioridades implements ISubMenu {
 	
 	
@@ -26,7 +36,8 @@ public class MenuFilaPrioridades implements ISubMenu {
 	@Override
 	public void show() {
 		out.println( getTitulo() + ":");
-
+		
+		// Montando fila de prioridades padrao
 		SortedListPriorityQueue<Integer, String> listBugs =  criaFilaPrioridades();
 		Tabela tbl_bugs = new Tabela(listBugs);
 		
@@ -59,7 +70,7 @@ public class MenuFilaPrioridades implements ISubMenu {
 	    out.println("      " + tbl_bugs.toString + "\n");
 	    
 	    
-	    
+	    // Loop de operaçoes
         int opcao = -1;
         do {
 	        
@@ -78,7 +89,7 @@ public class MenuFilaPrioridades implements ISubMenu {
 	        String conteudo = "";
 	        out.println();
 	        switch(opcao) {
-	        	case 1:
+	        	case 1:// Adiciona
 	        		out.println("\tPara adicionar na fila de Prioridades:");
 	        		out.println(tbl_bugs.toString);
 	        		out.print("\tDigite a prioridade:");
@@ -96,7 +107,7 @@ public class MenuFilaPrioridades implements ISubMenu {
 	        		out.println(tbl_bugs.toString + "\n");
 	        		
 	        		break;
-	        	case 2:
+	        	case 2: // Remove
 	        		out.println("\tPara remover da fila de Prioridades:");
 	        		out.println(tbl_bugs.toString);
 	        		
@@ -104,16 +115,16 @@ public class MenuFilaPrioridades implements ISubMenu {
 	        		out.println("\t O seguinte elemento foi removido :" + elementoRemovido);
 	        		tbl_bugs = new Tabela(listBugs);
 	        		break;
-	        	case 3:
+	        	case 3: // Exibe o elemento mais prioritario
 	        		out.println("\tNa fila Prioridades:");
 	        		out.println(tbl_bugs.toString);
 	        		out.println("\tO elemento mais prioritario é o "+listBugs.min().getValue());
 	        		break;
-	        	case 4:
+	        	case 4: // Exibe a fila de prioridades
 	        		out.println("\tFila de Prioridades:");
 	        		out.println(tbl_bugs.toString);
 	        		break;
-	        	case 5:
+	        	case 5:// Sai para o menu principal
 	        		close();
 	        		return;
 	        	default:

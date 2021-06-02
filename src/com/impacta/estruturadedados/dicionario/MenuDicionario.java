@@ -10,7 +10,17 @@ import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 
 import com.impacta.estruturadedados.utils.views.Tabela;
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuDicionario implements ISubMenu{
 	
 	
@@ -67,7 +77,7 @@ public class MenuDicionario implements ISubMenu{
 	        String conteudo = "";
 	        out.println();
 	        switch(opcao) {
-	        	case 1:
+	        	case 1://Adiciona
 	        		out.println("\tPara adicionar no Dicionario:");
 	        		out.println(tbl_dict.toString);
 	        		
@@ -84,7 +94,7 @@ public class MenuDicionario implements ISubMenu{
 	        		out.println(tbl_dict.toString);
 	        		
 	        		break;
-	        	case 2:
+	        	case 2:// Remove
 	        		if(dict.isEmpty()) {
 	        			out.println("\tNão é possível remover de um Dicionario Vazio!\n");
 	        			break;
@@ -107,7 +117,7 @@ public class MenuDicionario implements ISubMenu{
 	        		out.println(tbl_dict.toString);
 	        		
 	        		break;
-	        	case 3:
+	        	case 3:// Exibe
 	        		out.println("\tDicionario:");
 	        		out.println(tbl_dict.toString);
 	        		break;

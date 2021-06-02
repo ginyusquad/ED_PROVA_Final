@@ -10,7 +10,17 @@ import com.impacta.estruturadedados.fila.source.Queue;
 import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuFila implements ISubMenu{
 	
 	private IMenu menuPrincipal;
@@ -74,24 +84,24 @@ public class MenuFila implements ISubMenu{
 	        opcao = entrada.nextInt();
 	        out.println();
 	        switch(opcao) {
-	        	case 1:
+	        	case 1:// Adiciona
 	        		out.println("\tPara adicionar na fila "+ fila.toString());
 	        		out.print("\tDigite o inteiro a ser adicionado:");
 	        		int elemento = entrada.nextInt();
 	        		fila.enqueue(elemento);
 	        		out.println("\t  " + fila.toString() + "\n");
 	        		break;
-	        	case 2:
+	        	case 2:// Remove
 	        		out.println("\tPara a fila "+ fila.toString());
 	        		Integer elementoRemovido = fila.dequeue();
 	        		out.println("\tElemento removido [ "+ elementoRemovido.toString()+" ]");
 	        		out.println("\t  " + fila.toString() + "\n");
 	        		break;
-	        	case 3:
+	        	case 3:// Exibe o primeiro elemento
 	        		out.println("\tPara a fila "+ fila.toString());
 	        		out.println("\tO elemento primeiro da fila é "+ fila.front().toString() + "\n");
 	        		break;
-	        	case 4:
+	        	case 4:// Exibe a fila
 	        		out.println("\tFila:");
 	        		out.println("\t  " + fila.toString() + "\n");
 	        		break;
@@ -108,7 +118,7 @@ public class MenuFila implements ISubMenu{
 				
 			}
 	        
-        }while(opcao > 0 && opcao < 5);
+        }while(opcao != 5);
         
         
 		out.println( menuPrincipal.getTitulo() + ":");

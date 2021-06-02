@@ -11,7 +11,17 @@ import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.utils.tab_lista_de_nodos.Position;
 import com.impacta.estruturadedados.utils.views.Arvore;
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuArvoreBinaria implements ISubMenu{
 
 	
@@ -24,7 +34,7 @@ public class MenuArvoreBinaria implements ISubMenu{
         this.menuPrincipal = menuPrincipal;
         this.entrada = new Scanner(System.in);
     }
-    
+    // Mostra o sub menu na tela
 	@Override
 	public void show() {
 		
@@ -66,7 +76,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        Integer elemento;
 	        
 	        switch(opcao) {
-	        	case 1:
+	        	case 1:// Adicona um elemento
 	        		out.print("\tDigite o que será adicionado }>");
 	        		elemento = entrada.nextInt();
 	        		
@@ -75,7 +85,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        		out.println(arvore.toString + "\n");
 	        		
 	        		break;
-	        	case 2:
+	        	case 2:// Altera um elemento
 	        		
 	        		out.println("\tPara alterar a Árvore selecione um Ramo:");
 	        		selecionado = (Position<Integer>) selecionarNaArvore(arvore);
@@ -87,7 +97,7 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        		out.println(arvore.toString + "\n");
 	        		
 	        		break;
-	        	case 3:
+	        	case 3:// Remove um eleemento
 	        		out.println("\tPara remover na Árvore selecione um Ramo:");
 	        		selecionado =  selecionarNaArvore(arvore);
 	        		try {
@@ -102,16 +112,17 @@ public class MenuArvoreBinaria implements ISubMenu{
 	        		out.println("    Ramo removido:"+selecionado.element());
 	        		out.println(arvore.toString + "\n");
 	        		break;
-	        	case 4:
+	        	case 4:// Exibe a arvore
 	        		arvore =  new Arvore<Integer>(arvoreBinaryInteira);
 					try {
+						out.println("Arvore: ");
 						out.println(arvore.toString);
 					} catch (Exception e) {
 						out.println(e.toString());
 					}
 	        		
 	        		break;
-	        	case 5:
+	        	case 5:// Sai para o menu principal
 	        		close();
 	        		return;
 	        	default:

@@ -17,7 +17,17 @@ import com.impacta.estruturadedados.utils.tab_lista_de_nodos.Position;
 import com.impacta.estruturadedados.utils.tab_lista_de_nodos.PositionList;
 import com.impacta.estruturadedados.utils.views.Arvore;
 
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuArvoreGenerica implements ISubMenu{
 
 	
@@ -81,7 +91,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        String elemento;
 	        
 	        switch(opcao) {
-	        	case 1:
+	        	case 1://Adiciona
 	        		out.println("\tPara adicionar na Árvore selecione um Ramo:");
 	        		selecionado = (TreeNode<String>) selecionarNaArvore(arvore);
 	        		out.println("\tDigite o que será adicionado:");
@@ -93,7 +103,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		out.println(arvore.toString + "\n");
 	        		
 	        		break;
-	        	case 2:
+	        	case 2:// Altera um ramo
 	        		
 	        		out.println("\tPara alterar a Árvore selecione um Ramo:");
 	        		selecionado = (TreeNode<String>) selecionarNaArvore(arvore);
@@ -106,7 +116,7 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		out.println(arvore.toString + "\n");
 	        		
 	        		break;
-	        	case 3:
+	        	case 3:// Remove
 	        		out.println("\tPara remover na Árvore selecione um Ramo:");
 	        		selecionado = (TreeNode<String>) selecionarNaArvore(arvore);
 	        		
@@ -129,11 +139,11 @@ public class MenuArvoreGenerica implements ISubMenu{
 	        		out.println("    Ramo removido:"+selecionado.element());
 	        		out.println(arvore.toString + "\n");
 	        		break;
-	        	case 4:
+	        	case 4:// Exibe 
 	        		arvore =  new Arvore<String>(sistemas_operacionais);
 	        		out.println(arvore.toString + "\n");
 	        		break;
-	        	case 5:
+	        	case 5:// exibe a altura
 	        		out.println("\tAltura da Árvore: "+sistemas_operacionais.height1(sistemas_operacionais) + "\n");
 	        		break;
 	        	case 6:

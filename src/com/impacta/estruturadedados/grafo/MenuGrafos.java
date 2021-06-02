@@ -12,7 +12,17 @@ import com.impacta.estruturadedados.interfaces.IMenu;
 import com.impacta.estruturadedados.interfaces.ISubMenu;
 import com.impacta.estruturadedados.mapa.source.HashTableMap;
 import com.impacta.estruturadedados.utils.views.Tabela;
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class MenuGrafos implements ISubMenu{
 	
 	private IMenu menuPrincipal;
@@ -88,7 +98,7 @@ public class MenuGrafos implements ISubMenu{
 	        out.println();
 	        String chave = "";
 	        switch(opcao) {
-	        	case 1:
+	        	case 1:// Adicionar Vertice
 	        		out.println("\tPara adicionar no Grafo:");
 	        		out.println(tbl_grafo.toString);
 	        		
@@ -102,7 +112,7 @@ public class MenuGrafos implements ISubMenu{
 	        		out.println("\tVertice adicionado!!!");
 	        		out.println(tbl_grafo.toString);
 	        		break;
-	        	case 2:
+	        	case 2:// Adicioanr Aresta
 	        		out.println("\tPara adicionar no Grafo:");
 	        		out.println(tbl_grafo.toString);
 	        		
@@ -131,7 +141,7 @@ public class MenuGrafos implements ISubMenu{
 	        		out.println("\tAresta adicionado!!!");
 	        		out.println(tbl_grafo.toString);
 	        		break;
-	        	case 3:
+	        	case 3:// Remover Vertice
 	        		out.println("\tPara Remover no Grafo:");
 	        		out.println(tbl_grafo.toString);
 	        		int index = 0;
@@ -164,7 +174,7 @@ public class MenuGrafos implements ISubMenu{
 	        		out.println(tbl_grafo.toString);
 	        		
 	        		break;
-	        	case 4:
+	        	case 4:// Remover Aresta
 	        		out.println("\tPara Remover no Grafo:");
 	        		out.println(tbl_grafo.toString);
 	        		
@@ -194,7 +204,7 @@ public class MenuGrafos implements ISubMenu{
 	        		out.println("\t Aresta Removida!!!");
 	        		out.println(tbl_grafo.toString);
 	        		break;
-	        	case 5:
+	        	case 5:// Exibe o grafo
 	        		out.println(tbl_grafo.toString);
 	        		break;
 	        	case 6:

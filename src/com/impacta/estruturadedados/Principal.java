@@ -18,7 +18,17 @@ import com.impacta.estruturadedados.fila.MenuFila;
 import com.impacta.estruturadedados.fila.prioridades.MenuFilaPrioridades;
 import com.impacta.estruturadedados.grafo.MenuGrafos;
 
-
+/*
+ *	Grupo: 6.
+ *	Turma: CC3BN.
+ *	Github: https://github.com/ginyusquad/ED_PROVA_Final
+ *	Integrantes:    Claudia Thifany dos Santos (RA: 1903247);
+ *					Gilberto Ramos de Oliveira (RA: 1903991);
+ *					Leandro Epifanio Silva Costa (RA: 1902516);
+ *					Matheus Luz Galdino (RA: 1903502);
+ *			        Rodrigo Monastero (RA: 1904247). 
+ *
+*/
 public class Principal implements IMenu{
 	
 	private String titulo = " Menu Principal";
@@ -36,9 +46,9 @@ public class Principal implements IMenu{
 		}
 	}
 
-	//Mostra e inicia o menu
+	//  Mostra o menu principal
     public void show(){
-		// TODO Auto-generated method stub
+
 		Scanner entrada = new Scanner(System.in);
 		
 		out.println("Bem Vindo!!");
@@ -46,6 +56,7 @@ public class Principal implements IMenu{
 		
 		out.println(getTitulo()+":");
 		int opcao;
+		// Loop que valida as entradas
 		do {
 			out.println("\t1  - Lista Arranjo");
 			out.println("\t2  - Pilha");
@@ -74,6 +85,7 @@ public class Principal implements IMenu{
 			}
 
 			ISubMenu subMenu =  null;
+			// Chama a implementação desejada
 			switch(opcao) {
 				case 1:
 					subMenu = new MenuArranjo(this);
@@ -119,7 +131,7 @@ public class Principal implements IMenu{
 					out.println("Opção invalida!! Reveja o Menu");
 					continue;
 			}
-			// Inicia o Sub Menu correspondente
+			// Invoca o sub menu escolhido
 			subMenu.show();
 			
 		}while(opcao != 13 );
@@ -129,7 +141,11 @@ public class Principal implements IMenu{
     // fechar o menu
     public void close(){
     	out.println("Ate mais!! :)\n");
-    	
+    	out.println("\t\" Longe, lá de longe");
+    	out.println("\t De onde toda a beleza do mundo se esconde");
+        out.println("\t Mande para ontem");
+        out.println("\t Uma voz que se expanda e suspenda esse instante....\"");
+        out.println("\t\t\t\t Lá de Longe - Tribalistas\n");
     	try {
     		System.exit(0);
 		}catch (Exception e) {
