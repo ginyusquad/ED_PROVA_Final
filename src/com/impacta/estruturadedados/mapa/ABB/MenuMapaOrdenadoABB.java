@@ -50,13 +50,25 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 	        out.print("    Selecione uma opção (1..5) }>");
 	        
 	        opcao = entrada.nextInt();
-	        String chave = "";
+	        int chave = 0;
 	        String conteudo = "";
 	        out.println();
 	        switch(opcao) {
 	        	case 1:
 	        		out.println("\tPara adicionar no Mapa:");
 	        		
+	        		out.println(tbl_mapa.toString);
+	        		
+	        		out.print("\tDigite a Chave }>");
+	        		chave = entrada.nextInt();
+	        		
+	        		out.println("\tDigite o conteudo:");
+	        		entrada.nextLine();
+	        		conteudo = entrada.nextLine();
+	        		
+	        		mapa.put(chave, conteudo);
+	        		
+	        		tbl_mapa =  new Tabela(mapa);
 	        		
 	        		out.println(tbl_mapa.toString);
 	        		
@@ -67,15 +79,25 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 	        			break;
 	        		}
 	        		
+	        		out.println("\tPara remover no Mapa:");
+	        		out.println(tbl_mapa.toString);
+	        		out.println("\tDigite a Chave do elemento que deseja remover:");
+	        		chave = entrada.nextInt();
 	        		
+	        		mapa.remove(chave);
+	        		
+	        		out.println("\tElemento removido!!");
+	        		
+	        		tbl_mapa =  new Tabela(mapa);
+	        			        		
 	        		out.println(tbl_mapa.toString);
 	        		
 	        		break;
 	        	case 3:
+	        		
 	        		out.println("\tMapa:");
 	        		out.println(tbl_mapa.toString);
-	        		
-	        		
+	        		        		
 	        		
 	        		break;
 	        	case 4:
@@ -92,8 +114,6 @@ public class MenuMapaOrdenadoABB implements ISubMenu{
 			}
 	        
         }while( opcao != 4 );
-		
-		out.println( menuPrincipal.getTitulo() + ":");
 		
 		out.println( menuPrincipal.getTitulo() + ":");
 	}

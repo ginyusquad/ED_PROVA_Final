@@ -7,6 +7,9 @@ import java.util.List;
 
 import com.impacta.estruturadedados.dicionario.source.HashTableMultiMap;
 import com.impacta.estruturadedados.fila.prioridades.source.SortedListPriorityQueue;
+import com.impacta.estruturadedados.grafo.source.Aresta;
+import com.impacta.estruturadedados.grafo.source.Grafo;
+import com.impacta.estruturadedados.grafo.source.Vertice;
 import com.impacta.estruturadedados.listaDeNodos.source.DNode;
 import com.impacta.estruturadedados.listaDeNodos.source.Position;
 import com.impacta.estruturadedados.listaDeNodos.source.PositionList;
@@ -19,6 +22,7 @@ public class Tabela{
 	public String toString;
 	public Position<Integer>[] listPosition;
 	public HashMap<Integer,java.util.Map.Entry> mapDic;
+	public HashMap<Integer,Vertice<String>> mapVertices;
 	
 	
 	public Tabela(PositionList<Integer> listNodos) {
@@ -251,5 +255,125 @@ public class Tabela{
 		}
 		this.toString = listTexto;
 		
+	}
+
+	public Tabela(Grafo<String> grafo) {
+		mapVertices = new HashMap<Integer, Vertice<String>>();
+		String listTexto = "\t┌────────┬──────────────────────────┬─────────────────────────────────┐ \n"
+		 		 		 + "\t│Posicao │ Vertice                  │ Arestas                         │ \n"
+		 		 		 + "\t├────────┼──────────────────────────┼─────────────────────────────────┤ \n";
+		int index = 0;
+
+		for(Vertice<String> vertic: grafo.vertices) {
+			
+			index++;
+			
+			String espaco = "";
+			String chave = vertic.nome;
+			String posicao = ""+ index;
+			
+			mapVertices.put(index, vertic);
+			
+			if((posicao+"").length() > 6)posicao = posicao.substring(0, 4)+"..";
+			espaco = new String(new char[ (6 - posicao.length()) ]).replace("\0", " ");
+			listTexto += "\t│ "+ posicao + espaco +" │";
+			
+			
+			
+			if(chave.length() > 25)chave = chave.substring(0, 23)+"..";
+			espaco = new String(new char[ (25 - chave.length()) ]).replace("\0", " ");
+			listTexto += " "+ chave + espaco +"│";
+			
+			if(vertic.aresta.size() == 1) {
+				
+				String value = vertic.aresta.get(0).destino.toString();
+
+				if(value.length() > 32)value = value.substring(0, 30)+"..";
+				espaco = new String(new char[ (32 - value.length()) ]).replace("\0", " ");
+				// Valida a parte visual
+				listTexto += " "+value + espaco +"│\n";
+				
+			}else if(vertic.aresta.isEmpty()){
+				
+				String value = "";
+				if(value.length() > 32)value = value.substring(0, 20)+"..";
+				espaco = new String(new char[ (32 - value.length()) ]).replace("\0", " ");
+				// Valida a parte visual
+				listTexto += " "+value + espaco +"│\n";
+				
+			} else {
+				
+				boolean isFirst = true;
+				for(Aresta<String> aresta : vertic.aresta) {
+					if(isFirst) {
+						
+						String value = aresta.destino.toString();
+						if(value.length() > 32)value = value.substring(0, 20)+"..";
+						espaco = new String(new char[ (32 - value.length()) ]).replace("\0", " ");
+						// Valida a parte visual
+						listTexto += " "+value + espaco +"│\n";
+						isFirst = false;
+					} else {
+						
+						listTexto +=  "\t│        │                          │";
+						
+						String value = aresta.destino.toString();
+						if(value.length() > 32)value = value.substring(0, 30)+"..";
+						espaco = new String(new char[ (32 - value.length()) ]).replace("\0", " ");
+						//listTexto += " "+ chave + espaco +" │";
+						// Valida a parte visual
+						listTexto += " "+value + espaco +"│\n";
+						
+					}
+				}
+			}
+			
+			
+		}
+		
+		listTexto +=       "\t└────────┴──────────────────────────┴─────────────────────────────────┘ \n";
+		
+		if(grafo.isEmpty()) {
+			listTexto = "\t┌─────────┬────────────────┐ \n"
+			 		  + "\t│ Vertice │ Arestas        │ \n"
+					  + "\t├─────────┴────────────────┤ \n"
+					  + "\t│ O Grafo esta Vazio!      │ \n"
+					  + "\t└──────────────────────────┘ \n";
+		}
+		
+		this.toString = listTexto;
+	}
+
+	public Tabela(List<Aresta<String>> arestas) {
+		String listTexto = "\n\t┌───────┬────────────────────────────────────────┐ \n"
+		 		 		   + "\t│Posicao│   Aresta                               │ \n"
+		 		 		   + "\t├───────┼────────────────────────────────────────┤ \n";
+		int index = 1;
+		
+		for(Aresta<String> aresta : arestas) {
+			
+			
+			String conteudo = aresta.destino.toString();
+			
+			if(conteudo.length() > 37)conteudo = conteudo.substring(0, 32)+"..";
+			conteudo += new String(new char[ (37 - conteudo.length()) ]).replace("\0", " ");
+			
+			listTexto +=   "\t│  "+(index)+"°\t│  "+ conteudo +" │\n";
+			
+			index++;
+		}
+		
+		listTexto +=       "\t└───────┴────────────────────────────────────────┘ \n";
+		
+		if(arestas.isEmpty()) {
+			listTexto = "\t┌───────┬────────┐ \n"
+			   		  + "\t│Posicao│Vertice │ \n"
+			 		  + "\t├───────┴────────┤ \n"
+			 		  + "\t│   Esta Vazio!  │ \n"
+			 		  + "\t└────────────────┘ \n";
+		}
+		
+		this.toString = listTexto;
+
 	}
 }
