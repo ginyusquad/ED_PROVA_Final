@@ -30,11 +30,15 @@ public class MenuDicionario implements ISubMenu{
 		
 		
 		HashTableMultiMap<String, String> dict =  criaDicionarioPadrao();
-		out.println("\n# Descrição:");
-		out.println("\t    Um dicionario é uma estrutura de dados semelhante aos Mapas no entanto");
-        out.println("\t   ele permite armazenar diferentes valores em uma unica chave");
-        out.println("\t   como um dicioanrio na vida real aodne uma unica palavra pode");
-        out.println("\t   ter inumeros sinonimos e significados simultaneamente.\n");
+		out.println("\n"
+  		  	  	  + "\t┌─────────────────────────────────────────────────────────────────────────────────────┐\n"
+  		   	  	  + "\t│                                       DESCRICAO                                     │");
+		out.println("\t├─────────────────────────────────────────────────────────────────────────────────────┤");
+		out.println("\t│    Um dicionario é uma estrutura de dados semelhante aos Mapas no entanto           │");
+        out.println("\t│   ele permite armazenar diferentes valores em uma unica chave                       │");
+        out.println("\t│   como um dicioanrio na vida real aodne uma unica palavra pode                      │");
+        out.println("\t│   ter inumeros sinonimos e significados simultaneamente.                            │");
+        out.println("\t└─────────────────────────────────────────────────────────────────────────────────────┘\n");
         
 				
 		Tabela tbl_dict = new Tabela(dict);

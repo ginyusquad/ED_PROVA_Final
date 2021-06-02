@@ -39,19 +39,21 @@ public class MenuArvoreGenerica implements ISubMenu{
 	
 		LinkedTree<String> sistemas_operacionais = criarArvorePadrao();
 		
-		out.println("\n# Descrição:");
-		out.println("\t    Uma arvore generica é uma estrutura de dados, que armazena inumeros elementos");
-        out.println("\t   montandos eles em nós, com hierarquias, sendo o pai a raiz");
-        out.println("\t   os filhos os nós abaixo do pai e assim por diante");
-        out.println("\t   hierarquica.");
-        out.println("\t   Exemplo:");
-        out.println("\t          Adam ");
-        out.println("\t         /    \\ ");
-        out.println("\t       Abel   Cain");
-        out.println("\t                \\ ");
-        out.println("\t               Enoque");
-        out.println("\t   Podendo indexar estruturas gigantescas como sistemas de arquivos\n");
-         
+		out.println("\n"
+    		  	  + "\t┌─────────────────────────────────────────────────────────────────────────────────────┐\n"
+    		   	  + "\t│                                       DESCRICAO                                     │");
+		out.println("\t├─────────────────────────────────────────────────────────────────────────────────────┤");
+		out.println("\t│    Uma arvore generica é uma estrutura de dados, que armazena inumeros elementos    │"); 
+        out.println("\t│   montandos eles em nós, com hierarquias, sendo o pai a raiz                        │");
+        out.println("\t│   os filhos os nós abaixo do pai e assim por diante hierarquicamente.               │");
+        out.println("\t│   Exemplo:                                                                          │");
+        out.println("\t│          Adam                                                                       │");
+        out.println("\t│         /    \\                                                                      │");
+        out.println("\t│       Abel   Cain                                                                   │");
+        out.println("\t│                \\                                                                    │");
+        out.println("\t│               Enoque                                                                │");
+        out.println("\t│   Podendo indexar estruturas gigantescas como sistemas de arquivos.                 │");
+        out.println("\t└─────────────────────────────────────────────────────────────────────────────────────┘\n");
 		// Montando arvore padrao
 		Arvore<String> arvore =  new Arvore<String>(sistemas_operacionais);
 		out.println(" Por Padrão será usado a árvore:");
