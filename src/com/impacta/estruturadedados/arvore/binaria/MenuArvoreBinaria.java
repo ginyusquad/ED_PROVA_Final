@@ -146,7 +146,8 @@ public class MenuArvoreBinaria implements ISubMenu{
 		
 		out.println("\tÁrvore atual:");
 		out.println(arvore.toString);
-		out.print("    Selecione um ramo (1.1, 1.2 e etc) }>");
+		out.println("    Digite um ramo( Por Exemplo: 1.1, 1.2, 1.3 ");
+		out.print("                                   1.1.2 e etc) }>");
         String opcao = entrada.next();
         String elemento = null;
         try { elemento = arvore.map.get(opcao).toString(); }
